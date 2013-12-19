@@ -9,15 +9,16 @@ class FinderView
 
   render: =>
     @dom.empty()
-    @dom.addClass('results__list--active')
+    @dom[0].classList.add('results__list--active')
     for entry in @model then do (entry) =>
       console.log entry.title
       li = $ ss.tmpl['chart-result'].render entry
       li.click =>
         if $(".collection li").length >= 4
-          $('.app').addClass('app--publish')
+          $('.app')[0].classList.add('app--publish')
         if $(".collection li").length < 5
           @dom.empty()
+          @dom.html('')
           @dom.removeClass 'results__list--active'
           $('.finder__clear').hide()
           $('.finder__input').val('')
@@ -63,8 +64,17 @@ window.login = ({username, password}) ->
 
 register = ({email, username, password}) ->
   ss.rpc 'app.register', {email, username, password} , (res) ->
-    console.log 'register response', res
-
+    console.log res
+    if res is "ERROR: username is taken"
+      $(".register__alert").text "Username taken dickhead"
+      $(".register__alert")[0].classList.add('register__alert--error')
+      $(".register")[0].classList.add('register--alert')
+    if res is 'OK'
+      login
+        username: $(this).find('input#username').val()
+        password: $(this).find('input#password').val()
+      $('.register__window').html('You good bro, you logged in')
+    
 logout = ->
   ss.rpc 'app.logout', ->
     window.location.reload()
@@ -89,7 +99,7 @@ data =
 input = $ '#finder .header input'
 input.keyup _.throttle ->
   $('.spinner').show()
-  $('.results__header').addClass('results__header--active')
+  $('.results__header')[0].classList.add('results__header--active')
   $('.finder__clear').show()
   term = input.val()
   $('#query').html(term)

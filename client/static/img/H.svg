@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="243px" height="226px" viewBox="0 0 243 226" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>H</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Rectangle-10-+-H" sketch:type="MSLayerGroup">
+            <rect id="Rectangle-10" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="243" height="226"></rect>
+            <g id="H" transform="translate(51.000000, 42.000000)" fill="#0A9DFF" sketch:type="MSShapeGroup">
+                <path d="M96,50 L96,0 L141,0 L141,143 L96,143 L96,92 L55,92 L55,50 L96,50 Z" id="Rectangle-5"></path>
+                <rect id="Rectangle-6" x="0" y="50" width="45" height="42"></rect>
+                <rect id="Rectangle-6" x="0" y="101" width="45" height="42"></rect>
+                <rect id="Rectangle-6" x="0" y="0" width="45" height="42"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

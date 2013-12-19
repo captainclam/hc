@@ -2,6 +2,7 @@
 
 blue = #089AFB
 green = rgb(173, 255, 0)
+orange = #FF5C00
 
 search-bg = #2270A4
 search-border = #0A64A0
@@ -122,7 +123,6 @@ body
   background-color: #333
   width: 100%
   height: 100%
-  overflow-y: auto
 
 .sidebar--active
   transform: translateX(-100%)
@@ -268,10 +268,30 @@ body
   -ms-animation-delay: -0.8s
 
 .register
-  // display: none
+  display: none
   color: #fff
-  padding: 10px
+  margin-top: -50px
+  transition: transform 0.25s ease
 
+.register--alert
+  transform: translateY(50px)
+
+.register__alert
+  height: 50px
+  display: flex
+  align-items: center
+  padding: 0 10px
+  color: #fff
+  margin-bottom: 10px
+  font-size: 14px
+  font-weight: bold
+
+.register__alert--error
+  background-color: orange
+
+.register__window
+  padding: 10px
+  
 .register h2
   margin-bottom: 20px
   font-size: 22px
@@ -329,10 +349,9 @@ body
   border: 2px solid #fff
   margin-top: 10px
   cursor: pointer
-  transition: all 0.3s ease
+  transition: all 0.1s ease
   &:hover
-    color: #222
-    background-color: #fff
+    border-color: orange
   &:focus
     outline: 0
 
@@ -370,9 +389,11 @@ body
     font-size: 20px
     margin-bottom: 0
 
+  .collection
+    padding-right: 320px
+
   .results
     padding: 0
-    padding-right: 320px
     top: 64px
     overflow: hidden
 
@@ -404,7 +425,9 @@ body
     transform: translateY(40px)
 
   .results__list
-    padding-top: 20px
+    position: absolute;
+    top: 40px;
+    width: 100%
 
   .publish
     animation: none
@@ -420,11 +443,11 @@ body
     cursor: pointer
   
   .sidebar
+    overflow: hidden
     left: auto
     right: 0
     width: 320px
     border-left: 1px solid #444
-    padding-top: 20px
     transition: all 0.25s ease
 
   .result:hover
