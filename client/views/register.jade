@@ -1,0 +1,14 @@
+form#register.register
+  h2 Signup to publish your chart
+  .register__window
+    .register__group
+      input(id="email", autofocus, autocomplete="off",placeholder="Enter your email address").register__input
+      label.register__label Email
+    .register__group.register__group--user
+      input(id="username", autocomplete="off").register__input.register__input--user
+      label.register__label Username
+    .register__group
+      input(id="password", type="password", autocomplete="off").register__input
+      label.register__label Password
+    .register__group
+      button(type="submit").register__action Create account

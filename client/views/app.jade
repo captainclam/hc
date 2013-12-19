@@ -1,0 +1,31 @@
+!!! 5
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    != SocketStream
+    title Welcome
+  body
+    #app.module
+      #finder.app
+        .header
+          .logo
+          //- h2.header__question What are your favourite albums of 2013?
+          button.save.publish Publish your chart
+          .finder
+            i.icon-remove-sign.finder__clear
+            input.search.finder__input(placeholder="eg. Acid Rap")
+        .results
+          .results__header Searching  
+            span#query Mac Miller
+            .spinner
+              .rect1
+              .rect2
+              .rect3
+              .rect4
+              .rect5
+          .sidebar
+            include register
+            ul.results__list
+          #collection.collection
+            ul.list.entries
+    

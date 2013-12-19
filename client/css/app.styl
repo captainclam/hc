@@ -1,0 +1,544 @@
+@import 'nib'
+
+blue = #089AFB
+green = rgb(173, 255, 0)
+
+search-bg = #2270A4
+search-border = #0A64A0
+
+results-bg = #313131
+
+html,
+body,
+.app,
+.module,
+.collection,
+.entries
+  height: 100%
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+body
+  font-family: sans-serif
+
+.logo
+  width: 36px
+  height: 33px
+  background-image: url("/img/H.svg")
+  -webkit-background-size: cover
+  -moz-background-size: cover
+  background-size: cover
+  margin-top: 6px
+  &:before
+    content: 'Hipcharts'
+    display: block
+    font-family: 'Droid Sans'
+    font-weight: bold
+    color: #fff
+    letter-spacing: -1px
+    padding-left: 45px
+    padding-top: 6px
+    font-size: 20px
+
+.dev-menu
+  display: none
+
+.dev-menu
+  a
+    display: block
+
+.module
+  overflow: hidden
+  width: 100%
+  height 100%
+  position: relative
+
+.header
+  background: blue
+  padding: 10px
+  overflow: hidden
+
+.header__question
+  color: #fff
+  text-align: center
+  font-size: 14px
+  margin-bottom: 10px
+
+.finder
+  position: relative
+
+.finder__clear
+  display: none
+  position: absolute
+  right: 20px
+  bottom: 13px
+  color: #fff
+
+.finder__input
+  width: 100%
+  border: 0
+  height: 44px
+  padding: 0 20px
+  font-size: 14px
+  background-color: #2270a4
+  border: 1px solid #0a64a0
+  color: #fff
+  &:focus
+    outline: 0
+
+.finder__input::-webkit-input-placeholder
+   color: rgba(255,255,255,0.2)
+
+.finder__input:-moz-placeholder
+   color:  rgba(255,255,255,0.2) 
+
+.finder__input::-moz-placeholder
+   color:  rgba(255,255,255,0.2) 
+
+.finder__input:-ms-input-placeholder
+   color:  rgba(255,255,255,0.2)
+
+.results
+  background-color: #313131
+  padding: 10px
+  overflow: hidden
+  overflow-y: auto
+  position: absolute
+  bottom: 0
+  width: 100%
+  top: 90px
+
+.results__header
+  display: none
+
+.sidebar
+  position: absolute
+  z-index: 20
+  left: 100%
+  top: 0
+  background-color: #333
+  width: 100%
+  height: 100%
+  overflow-y: auto
+
+.sidebar--active
+  transform: translateX(-100%)
+  transform: translateX(-100%)
+
+.result
+  color: #fff
+  flex-wrap: wrap
+  display: flex
+  flex-flow: column
+  padding: 10px
+  position: relative
+  height: 60px
+  padding-left: 55px
+  justify-content: center
+  cursor: pointer
+
+.result__thumb
+  position: absolute
+  width: 30px
+  left: 10px
+  top: 15px
+
+.result__title
+  font-weight: bold
+  width: 100%
+  font-size: 14px
+  text-overflow: ellipsis
+  overflow: hidden
+  white-space: nowrap
+
+.result__subtitle
+  color: #999
+  font-weight: normal
+  font-size: 14px
+
+.placeholders
+  position: absolute
+  bottom: 0
+  width: 100%
+  left: 0
+  top: 0
+
+.placeholder
+  background-color: #444
+  height: 60px
+  height: calc(20% - 1px)
+  margin-top: 1px
+
+.container
+  // max-width: 800px
+  // margin: 0 auto
+
+.collection
+  counter-reset: tally
+
+.entry
+  background-color: #fff
+  color: #555
+  flex-wrap: wrap
+  display: flex
+  flex-flow: column
+  padding: 10px
+  position: relative
+  height: 80px
+  padding-left: 75px
+  justify-content: center
+  margin-top: 1px
+  &:first-child
+    margin-top: 0
+
+.entry__thumb
+  opacity: 0
+  position: absolute
+  width: 50px
+  left: 10px
+  top: 15px
+
+.entry__title
+  font-weight: bold
+  width: 100%
+  text-overflow: ellipsis
+  overflow: hidden
+  white-space: nowrap
+
+.entry__subtitle
+  color: #999
+  font-weight: normal
+  font-size: 14px
+
+.publish
+  transition: transform 0.3s ease
+  width: 100%
+  background: none
+  border: 1px solid #fff
+  border-radius: 2px
+  color: #fff
+  padding: 20px
+  font-size: 18px
+  font-weight: bold
+  cursor: pointer
+  &:hover
+    background-color: #fff
+    color: #222
+
+.spinner
+  display: none
+  text-align: center
+  font-size: 10px
+  position: absolute
+  right: 15px
+  top: 10px
+
+.spinner > div
+  background-color: orange
+  height: 20px
+  width: 4px
+  display: inline-block
+  margin-left: 1px
+  
+  -webkit-animation: stretchdelay 1.2s infinite ease-in-out
+  -moz-animation: stretchdelay 1.2s infinite ease-in-out
+  -ms-animation: stretchdelay 1.2s infinite ease-in-out
+
+.spinner .rect2
+  -webkit-animation-delay: -1.1s
+  -moz-animation-delay: -1.1s
+  -ms-animation-delay: -1.1s
+
+.spinner .rect3
+  -webkit-animation-delay: -1.0s
+  -moz-animation-delay: -1.0s
+  -ms-animation-delay: -1.0s
+
+.spinner .rect4
+  -webkit-animation-delay: -0.9s
+  -moz-animation-delay: -0.9s
+  -ms-animation-delay: -0.9s
+
+.spinner .rect5
+  -webkit-animation-delay: -0.8s
+  -moz-animation-delay: -0.8s
+  -ms-animation-delay: -0.8s
+
+.register
+  // display: none
+  color: #fff
+  padding: 10px
+
+.register h2
+  margin-bottom: 20px
+  font-size: 22px
+
+.register p
+  margin-bottom: 20px
+
+.register__group
+  display: flex
+  flex-flow: column-reverse
+  margin-bottom: 20px
+  position: relative
+
+.register__group--user:before
+  content: 'hipcharts.com/u/'
+  display: block
+  position: absolute
+  font-size: 16px
+  color: #999
+  bottom: 10px
+  left: 10px
+
+.register__label
+  color: #fff
+  margin-bottom: 10px
+  font-size: 16px
+  font-weight: bold
+
+.register__input
+  height: 40px
+  border: 0
+  border-radius: 0px
+  background-color: rgb(73, 73, 73)
+  border: 1px solid rgb(46, 46, 46)
+  transition: border-color 0.1s ease
+  color: #fff
+  padding: 0 10px
+  font-size: 16px
+
+.register__input--user
+  padding-left 129px
+
+.register__input:focus
+  outline: 0
+  border-color: #fff
+  + .register__label
+    color: #fff
+
+.register__action
+  height: 50px
+  border-radius: 2px
+  font-size: 18px
+  color: #fff
+  background: none
+  border: 2px solid #fff
+  margin-top: 10px
+  cursor: pointer
+  transition: all 0.3s ease
+  &:hover
+    color: #222
+    background-color: #fff
+  &:focus
+    outline: 0
+
+@-webkit-keyframes stretchdelay
+  0%
+  40%
+  100%
+    -webkit-transform: scaleY(0.4) 
+  20%
+    -webkit-transform: scaleY(1.0)
+
+@-moz-keyframes stretchdelay
+  0%
+  40%
+  100%
+    -moz-transform: scaleY(0.4)
+  20%
+    -moz-transform: scaleY(1.0)
+
+@-ms-keyframes stretchdelay
+  0%
+  40%
+  100%
+    -ms-transform: scaleY(0.4) 
+  20%
+    -ms-transform: scaleY(1.0)
+
+@media only screen and (min-width: 768px)
+
+  .header
+    height: 64px
+    overflow: hidden
+
+  .header__question
+    font-size: 20px
+    margin-bottom: 0
+
+  .results
+    padding: 0
+    padding-right: 320px
+    top: 64px
+    overflow: hidden
+
+  .results__header
+    position: absolute
+    top: -40px
+    right: 0
+    z-index: 50
+    padding: 0 20px
+    width: 320px
+    background-color: #424242
+    color: #8D8D8D
+    font-size: 14px
+    height: 40px
+    display: flex
+    align-items: center
+    font-weight: 100
+    transition: all 0.25s ease
+    span
+      font-weight: bold
+      padding-left: 5px
+      color: #eee
+      width: 180px
+      text-overflow: ellipsis
+      white-space: no-wrap
+      overflow: hidden
+
+  .results__header--active
+    transform: translateY(40px)
+
+  .results__list
+    padding-top: 20px
+
+  .publish
+    animation: none
+    position: absolute
+    max-width: 310px
+    right: -310px
+    top: 10px
+    height: 44px
+    padding: 0
+    line-height: 44px
+
+  .finder__clear
+    cursor: pointer
+  
+  .sidebar
+    left: auto
+    right: 0
+    width: 320px
+    border-left: 1px solid #444
+    padding-top: 20px
+    transition: all 0.25s ease
+
+  .result:hover
+    background-color: #292929
+
+  .sidebar--active
+    transform: translateX(0)
+
+  .finder
+    position: absolute
+    width: 310px
+    right: 10px
+    top: 10px
+    transition: all 0.3s ease
+  
+  // .entries
+  //   display: flex
+  //   flex-wrap: wrap
+
+  .entry
+    float: left
+    padding-left: 0
+    width: 100%
+    padding: 0
+    height: 20%
+    background-position: center
+    background-size: cover
+    border: 1px solid #2B2A2A
+    border-bottom: 0
+    background-color: #2B2A2A
+    &:hover
+      .entry__remove
+        animation: fadeInTopBig 0.25s ease
+        opacity: 1
+
+  .entry:first-child
+    width: 100%
+    .entry__title
+      font-size: 22px
+    .entry__details
+      height: 100px
+      padding-left: 100px
+      padding-top: 15px
+    
+  .entry__details
+    position: absolute
+    bottom: -1px
+    right: 0
+    left: 0
+    z-index: 20
+    color: #fff
+    height: 50px
+    padding-left: 60px
+    text-shadow: 0 1px 1px rgba(0,0,0,0.8)
+    background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.8))
+    &:before
+      position: absolute
+      bottom: 10px
+      left: 20px
+      font-size: 42px
+      font-family: 'Helvetica Neue'
+      font-weight: 100
+      color: #fff
+      counter-increment: tally
+      content: counter(tally)
+      z-index: 20
+      text-shadow: 1px 1px 10px rgba(0,0,0,0.4)
+
+  .entry__subtitle
+    color: #fff
+
+  .entry__remove
+    text-align: center
+    line-height: 34px
+    justify-content: center
+    position: absolute
+    top: 10px
+    right: 10px
+    width: 40px
+    height: 40px
+    border-radius: 20px
+    border: 2px solid #fff
+    color: #fff
+    font-weight: 100
+    font-family: 'Helvetica Neue'
+    transition: all 0.2s ease
+    cursor: pointer
+    font-size: 18px
+    transition: all 0.25s ease
+    opacity: 0
+    &:hover
+      background-color: #fff
+      color: #000
+
+  .app--publish
+    
+    // .publish
+    //   transition-delay: 0.5s
+    //   transform: translateX(-320px)
+    
+    .finder
+      transform: translateX(320px)
+
+    .register
+      display: block
+
+@media only screen and (min-width: 1024px)
+  
+  .entry
+    width: 50%
+    padding: 0
+    height: 33.333333333%
+
+  .entry:first-child
+    width: 100%
+    .entry__details:before
+      font-size: 100px
