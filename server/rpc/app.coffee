@@ -26,9 +26,8 @@ exports.actions = (req, res, ss) ->
       res user
 
   register: (details) ->
-    console.log 'app.register'
-    if details
-      console.log 'OK'
+    validEmail = /^[^\s@]+@[^\s,;@]+$/g
+    if details and validEmail.test details.email
       User.findOne {username: details.username}, (err, existingUser) ->
         if existingUser?
           console.log 'ERROR: username is taken'
