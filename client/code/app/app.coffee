@@ -12,6 +12,7 @@ class FinderView
     @dom[0].classList.add('results__list--active')
     for entry in @model then do (entry) =>
       # console.log entry.title
+      console.log entry
       li = $ ss.tmpl['chart-result'].render entry
       li.click =>
         if $(".collection li").length >= 4
@@ -167,3 +168,5 @@ window.publicProfile = ->
       alert 'boo! ' + message
 
 setTimeout publicProfile, 10
+
+suggestions = require '/suggestions'
