@@ -4,4 +4,4 @@ module.exports = mongoose.model 'User',
   name: String
   username: String
   password: String
-  games: Array
+  chart: Array

@@ -11,7 +11,7 @@ class FinderView
     @dom.empty()
     @dom[0].classList.add('results__list--active')
     for entry in @model then do (entry) =>
-      console.log entry.title
+      # console.log entry.title
       li = $ ss.tmpl['chart-result'].render entry
       li.click =>
         if $(".collection li").length >= 4
@@ -62,8 +62,8 @@ window.login = ({username, password}) ->
       Nav.go 'app'
     # window.location.reload()
 
-register = ({email, username, password}) ->
-  ss.rpc 'app.register', {email, username, password} , (res) ->
+register = ({email, username, password, chart}) ->
+  ss.rpc 'app.register', {email, username, password, chart} , (res) ->
     console.log res
     if res is "ERROR: username is taken"
       $(".register__alert").text "Username taken dickhead"
@@ -146,6 +146,20 @@ $('form#register').submit (e) ->
     email: $(this).find('input#email').val()
     username: $(this).find('input#username').val()
     password: $(this).find('input#password').val()
+    chart: collectionView.model
 
 $('a.logout').click logout
 $('a.go').click -> Nav.go $(this).attr('href').replace('#','')
+
+window.publicProfile = ->
+  username = window.location.pathname.substring(1)
+  return unless username
+  ss.rpc 'app.getCollection', {username}, ({success, user, message}) ->
+    if success
+      collectionView.model = user.chart
+      collectionView.render()
+      # alert 'yay! #1' + user.chart[0].title
+    else
+      alert 'boo! ' + message
+
+setTimeout publicProfile, 500

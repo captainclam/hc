@@ -25,6 +25,17 @@ exports.actions = (req, res, ss) ->
       throw err if err
       res user
 
+  getCollection: (details) ->
+    User.findOne {username: details.username}, (err, user) ->
+      if user?
+        res
+          success: true
+          user: user
+      else
+        res
+          success: false
+          message: 'User not found'
+
   register: (details) ->
     validEmail = /^[^\s@]+@[^\s,;@]+$/g
     if details and validEmail.test details.email
