@@ -106,6 +106,7 @@ body
 
 .results
   background-color: #2e2e2e
+  box-shadow: inset 0 2px 2px rgba(0,0,0,0.3)
   padding: 10px
   position: absolute
   bottom: 0
@@ -395,8 +396,8 @@ body
 
   .sidebar
     height: 100%
-    background-color: #222
     box-shadow: -1px 0 5px
+    position: relative
     border-left: 1px solid rgb(54, 54, 54)
 
   .collection
@@ -414,18 +415,16 @@ body
     height: 100%
     overflow: hidden
 
-  // .container
-  //   max-width: 768px;
-  //   margin: 0 auto;
+  .container
+    max-width: 768px;
+    margin: 0 auto;
 
   .suggestions
     overflow: hidden
     height: 100%
     overflow-y: auto
     padding: 10px
-    padding-left: 320px
     transform: translateZ(0)
-    transition: transform 0.3s ease
 
   .suggestions__title
     color: #fff
@@ -503,6 +502,7 @@ body
   .header
     height: 64px
     overflow: hidden
+    border-bottom: 1px solid black
 
   .header__question
     font-size: 20px
@@ -519,7 +519,7 @@ body
     right: 0
     z-index: 50
     padding: 0 20px
-    width: 320px
+    width: 310px
     background-color: #424242
     color: #8D8D8D
     font-size: 14px
@@ -537,12 +537,11 @@ body
       white-space: no-wrap
       overflow: hidden
 
-  .results__list
-    position: absolute;
-    top: 40px;
-    width: 100%
-    bottom: 0
-    background-color: #222
+  // .results__list
+  //   position: absolute;
+  //   top: 40px;
+  //   width: 100%
+  //   background-color: #222
 
   .publish
     animation: none
@@ -568,9 +567,6 @@ body
     left: auto
     right: -100%
     width: 100%
-    padding-left: calc(100% - 320px);
-    background-color: rgba(0,0,0,0.8)
-    border-left: 1px solid #444
     transform: translateZ(0)
 
   .result:hover
@@ -582,8 +578,9 @@ body
   .finder
     position: absolute
     width: 310px
-    right: 10px
+    left: 50%
     top: 10px
+    margin-left: -155px
     transition: all 0.3s ease
   
   .entries
@@ -656,8 +653,8 @@ body
 
 @media only screen and (min-width: 1024px)
 
-  // .container
-  //   max-width: 1024px
+  .container
+    max-width: 1024px
 
   .suggestion
     flex-basis: 220px
@@ -665,8 +662,8 @@ body
 
 @media only screen and (min-width: 1200px)
 
-  // .container
-  //   max-width: 1245px
+  .container
+    max-width: 1245px
 
   .suggestion--selected,
   .suggestion:hover

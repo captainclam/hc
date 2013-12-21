@@ -1,5 +1,15 @@
-.result
-  img.result__thumb(src="{{image}}")
-  .result__details
-    .title.result__title {{title}}
-    .subtitle.result__subtitle {{subtitle}}
+.result.suggestion(style="background-image: url({{image}})")
+  .suggestion__overlay
+    i.fa.fa-plus.suggestion__add
+  .result__details.suggestion__details
+    .title.result__title.suggestion__title {{title}}
+    .subtitle.result__subtitle.suggestion__subtitle {{subtitle}}
+  //- img.result__thumb(src="{{image}}")
+
+//- .suggestion
+//-   .suggestion__overlay
+//-     i.fa.fa-plus.suggestion__add
+//-   .suggestion__details
+//-     h4.suggestion__title {{title}}
+//-     h4.suggestion__subtitle {{subtitle}}
+//-   img(src="{{image}}", title="{{title}}")
