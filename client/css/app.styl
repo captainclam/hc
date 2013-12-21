@@ -428,7 +428,7 @@ body
     max-width: 768px;
     margin: 0 auto;
 
-  .items
+  .suggestions
     overflow: hidden
     height: 100%
     overflow-y: auto
@@ -444,27 +444,46 @@ body
 
   .item
     float: left
-    width: 256px
-    height: 256px
+    width: 249px
+    height: 249px
     padding: 2px
     position: relative
     cursor: pointer
 
+  .item--selected
+    .item__overlay:before
+      opacity: 0.75
+    .item__add
+      opacity: 1
+      transform: scale(1.25)
+      background-color: #222
+      color: darken(green,20%)
+
   .item__overlay
     position: absolute
     display: flex
-    background-color: rgba(0,0,0,0.4)
     align-items: center
     justify-content: center
-    opacity: 0
     transition: opacity 0.1s ease
     top: 2px
     right: 2px
     bottom: 2px
     left: 2px
     border-radius: 5px
+    &:before
+      top: 0
+      left: 0
+      opacity: 0
+      position: absolute
+      content: ''
+      display: block
+      background-color: #000
+      height: 100%
+      width: 100%
+
 
   .item__add
+    opacity: 0
     display: block
     color: #fff
     width: 40px
@@ -697,7 +716,6 @@ body
     height: 249px
     width: 249px
 
-  .item--selected,
   .item:hover
     .item__overlay
       opacity: 1

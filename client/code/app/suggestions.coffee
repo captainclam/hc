@@ -26,4 +26,5 @@ for suggestion in suggestions
   el = $ ss.tmpl['chart-suggestion'].render suggestion
   el.click ->
     collectionView.add suggestion
+    $(this).addClass('item--selected')
   $('#suggestions').append el

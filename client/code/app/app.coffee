@@ -15,21 +15,8 @@ class FinderView
       console.log entry
       li = $ ss.tmpl['chart-result'].render entry
       li.click =>
-      # if $(".collection li").length >= 4
-      #   $('.app')[0].classList.add('app--publish')
-      # if $(".collection li").length < 5
-        @dom.empty()
-        @dom.html('')
-        $('.finder__clear').hide()
-        $('.finder__input').val('')
         collectionView.add entry
-        $('.app').removeClass('app--searching')
-        $('.app').addClass('app--collection')
-        $(".entry__thumb").load ->
-          src = $(this).attr("src")
-          # console.log(src)
-          $(this).parent(".entry__wrap").css "background-image", 'url(' + src + ')'
-          $(this).attr('src','')
+        $(this).addClass('item--selected')
         $('.entry__remove').click ->
           $(this).parents('.entry').remove()
           $('.finder__input').focus()
@@ -125,15 +112,13 @@ input.keyup _.throttle ->
     finderView.render()
 , 400
 
-$('.suggestion').click ->
-  $(this).addClass('suggestion--selected')
-  $(this).find('.suggestion__add')[0].classList.add('fa-check-circle')
-
 # key "a", ->
 #   alert "you pressed a!"
 
 # Better way to do all this shit
 $('.finder__clear').click ->
+  @dom.empty()
+  @dom.html('')
   $('.app').removeClass('app--searching')
   $('.results__list').html('')
   $(this).hide()
