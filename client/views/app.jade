@@ -13,11 +13,14 @@ html(lang="en")
   body
     #finder.app
       .header
-        .container
+        .container.header__wrap
           .logo
           .finder
             i.fa.fa-times-circle.finder__clear
             input#search-toggle.finder__input(placeholder="eg. Acid Rap")
+          .button.button--inactive 
+            span#item-total 0 
+            | albums in your chart
       .results
         .search.suggestions
           .container.results__list
