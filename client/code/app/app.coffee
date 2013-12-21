@@ -17,6 +17,8 @@ class FinderView
         if $(".collection li").length >= 4
           $('.app')[0].classList.add('app--publish')
         if $(".collection li").length < 5
+          $('.suggestions').html('')
+          $('.suggestions').hide()
           @dom.empty()
           @dom.html('')
           @dom.removeClass 'results__list--active'
