@@ -125,10 +125,9 @@ input.keyup _.throttle ->
     finderView.render()
 , 400
 
-# $('.suggestion').click ->
-#   $('.app').addClass('app--collection')
-#   $(this).addClass('suggestion--selected')
-#   $(this).find('.suggestion__add')[0].classList.add('fa-check-circle')
+$('.suggestion').click ->
+  $(this).addClass('suggestion--selected')
+  $(this).find('.suggestion__add')[0].classList.add('fa-check-circle')
 
 # key "a", ->
 #   alert "you pressed a!"
