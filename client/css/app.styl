@@ -61,6 +61,7 @@ body
   background: blue
   padding: 10px
   overflow: hidden
+  position: relative
 
 .header__question
   color: #fff
@@ -105,8 +106,6 @@ body
 .results
   background-color: #313131
   padding: 10px
-  overflow: hidden
-  overflow-y: auto
   position: absolute
   bottom: 0
   width: 100%
@@ -381,19 +380,49 @@ body
 
 @media only screen and (min-width: 768px)
 
+  .collection__scroll
+    transform: translateZ(0)
+    height: 100%
+    overflow-y: auto
+
   .suggestions
     display: flex
     flex-wrap: wrap
     flex-direction: row
 
   .suggestion
-    flex-basis: 33.333333333%
-    height: 234px
+    flex-basis: 251px
+    height: 251px
     padding: 2px
+    position: relative
 
   .suggestion img
     height: 100%
+    width: 100%
     box-shadow: 0 1px 1px rgba(0,0,0,0.4)
+    border-radius: 5px
+
+  .suggestion__details
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    background-color: rgba(25,26,26,0.8)
+    color: #fff
+    border-radius: 0 0 7px 7px
+    padding: 10px
+
+  .suggestion__title
+    font-size: 14px
+    width: 200px
+    text-overflow: ellipsis
+    white-space: nowrap
+    overflow: hidden
+
+  .suggestion__subtitle
+    color: #eee
+    font-size: 13px
+    font-weight: normal
 
   .header
     height: 64px
@@ -403,9 +432,6 @@ body
     font-size: 20px
     margin-bottom: 0
 
-  .collection
-    padding-right: 320px
-
   .results
     padding: 0
     top: 64px
@@ -413,7 +439,7 @@ body
 
   .results__header
     position: absolute
-    top: -40px
+    top: 0
     right: 0
     z-index: 50
     padding: 0 20px
@@ -435,13 +461,12 @@ body
       white-space: no-wrap
       overflow: hidden
 
-  .results__header--active
-    transform: translateY(40px)
-
   .results__list
     position: absolute;
     top: 40px;
     width: 100%
+    bottom: 0
+    background-color: #222
 
   .publish
     animation: none
@@ -459,10 +484,15 @@ body
   .sidebar
     overflow: hidden
     left: auto
-    right: 0
-    width: 320px
+    right: -100%
+    width: 100%
+    padding-left: calc(100% - 320px);
+    background-color: rgba(0,0,0,0.8)
     border-left: 1px solid #444
-    transition: all 0.25s ease
+    transform: translateZ(0)
+  
+  .sidebar--searching
+    transform: translateX(-100%)
 
   .result:hover
     background-color: #292929
@@ -569,7 +599,11 @@ body
       display: block
 
 @media only screen and (min-width: 1024px)
-  
+
+  .suggestion
+    flex-basis: 252px
+    height: 252px
+
   .entry
     width: 50%
     padding: 0

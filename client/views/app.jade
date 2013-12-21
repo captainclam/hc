@@ -7,26 +7,26 @@ html(lang="en")
     != SocketStream
     title Welcome
   body
-    #app.module
-      #finder.app
-        .header
-          .logo
-          .finder
-            i.icon-remove-sign.finder__clear
-            input.search.finder__input(placeholder="eg. Acid Rap")
-        .results
-          .sidebar
-            .results__header Searching  
-              span#query Mac Miller
-              .spinner
-                .rect1
-                .rect2
-                .rect3
-                .rect4
-                .rect5
-            include register
-            ul.results__list
-          #collection.collection
+    #finder.app
+      .header
+        .logo
+        .finder
+          i.icon-remove-sign.finder__clear
+          input.search.finder__input(placeholder="eg. Acid Rap")
+      .results
+        .sidebar
+          .results__header Searching  
+            span#query Mac Miller
+            .spinner
+              .rect1
+              .rect2
+              .rect3
+              .rect4
+              .rect5
+          include register
+          ul.results__list
+        #collection.collection
+          .collection__scroll
             .suggestions
               //- .suggestion
               //-   img(src="http://thissongissick.com/blog/wp-content/uploads/2013/11/Action-Bronson-Party-Supplies-Blue-Chips-2.jpg")

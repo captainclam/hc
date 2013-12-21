@@ -15,29 +15,29 @@ class FinderView
       console.log entry
       li = $ ss.tmpl['chart-result'].render entry
       li.click =>
-        if $(".collection li").length >= 4
-          $('.app')[0].classList.add('app--publish')
-        if $(".collection li").length < 5
-          $('.suggestions').html('')
-          $('.suggestions').hide()
-          @dom.empty()
-          @dom.html('')
-          @dom.removeClass 'results__list--active'
-          $('.finder__clear').hide()
-          $('.finder__input').val('')
+      # if $(".collection li").length >= 4
+      #   $('.app')[0].classList.add('app--publish')
+      # if $(".collection li").length < 5
+        $('.suggestions').html('')
+        $('.suggestions').hide()
+        @dom.empty()
+        @dom.html('')
+        @dom.removeClass 'results__list--active'
+        $('.finder__clear').hide()
+        $('.finder__input').val('')
+        $('.finder__input').focus()
+        collectionView.add entry
+        $('.sidebar').removeClass('sidebar--searching')
+        $(".entry__thumb").load ->
+          src = $(this).attr("src")
+          # console.log(src)
+          $(this).parent(".entry").css "background-image", 'url(' + src + ')'
+          $(this).attr('src','')
+        $('.entry__remove').click ->
+          $(this).parents('.entry').remove()
           $('.finder__input').focus()
-          collectionView.add entry
-          $('.results__header').removeClass('results__header--active')
-          $(".entry__thumb").load ->
-            src = $(this).attr("src")
-            # console.log(src)
-            $(this).parent(".entry").css "background-image", 'url(' + src + ')'
-            $(this).attr('src','')
-          $('.entry__remove').click ->
-            $(this).parents('.entry').remove()
-            $('.finder__input').focus()
-        else
-          alert('Full chart')
+      # else
+      #   alert('Full chart')
 
       @dom.append li
     return @dom
@@ -102,7 +102,7 @@ data =
 input = $ '#finder .header input'
 input.keyup _.throttle ->
   $('.spinner').show()
-  $('.results__header')[0].classList.add('results__header--active')
+  $('.sidebar')[0].classList.add('sidebar--searching')
   $('.finder__clear').show()
   term = input.val()
   $('#query').html(term)
