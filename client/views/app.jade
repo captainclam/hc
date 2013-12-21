@@ -4,47 +4,36 @@
 html(lang="en")
   head
     meta(charset="utf-8")
+    meta(name="apple-mobile-web-app-capable",content="yes")
+    meta(name="viewport",content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no")
     != SocketStream
     title Welcome
+    link(rel="stylesheet",href="font-awesome/css/font-awesome.css")
+    link(rel="stylesheet",href="animations.css")
   body
     #finder.app
       .header
         .logo
         .finder
-          i.icon-remove-sign.finder__clear
-          input.search.finder__input(placeholder="eg. Acid Rap")
+          i.fa.fa-times-circle.finder__clear
+          input#search-toggle.finder__input(placeholder="eg. Acid Rap")
       .results
-        .sidebar
-          .results__header Searching  
-            span#query Mac Miller
-            .spinner
-              .rect1
-              .rect2
-              .rect3
-              .rect4
-              .rect5
-          include register
-          ul.results__list
+        .search
+          .sidebar
+            .results__header Searching  
+              span#query Mac Miller
+              .spinner
+                .rect1
+                .rect2
+                .rect3
+                .rect4
+                .rect5
+            include register
+            .results__list
+        .suggestions
+          .container#suggestions
+            //- h2.suggestions__title  What were your favourite albums of 2013?
         #collection.collection
           .collection__scroll
-            .suggestions
-              //- .suggestion
-              //-   img(src="http://thissongissick.com/blog/wp-content/uploads/2013/11/Action-Bronson-Party-Supplies-Blue-Chips-2.jpg")
-              //- .suggestion
-              //-   img(src="http://plainsmenpost.com/wp-content/uploads/2013/09/denzelcurryN64.jpg")
-              //- .suggestion
-              //-   img(src="http://s.cdon.com/media-dynamic/images/product/music/album/image5/magna_carta_holy_grail_deluxe_edition-24049450-frntl.jpg")
-              //- .suggestion
-              //-   img(src="http://cdn2.thelineofbestfit.com/media/2013/07/earl_doris_album_cover1.jpg")
-              //- .suggestion
-              //-   img(src="http://edge-img.datpiff.com/m088c8e6/Chance_The_Rapper_Acid_Rap-front-large.jpg")
-              //- .suggestion
-              //-   img(src="http://s3.amazonaws.com/rapgenius/filepicker%2FoLU0VF0rRiGYOoiEpvmw_Watching_Movies_With_the_Sound_Off.jpg")
-              //- .suggestion
-              //-   img(src="http://www.2dopeboyz.com/wp-content/uploads/2013/09/flatbush-zombies-better-off-dead.jpg")
-              //- .suggestion
-              //-   img(src="http://hiphopgame.ihiphop.com/jeannieweb/wp-content/uploads/2013/09/nothing-was-the-same-cover.jpg")
-              //- .suggestion
-              //-   img(src="http://4.bp.blogspot.com/-ISBnZ4sg_O4/Up63LiSk4tI/AAAAAAAAVJs/j03mQWG7lyI/s1600/becausetheinternet.jpg")
             ul.list.entries
     

@@ -18,20 +18,17 @@ class FinderView
       # if $(".collection li").length >= 4
       #   $('.app')[0].classList.add('app--publish')
       # if $(".collection li").length < 5
-        $('.suggestions').html('')
-        $('.suggestions').hide()
         @dom.empty()
         @dom.html('')
-        @dom.removeClass 'results__list--active'
         $('.finder__clear').hide()
         $('.finder__input').val('')
-        $('.finder__input').focus()
         collectionView.add entry
-        $('.sidebar').removeClass('sidebar--searching')
+        $('.app').removeClass('app--searching')
+        $('.app').addClass('app--collection')
         $(".entry__thumb").load ->
           src = $(this).attr("src")
           # console.log(src)
-          $(this).parent(".entry").css "background-image", 'url(' + src + ')'
+          $(this).parent(".entry__wrap").css "background-image", 'url(' + src + ')'
           $(this).attr('src','')
         $('.entry__remove').click ->
           $(this).parents('.entry').remove()
@@ -102,7 +99,7 @@ data =
 input = $ '#finder .header input'
 input.keyup _.throttle ->
   $('.spinner').show()
-  $('.sidebar')[0].classList.add('sidebar--searching')
+  $('.app')[0].classList.add('app--searching')
   $('.finder__clear').show()
   term = input.val()
   $('#query').html(term)
@@ -128,14 +125,21 @@ input.keyup _.throttle ->
     finderView.render()
 , 400
 
+# $('.suggestion').click ->
+#   $('.app').addClass('app--collection')
+#   $(this).addClass('suggestion--selected')
+#   $(this).find('.suggestion__add')[0].classList.add('fa-check-circle')
+
+# key "a", ->
+#   alert "you pressed a!"
+
 # Better way to do all this shit
 $('.finder__clear').click ->
-  $('.results__header').removeClass('results__header--active')
   $('.results__list').html('')
   $(this).hide()
   $('.finder__input').focus()
   $('.finder__input').val('')
-  $('.results__list').removeClass('results__list--active')
+  $('.search').removeClass('search--active')
 
 $('form#login').submit (e) ->
   e.preventDefault()

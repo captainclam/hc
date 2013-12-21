@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"class",
+				"classList"
+			],
+			[
 				"tex-",
 				"text-overflow"
 			],
@@ -95,6 +99,46 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "client/views/register.jade",
+			"settings":
+			{
+				"buffer_size": 632,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "client/code/app/app.coffee",
+			"settings":
+			{
+				"buffer_size": 4960,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "client/css/app.styl",
+			"settings":
+			{
+				"buffer_size": 11087,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "client/views/app.jade",
+			"settings":
+			{
+				"buffer_size": 836,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "client/templates/chart/entry.jade",
+			"settings":
+			{
+				"buffer_size": 225,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -103,11 +147,11 @@
 		"selected_items":
 		[
 			[
-				"wordwra",
+				"word",
 				"Word Wrap: Toggle"
 			],
 			[
-				"word",
+				"wordwra",
 				"Word Wrap: Toggle"
 			],
 			[
@@ -183,7 +227,7 @@
 				"Preferences: Browse Packages"
 			]
 		],
-		"width": 796.0
+		"width": 681.0
 	},
 	"console":
 	{
@@ -195,11 +239,23 @@
 		"show_minimap": false,
 		"show_open_files": false,
 		"show_tabs": false,
-		"side_bar_visible": false,
+		"side_bar_visible": true,
 		"status_bar_visible": false
 	},
 	"file_history":
 	[
+		"/Users/jasoncorbett/Sites/hc/client/code/app/entry.coffee",
+		"/Users/jasoncorbett/Sites/hc/client/templates/chart/suggestion.jade",
+		"/Users/jasoncorbett/Sites/hc/client/code/app/suggestions.coffee",
+		"/Users/jasoncorbett/Sites/hc/client/code/app/app.coffee",
+		"/Users/jasoncorbett/Sites/hc/client/css/app.styl",
+		"/Users/jasoncorbett/Sites/hc/client/templates/chart/result.jade",
+		"/Users/jasoncorbett/Sites/hc/server.coffee",
+		"/Users/jasoncorbett/Sites/hc/client/views/app.jade",
+		"/Users/jasoncorbett/Sites/hc/client/static/font-awesome/font-awesome.css",
+		"/Users/jasoncorbett/Sites/hc/server/rpc/app.coffee",
+		"/Users/jasoncorbett/Sites/hc/client/code/libs/keymaster.js",
+		"/Users/jasoncorbett/Sites/hc/node_modules/socketstream/node_modules/colors/ReadMe.md",
 		"/Users/jasoncorbett/Sites/hipcharts/node_modules/everyauth/index.js",
 		"/Users/jasoncorbett/Sites/hipcharts/client/templates/chart/result.jade",
 		"/Users/jasoncorbett/Sites/hipcharts/package.json",
@@ -315,19 +371,7 @@
 		"/Users/jasoncorbett/Sites/ss-swapsies/client/templates/game/full.jade",
 		"/Users/jasoncorbett/Sites/ss-swapsies/node_modules/jsdom/node_modules/nwmatcher/lib/prototype/selector_engine.js",
 		"/Users/jasoncorbett/Sites/ss-swapsies/node_modules/ss-hogan/node_modules/hogan.js/wrappers/amd.js.mustache",
-		"/Users/jasoncorbett/Downloads/PageTransitions/css/animations.css",
-		"/Users/jasoncorbett/Sites/ss-swapsies/client/templates/game/autocomplete.jade",
-		"/Users/jasoncorbett/Sites/ss-swapsies/app.js",
-		"/Users/jasoncorbett/Sites/ss-swapsies/server.coffee",
-		"/Users/jasoncorbett/Sites/ss-swapsies/README.md",
-		"/Users/jasoncorbett/Sites/ss-swapsies/client/code/app/gameView.coffee",
-		"/Users/jasoncorbett/Sites/ss-swapsies/node_modules/jquery/node_modules/htmlparser/tests/18-enforce_empty_tags.js",
-		"/Users/jasoncorbett/Sites/ss-swapsies/client/code/libs/matchmedia.js",
-		"/Users/jasoncorbett/Sites/ss-swapsies/node_modules/jsdom/node_modules/htmlparser2/tests/Events/09-attributes.json",
-		"/Users/jasoncorbett/Sites/ss-swapsies/server/rpc/app.coffee",
-		"/Users/jasoncorbett/Sites/ss-swapsies/client/code/libs/fastclick.js",
-		"/Users/jasoncorbett/Sites/ss-swapsies/client/css/font-awesome.styl",
-		"/Users/jasoncorbett/Sites/ss-swapsies/node_modules/mocha/node_modules/jade/testing/head.jade"
+		"/Users/jasoncorbett/Downloads/PageTransitions/css/animations.css"
 	],
 	"find":
 	{
@@ -346,6 +390,61 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"collection",
+			"entry",
+			"entry__details",
+			"suggestion",
+			"entry__title",
+			"entry__details",
+			"entry__title",
+			"entry__details",
+			"entry__remove",
+			"suggestions",
+			"collection",
+			"addClass",
+			"results",
+			"collection",
+			"results",
+			"collection",
+			"entry",
+			"collection",
+			"sidebar",
+			"search",
+			"finder__clear",
+			"sidebar",
+			".search",
+			"search",
+			"collection",
+			"sidebar",
+			"register",
+			"register__header",
+			"sidebar",
+			"key",
+			"results",
+			"resutls",
+			"finder",
+			"results",
+			"header",
+			"finder",
+			"collection",
+			"go",
+			"register",
+			"entry",
+			".sugge",
+			".sug",
+			" .suggestion\n              img",
+			"img(",
+			"img(sr",
+			"img(src=\"http",
+			"orange",
+			"addClass",
+			".addClass",
+			"register",
+			"sidebar",
+			"results__list",
+			"results",
+			"collection",
+			"sidebar",
 			"finder",
 			"results__list",
 			"entry",
@@ -418,65 +517,10 @@
 			"close",
 			"$('.modal",
 			"modal--show",
-			"hero__acti",
-			"success",
-			"register",
-			"publish",
-			"user__action",
-			"closeMOdal",
-			"signup",
-			"# ",
-			"#",
-			"#sidebar",
-			"target",
-			":target",
-			"href",
-			"focus",
-			"target",
-			"focus",
-			"modal--show",
-			"publish",
-			"removeHero",
-			"publish",
-			"removeHero",
-			"subscrib",
-			"upgrade",
-			"removeHero",
-			"hero__action a",
-			"removeher",
-			"modal__face",
-			"publish",
-			"slideOut",
-			"modal--show",
-			"register",
-			"submit",
-			"user__action",
-			"action",
-			"user__action",
-			"publish",
-			"modal--show",
-			"hero ",
-			"hero a",
-			"--show",
-			"modal--show",
-			"loadmodal",
-			"closeModal",
-			"modal--show",
-			"closeModal",
-			"modal--show",
-			"#publish",
-			"publish",
-			"consoles",
-			"search",
-			"consoles",
-			"collections",
-			"body",
-			"swapsy",
-			"login",
-			"currentUser"
+			"hero__acti"
 		],
 		"highlight": true,
-		"in_selection": true,
+		"in_selection": false,
 		"preserve_case": false,
 		"regex": false,
 		"replace_history":
@@ -492,8 +536,147 @@
 	"groups":
 	[
 		{
+			"selected": 3,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "client/views/register.jade",
+					"settings":
+					{
+						"buffer_size": 632,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								632,
+								632
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "client/code/app/app.coffee",
+					"settings":
+					{
+						"buffer_size": 4960,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1011,
+								1011
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CoffeeScript/CoffeeScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "client/css/app.styl",
+					"settings":
+					{
+						"buffer_size": 11087,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6235,
+								6235
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Stylus/Stylus.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 6034.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "client/views/app.jade",
+					"settings":
+					{
+						"buffer_size": 836,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								802,
+								802
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "client/templates/chart/entry.jade",
+					"settings":
+					{
+						"buffer_size": 225,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								224,
+								67
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -547,12 +730,136 @@
 		"selected_items":
 		[
 			[
+				"app.coff",
+				"client/code/app/app.coffee"
+			],
+			[
+				"entr",
+				"client/code/app/entry.coffee"
+			],
+			[
+				"app.st",
+				"client/css/app.styl"
+			],
+			[
 				"app",
-				"client/views/app.jade"
+				"client/css/app.styl"
 			],
 			[
 				"app.sty",
 				"client/css/app.styl"
+			],
+			[
+				"appsty",
+				"client/css/app.styl"
+			],
+			[
+				"server",
+				"server.coffee"
+			],
+			[
+				"app.jad",
+				"client/views/app.jade"
+			],
+			[
+				"pp",
+				"client/css/app.styl"
+			],
+			[
+				"result",
+				"client/templates/chart/result.jade"
+			],
+			[
+				"pp.sty",
+				"client/css/app.styl"
+			],
+			[
+				"app.cf",
+				"client/code/app/app.coffee"
+			],
+			[
+				"app.coffe",
+				"client/code/app/app.coffee"
+			],
+			[
+				"app.coffee",
+				"client/code/app/app.coffee"
+			],
+			[
+				"su",
+				"client/code/app/suggestions.coffee"
+			],
+			[
+				"sugg",
+				"client/templates/chart/suggestion.jade"
+			],
+			[
+				"ser",
+				"server.coffee"
+			],
+			[
+				"sugge",
+				"client/templates/chart/suggestion.jade"
+			],
+			[
+				"app.jade",
+				"client/views/app.jade"
+			],
+			[
+				"fontawes",
+				"client/static/font-awesome/font-awesome.css"
+			],
+			[
+				"app.",
+				"client/views/app.jade"
+			],
+			[
+				"suggest",
+				"client/templates/chart/suggestion.jade"
+			],
+			[
+				"app.cof",
+				"client/code/app/app.coffee"
+			],
+			[
+				"appst",
+				"client/css/app.styl"
+			],
+			[
+				"suggestion",
+				"client/templates/chart/suggestion.jade"
+			],
+			[
+				"entry",
+				"client/code/app/entry.coffee"
+			],
+			[
+				"readme",
+				"README.md"
+			],
+			[
+				"app.co",
+				"server/rpc/app.coffee"
+			],
+			[
+				"register",
+				"client/views/register.jade"
+			],
+			[
+				"appsy",
+				"client/css/app.styl"
+			],
+			[
+				"reg",
+				"client/views/register.jade"
+			],
+			[
+				"pp.coffee",
+				"client/code/app/app.coffee"
+			],
+			[
+				"pp.cof",
+				"server/rpc/app.coffee"
 			],
 			[
 				"style",
@@ -567,14 +874,6 @@
 				"client/css/app.styl"
 			],
 			[
-				"entr",
-				"client/code/app/entry.coffee"
-			],
-			[
-				"app.",
-				"client/views/app.jade"
-			],
-			[
 				"sty",
 				"client/css/styles.styl"
 			],
@@ -583,28 +882,12 @@
 				"client/views/header.jade"
 			],
 			[
-				"server",
-				"server.coffee"
-			],
-			[
-				"entry",
-				"client/code/app/entry.coffee"
-			],
-			[
 				"ap.sty",
 				"client/css/app.styl"
 			],
 			[
 				"dev",
 				"client/views/dev.jade"
-			],
-			[
-				"appst",
-				"client/css/app.styl"
-			],
-			[
-				"register",
-				"client/views/register.jade"
 			],
 			[
 				"styles.st",
@@ -624,10 +907,6 @@
 			],
 			[
 				"regst",
-				"client/views/register.jade"
-			],
-			[
-				"reg",
 				"client/views/register.jade"
 			],
 			[
@@ -675,10 +954,6 @@
 				"client/css/styles.styl"
 			],
 			[
-				"app.jade",
-				"client/views/app.jade"
-			],
-			[
 				"stykel",
 				"node_modules/ss-hogan/node_modules/hogan.js/web/stylesheets/skeleton.css"
 			],
@@ -701,10 +976,6 @@
 			[
 				"layout",
 				"node_modules/everyauth/example/views/layout.jade"
-			],
-			[
-				"app.st",
-				"client/css/app.styl"
 			],
 			[
 				"somem",
@@ -739,10 +1010,6 @@
 				"client/views/toolbar.jade"
 			],
 			[
-				"app.jad",
-				"client/views/app.jade"
-			],
-			[
 				"app.c",
 				"app.coffee"
 			],
@@ -751,20 +1018,8 @@
 				"client/code/app/jason.coffee"
 			],
 			[
-				"pp.sty",
-				"client/css/app.styl"
-			],
-			[
-				"app.coff",
-				"app.coffee"
-			],
-			[
 				"base.sty",
 				"client/css/base.styl"
-			],
-			[
-				"app.co",
-				"app.coffee"
 			],
 			[
 				"toobar",
@@ -805,10 +1060,6 @@
 			[
 				"subscr",
 				"client/views/subscribe.jade"
-			],
-			[
-				"app.cof",
-				"app.coffee"
 			],
 			[
 				"pp.coff",
@@ -889,10 +1140,6 @@
 			[
 				"jas",
 				"client/code/app/jason.coffee"
-			],
-			[
-				"app.coffe",
-				"app.coffee"
 			],
 			[
 				"collect",
@@ -993,70 +1240,6 @@
 			[
 				"fontaweosme.css",
 				"client/static/font-awesome/font-awesome.css"
-			],
-			[
-				"fontawesome",
-				"client/css/font-awesome.css"
-			],
-			[
-				"fontawesome.css",
-				"client/css/font-awesome.css"
-			],
-			[
-				"fontawesom",
-				"client/css/font-awesome.styl"
-			],
-			[
-				"fontawesomestyl",
-				"client/css/font-awesome.styl"
-			],
-			[
-				"app.coffee",
-				"app.coffee"
-			],
-			[
-				"app.js",
-				"app.js"
-			],
-			[
-				"login.",
-				"client/views/login.jade"
-			],
-			[
-				"loginst",
-				"client/css/login.styl"
-			],
-			[
-				"log",
-				"client/css/logos.styl"
-			],
-			[
-				"login.sty",
-				"client/css/login.styl"
-			],
-			[
-				"coll",
-				"client/css/collection.styl"
-			],
-			[
-				"app.s",
-				"client/css/app.styl"
-			],
-			[
-				"col",
-				"client/css/collection.styl"
-			],
-			[
-				"searh",
-				"client/css/search.styl"
-			],
-			[
-				"search.s",
-				"client/css/search.styl"
-			],
-			[
-				"toolbar.jad",
-				"client/views/toolbar.jade"
 			]
 		],
 		"width": 0.0
@@ -1066,6 +1249,10 @@
 		"height": 500.0,
 		"selected_items":
 		[
+			[
+				"swap",
+				"/Users/jasoncorbett/Sites/swapsy.sublime-project"
+			],
 			[
 				"stans",
 				"/Users/jasoncorbett/Sites/stans/Stans.sublime-project"
@@ -1100,10 +1287,6 @@
 			],
 			[
 				"s",
-				"/Users/jasoncorbett/Sites/swapsies.sublime-project"
-			],
-			[
-				"swap",
 				"/Users/jasoncorbett/Sites/swapsies.sublime-project"
 			],
 			[

@@ -2,6 +2,7 @@ suggestions = [
   {"title":"Watching Movies with the Sound Off (Deluxe Edition)","subtitle":"Mac Miller","image":"http://userserve-ak.last.fm/serve/300x300/91010329.png"}
   {"title": "Acid Rap", "subtitle": "Chance the Rapper", "image": "http://userserve-ak.last.fm/serve/300x300/93294971.png"}
   {"title":"Old","subtitle":"Danny Brown","image":"http://userserve-ak.last.fm/serve/300x300/94257157.jpg"}
+  {"title":"Retrograde","subtitle":"James Blake","image":"http://userserve-ak.last.fm/serve/300x300/88442075.png"}
   {"title":"Doris","subtitle":"Earl Sweatshirt","image":"http://userserve-ak.last.fm/serve/300x300/91706171.png"}
   {"title":"Born Sinner","subtitle":"J. Cole","image":"http://userserve-ak.last.fm/serve/300x300/92364469.png"}
   {"title":"Wolf","subtitle":"Tyler, the Creator","image":"http://userserve-ak.last.fm/serve/300x300/88141265.png"}
@@ -25,4 +26,4 @@ for suggestion in suggestions
   el = $ ss.tmpl['chart-suggestion'].render suggestion
   el.click ->
     collectionView.add suggestion
-  $('.suggestions').append el
+  $('#suggestions').append el
