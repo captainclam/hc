@@ -1,7 +1,7 @@
 {
   "name": "hc",
   "description": "An awesome real time application",
-  "version": "0.0.1",
+  "version": "0.0.1-1",
   "author": "Me <me@mydomain.com>",
   "private": true,
   "engines": {
@@ -16,6 +16,7 @@
     "mongoose": "~3.8.3"
   },
   "scripts": {
-    "start": "node app.js"
-  }
+    "start": "node server.js"
+  },
+  "subdomain": "hc"
 }

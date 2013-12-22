@@ -115,17 +115,6 @@ input.keyup _.throttle ->
 # key "a", ->
 #   alert "you pressed a!"
 
-# Better way to do all this shit
-$('.finder__clear').click ->
-  @dom.empty()
-  @dom.html('')
-  $('.app').removeClass('app--searching')
-  $('.results__list').html('')
-  $(this).hide()
-  $('.finder__input').focus()
-  $('.finder__input').val('')
-  $('.search').removeClass('search--active')
-
 $('form#login').submit (e) ->
   e.preventDefault()
   login

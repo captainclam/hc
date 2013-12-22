@@ -16,3 +16,14 @@ ss.server.on 'ready', ->
     
     # Load app
     require('/app')
+
+    # Better way to do all this shit
+    $('.finder__clear').click ->
+      @dom.empty()
+      @dom.html('')
+      $('.app').removeClass('app--searching')
+      $('.results__list').html('')
+      $(this).hide()
+      $('.finder__input').focus()
+      $('.finder__input').val('')
+      $('.search').removeClass('search--active')
