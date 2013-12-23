@@ -38,7 +38,7 @@ data =
   method: 'user.gettopalbums'
   api_key: '08b9be8ca570eb793277e9f88cc5ad14'
   format: 'json'
-  user: 'masey19'
+  user: 'jaseflow'
 
 $.ajax(
   url: url
