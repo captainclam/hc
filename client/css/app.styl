@@ -122,8 +122,6 @@ body
   font-weight: bold
   color: #555
   border-radius: 3px 0 0 3px
-  position: relative
-  z-index: 40
 
 .alert__action
   height: 100%
@@ -136,14 +134,8 @@ body
   display: flex
   text-shadow: 0 1px 0px rgba(0,0,0,0.4)
   border-radius: 0 3px 3px 0
-  position: absolute
-  right: 0
-  transition: transform 0.25s ease
   &:focus
     outline: 0
-
-.alert__input:focus + .alert__action
-  transform: translateX(calc(100% + 1px))
 
 .alert__title
   font-size: 32px
