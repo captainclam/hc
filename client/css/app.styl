@@ -84,13 +84,16 @@ body
   border: 1px solid rgba(255, 255, 255, 0.34)
 
 .alert
-  background-color: #252525
+  background-color: rgba(0,0,0,0.8)
   text-align: center
   font-size: 15px
   color: #fff
-  padding: 20px 0
-  border-bottom: 1px solid #3F3F3F
-  margin-bottom: 20px
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 500
 
 .alert--lastFM
   background-image: url("/img/last-fm.png")
@@ -99,15 +102,18 @@ body
   display: flex
   align-items: center
   justify-content: center
+  flex-flow: column
+  height: 100%
 
 .alert__form
   height: 44px
   display: flex
+  margin-bottom: 10px
+  position: relative
 
 .alert__input
   font-family: 'Helvetica Neue', sans-serif
-  width: 90%
-  max-width: 240px
+  width: 320px
   background-color: #fff
   border: 0
   height: 100%
@@ -116,31 +122,39 @@ body
   font-weight: bold
   color: #555
   border-radius: 3px 0 0 3px
+  position: relative
+  z-index: 40
 
 .alert__action
   height: 100%
   background: orange
   border: 0
-  color: #222
-  font-size: 16px
+  font-size: 22px
   color: #fff
   font-weight: bold
-  padding: 0 20px 0 15px
+  padding: 0 20px
   display: flex
   text-shadow: 0 1px 0px rgba(0,0,0,0.4)
   border-radius: 0 3px 3px 0
+  position: absolute
+  right: 0
+  transition: transform 0.25s ease
+  &:focus
+    outline: 0
 
-.alert__action i
-  margin-right: 10px
-  margin-top: 2px
+.alert__input:focus + .alert__action
+  transform: translateX(calc(100% + 1px))
 
 .alert__title
-  font-size: 16px
+  font-size: 32px
   font-weight: 100
+  margin-bottom: 24px
+  max-width: 480px
+  text-align: center
 
 .alert__cancel
   color: #fff
-  margin-left: 10px
+  margin-left: 15px
   color: #999
 
 .module
@@ -197,17 +211,20 @@ body
 
 
 .alert__input::-webkit-input-placeholder
-   color: #555
+   color: #999
+   font-weight: normal
 
 .alert__input:-moz-placeholder
-   color:  #555
+   color:  #999
+   font-weight: normal
 
 .alert__input::-moz-placeholder
-   color:  #555
+   color:  #999
+   font-weight: normal
 
 .alert__input:-ms-input-placeholder
-   color:  #555
-
+   color:  #999
+   font-weight: normal
 
 .results
   background-color: #2e2e2e
@@ -530,6 +547,9 @@ body
     overflow-y: auto
     transform: translateZ(0)
 
+  .suggestion
+    animation: fadeInUp 1s ease
+
   .items__title
     color: #fff
     font-size: 28px
@@ -553,6 +573,8 @@ body
       transform: scale(1.25)
       background-color: #222
       color: darken(green,20%)
+    .item__thumb img
+      animation: fadeOutUp 0.8s ease forwards
 
   .item__overlay
     position: absolute
@@ -560,10 +582,10 @@ body
     align-items: center
     justify-content: center
     transition: opacity 0.1s ease
-    top: 2px
-    right: 2px
-    bottom: 2px
-    left: 2px
+    top: 4px
+    right: 4px
+    bottom: 4px
+    left: 4px
     border-radius: 5px
     &:before
       top: 0
@@ -576,6 +598,17 @@ body
       height: 100%
       width: 100%
 
+  .item__thumb
+    top: 2px
+    right: 2px
+    bottom: 2px
+    left: 2px
+    position: absolute
+    background-color: #242424
+    margin: 2px
+    border-radius: 5px
+    border-bottom: 1px solid #3C3C3C
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.4)
 
   .item__add
     opacity: 0
@@ -594,15 +627,13 @@ body
   .item img
     height: 100%
     width: 100%
-    box-shadow: 0 1px 1px rgba(0,0,0,0.4)
-    border-radius: 5px
 
   .item__details,
   .entry__details
     position: absolute
-    bottom: 2px
-    left: 2px
-    right:2px
+    bottom: 4px
+    left: 4px
+    right:4px
     background-color: rgba(25,26,26,0.8)
     color: #fff
     border-radius: 0 0 5px 5px

@@ -18,9 +18,11 @@ html(lang="en")
           .finder
             i.fa.fa-times-circle.finder__clear
             input#search-toggle.finder__input(placeholder="eg. Acid Rap")
-          //- .button View chart
+          .button View chart
       .results
         .search.suggestions
+          .alert
+            h2.alert__title Enter your LastFM account name for more accurate suggestions
           .search__title Searching for 
             span#query some
             //- .spinner
@@ -34,16 +36,6 @@ html(lang="en")
             //-   span#query Mac Miller
             //- include register
         .suggestions
-          .alert.alert--lastFM
-            .container.alert__container
-              h2.alert__title Enter your 
-                strong last.fm
-                |  user name for more accurate suggestions
-              form.alert__form
-                input(type="text",id="last-fm",class="alert__input",placeholder="Your last.fm username")
-                button(type="submit").alert__action
-                  i.fa.fa-save
-              a(href="#").alert__cancel or continue using Hipcharts suggestions.
           .container#suggestions
             //- h2.suggestions__title  What were your favourite albums of 2013?
         //- #collection.collection
