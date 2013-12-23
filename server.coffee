@@ -15,9 +15,20 @@ ss.client.define "main",
   code: ["libs/jquery.min.js", "libs/underscore.min.js", "libs/fastclick.js", "libs/keymaster.js", "app"]
   tmpl: "*"
 
+# Define collection view?
+ss.client.define "user",
+  view: "collection.jade"
+  css: ["app.styl"]
+  code: ["libs/jquery.min.js", "libs/underscore.min.js", "libs/fastclick.js", "libs/keymaster.js", "app"]
+  tmpl: "*"
+
 # Serve this client on the root URL
 ss.http.route "/", (req, res) ->
   res.serveClient "main"
+
+# Define collection URL
+ss.http.route "/", (req, res) ->
+  res.serveClient "user"
 
 # Code Formatters
 ss.client.formatters.add require("ss-coffee")

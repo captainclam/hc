@@ -34,6 +34,17 @@ html(lang="en")
             //-   span#query Mac Miller
             //- include register
         .suggestions
+          .alert.alert--lastFM
+            .container.alert__container
+              h2.alert__title Enter your 
+                strong last.fm
+                |  user name for more accurate suggestions
+              form.alert__form
+                input(type="text",id="last-fm",class="alert__input",placeholder="Your last.fm username")
+                button(type="submit").alert__action
+                  i.fa.fa-save
+                  | Save
+              a(href="#").alert__cancel No thanks
           .container#suggestions
             //- h2.suggestions__title  What were your favourite albums of 2013?
         //- #collection.collection
