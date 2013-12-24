@@ -28,5 +28,5 @@ ss.server.on 'ready', ->
       $('.finder__input').val('')
       $('.search').removeClass('search--active')
 
-    $('.finder__clear').click ->
-      alert('cat')
+    $('.header__action').click ->
+      $('.alert--register').show()

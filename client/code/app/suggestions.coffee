@@ -4,6 +4,8 @@ printSuggestions = (suggestions) ->
     el.click ->
       collectionView.add suggestion
       $(this).addClass('item--selected')
+      if $(".item--selected").length >= 5
+        $('.app').addClass('app--publish')
     $('#suggestions').append el
 
 # printSuggestions [

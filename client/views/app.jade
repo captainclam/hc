@@ -18,7 +18,7 @@ html(lang="en")
           .finder
             i.fa.fa-times-circle.finder__clear
             input#search-toggle.finder__input(placeholder="eg. Acid Rap")
-          //- .button View chart
+          .button.header__action Save your chart
       .results
         .search.suggestions
           .search__title Searching for 
@@ -44,7 +44,11 @@ html(lang="en")
                 button(type="submit").alert__action
                   i.fa.fa-save
               a(href="#").alert__cancel or continue using Hipcharts suggestions.
-          .container#suggestions
+          .alert.alert--register
+            .container.alert__container
+              h2.alert__title Join us
+              include register
+          .container#suggestions.results__list
             //- h2.suggestions__title  What were your favourite albums of 2013?
         //- #collection.collection
         //-   .collection__scroll
