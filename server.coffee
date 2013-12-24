@@ -17,7 +17,7 @@ ss.client.define "main",
 
 # Define collection view?
 ss.client.define "user",
-  view: "collection.jade"
+  view: "user.jade"
   css: ["app.styl"]
   code: ["libs/jquery.min.js", "libs/underscore.min.js", "libs/fastclick.js", "libs/keymaster.js", "app"]
   tmpl: "*"
@@ -27,7 +27,7 @@ ss.http.route "/", (req, res) ->
   res.serveClient "main"
 
 # Define collection URL
-ss.http.route "/", (req, res) ->
+ss.http.route "/jaseflow", (req, res) ->
   res.serveClient "user"
 
 # Code Formatters

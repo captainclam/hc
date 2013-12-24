@@ -97,6 +97,8 @@ body
 
 .alert--lastFM
   background-image: url("/img/last-fm.png")
+  background-repeat: no-repeat
+  background-position: bottom center
 
 .alert__container
   display: flex
@@ -165,6 +167,12 @@ body
   text-align: center
   font-size: 14px
   margin-bottom: 10px
+
+.header__title
+  font-size: 22px
+  font-weight: bold
+  color: #fff
+  text-shadow: 0 1px 1px rgba(0,0,0,0.4)
 
 .finder
   position: relative
@@ -514,16 +522,6 @@ body
   .alert__title
     margin-right: 20px
 
-  .collection
-    top: 0
-    background-color: #222
-    counter-reset: tally
-    position: absolute
-    width: 320px
-    left: 0
-    height: 100%
-    border-right: 1px solid #3C3C3C
-
   .collection__scroll
     transform: translateZ(0)
     height: 100%
@@ -534,9 +532,8 @@ body
     margin: 0 auto
 
   .suggestions
-    overflow: hidden
     height: 100%
-    overflow-y: auto
+    overflow: hidden
     transform: translateZ(0)
 
   .suggestion

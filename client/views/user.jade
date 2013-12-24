@@ -15,30 +15,10 @@ html(lang="en")
       .header
         .container.header__wrap
           .logo
-          .finder
-            i.fa.fa-times-circle.finder__clear
-            input#search-toggle.finder__input(placeholder="eg. Acid Rap")
-          .button View chart
+          .header__title Your top 5 albums of 2013
+          .button View finder
       .results
-        .search.suggestions
-          .alert
-            h2.alert__title Enter your LastFM account name for more accurate suggestions
-          .search__title Searching for 
-            span#query some
-            //- .spinner
-            //-   .rect1
-            //-   .rect2
-            //-   .rect3
-            //-   .rect4
-            //-   .rect5
-          .container.results__list
-            //- .results__header Searching  
-            //-   span#query Mac Miller
-            //- include register
-        .suggestions
-          .container#suggestions
-            //- h2.suggestions__title  What were your favourite albums of 2013?
-        //- #collection.collection
-        //-   .collection__scroll
-        //-     ul.list.entries
+        #collection.collection
+          .collection__scroll
+            ul.list.entries.results__list
     

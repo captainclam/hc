@@ -137,8 +137,6 @@ window.publicProfile = ->
   return unless username
   ss.rpc 'app.getCollection', {username}, ({success, user, message}) ->
     if success
-      $('.suggestions').html('')
-      $('.suggestions').hide()
       collectionView.model = user.chart
       collectionView.render()
       # alert 'yay! #1' + user.chart[0].title
