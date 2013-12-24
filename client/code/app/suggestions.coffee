@@ -36,6 +36,7 @@ printSuggestions = (suggestions) ->
 url = 'http://ws.audioscrobbler.com/2.0/'
 data =
   method: 'user.gettopalbums'
+  limit: 30
   api_key: '08b9be8ca570eb793277e9f88cc5ad14'
   format: 'json'
   user: 'jaseflow'
