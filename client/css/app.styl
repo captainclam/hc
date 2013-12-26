@@ -43,20 +43,11 @@ body
 .logo
   width: 36px
   height: 33px
+  margin-right: 10px
   background-image: url("/img/H.svg")
   -webkit-background-size: cover
   -moz-background-size: cover
   background-size: cover
-  &:before
-    content: 'Hipcharts'
-    display: block
-    font-family: 'Droid Sans', sans-serif
-    font-weight: bold
-    color: #fff
-    letter-spacing: -1px
-    padding-left: 45px
-    padding-top: 6px
-    font-size: 20px
 
 .dev-menu
   display: none
@@ -162,6 +153,11 @@ body
   overflow: hidden
   position: relative
 
+.header__wrap
+  display: flex
+  align-items: center
+  padding: 5px 10px
+
 .header__question
   color: #fff
   text-align: center
@@ -176,12 +172,13 @@ body
 
 .header__action
   position: absolute
-  right: 0
+  right: 10px
   top: -100%
   transition: transform 0.4s ease
 
 .finder
   position: relative
+  flex: 1
 
 .finder__clear
   display: none
@@ -239,7 +236,8 @@ body
   position: absolute
   bottom: 0
   width: 100%
-  top: 90px
+  top: 54px
+  overflow: hidden
 
 .results__header
   display: none
@@ -301,12 +299,25 @@ body
   height: calc(20% - 1px)
   margin-top: 1px
 
-.container
-  // max-width: 800px
-  // margin: 0 auto
+// .container
+//   max-width: 800px
+//   margin: 0 auto
 
 .collection
   counter-reset: tally
+
+.suggestions
+  height: 100%
+  overflow: hidden
+  counter-reset: tally
+  transform: translateZ(0)
+
+.suggestion
+  animation: fadeInUp 1s ease
+
+.entry-wrap
+  width: 100%
+  max-width: 
 
 .entry
   flex-wrap: wrap
@@ -314,9 +325,9 @@ body
   flex-flow: column
   padding: 10px
   position: relative
-  height: 80px
   justify-content: center
   margin-top: 1px
+  background-color: #fff
   &:first-child
     margin-top: 0
 
@@ -516,7 +527,21 @@ body
   20%
     -ms-transform: scaleY(1.0)
 
+
+@import item
+
 @media only screen and (min-width: 768px)
+
+  .logo:before
+    content: 'Hipcharts'
+    display: block
+    font-family: 'Droid Sans', sans-serif
+    font-weight: bold
+    color: #fff
+    letter-spacing: -1px
+    padding-left: 45px
+    padding-top: 6px
+    font-size: 20px
 
   .sidebar
     height: 100%
@@ -536,142 +561,12 @@ body
     max-width: 768px
     margin: 0 auto
 
-  .suggestions
-    height: 100%
-    overflow: hidden
-    counter-reset: tally
-    transform: translateZ(0)
-
-  .suggestion
-    animation: fadeInUp 1s ease
-
   .items__title
     color: #fff
     font-size: 28px
     text-align: center
     margin-bottom: 20px
     padding-top: 10px
-
-  .item
-    float: left
-    width: 249px
-    height: 249px
-    padding: 2px
-    position: relative
-    cursor: pointer
-
-  .item--selected
-    counter-increment: tally
-    .item__overlay:before
-      opacity: 0.75
-    .item__add
-      opacity: 1
-      transform: scale(1.25)
-      background-color: #222
-      color: darken(green,20%)
-    .item__thumb img
-      animation: fadeOutUp 0.8s ease forwards
-
-  .item--selected:before
-    position: absolute
-    width: 60px
-    height: 60px
-    display: block
-    content: counter(tally)
-    z-index: 200
-    color: #222
-    font-weight: bold
-    top: 50%
-    margin-top: -30px
-    left: 50%
-    margin-left: -30px
-    text-align: center
-    line-height: 60px
-    font-size: 32px
-    opacity: 0
-    animation: fadeIn 0.5s 0.75s ease forwards
-    background-color: #fff
-    border-radius: 30px
-    transition: opacity 0.5s ease
-
-  .item__overlay
-    position: absolute
-    display: flex
-    align-items: center
-    justify-content: center
-    transition: opacity 0.1s ease
-    top: 4px
-    right: 4px
-    bottom: 4px
-    left: 4px
-    border-radius: 5px
-    &:before
-      top: 0
-      left: 0
-      opacity: 0
-      position: absolute
-      content: ''
-      display: block
-      background-color: #000
-      height: 100%
-      width: 100%
-
-  .item__thumb
-    top: 2px
-    right: 2px
-    bottom: 2px
-    left: 2px
-    position: absolute
-    background-color: #242424
-    margin: 2px
-    border-radius: 5px
-    border-bottom: 1px solid #3C3C3C
-    box-shadow: inset 0 1px 2px rgba(0,0,0,0.4)
-
-  .item__add
-    opacity: 0
-    display: block
-    color: #fff
-    width: 40px
-    height: 40px
-    display: flex !important
-    align-items: center
-    justify-content: center
-    border-radius: 20px
-    border: 2px solid #fff
-    font-size: 14px
-    transition: transform 0.2s ease
-
-  .item img
-    height: 100%
-    width: 100%
-    border-radius: 5px
-
-  .item__details,
-  .entry__details
-    position: absolute
-    bottom: 4px
-    left: 4px
-    right:4px
-    background-color: rgba(25,26,26,0.8)
-    color: #fff
-    border-radius: 0 0 5px 5px
-    padding: 10px
-    z-index: 100
-
-  .item__title,
-  .entry__title
-    font-size: 14px
-    width: 200px
-    text-overflow: ellipsis
-    white-space: nowrap
-    overflow: hidden
-
-  .item__subtitle,
-  .entry__subtitle
-    color: #eee
-    font-size: 13px
-    font-weight: normal
 
   .header
     height: 64px
@@ -770,10 +665,10 @@ body
 
   .finder
     position: absolute
-    width: 310px
+    width: 260px
     left: 50%
     top: 10px
-    margin-left: -155px
+    margin-left: -130px
     transition: all 0.3s ease
   
   .entries
@@ -841,26 +736,16 @@ body
     .finder__clear
       opacity: 1
 
+  .app--user
+    .finder
+      display: none
+
 @media only screen and (min-width: 1024px)
 
   .container
     max-width: 1024px
-
-  .item
-    flex-basis: 220px
-    height: 251px
-
+    
 @media only screen and (min-width: 1200px)
 
   .container
     max-width: 1245px
-
-  .item
-    height: 249px
-    width: 249px
-
-  .item:hover
-    .item__overlay
-      opacity: 1
-    .item__add
-      transform: scale(1.25)

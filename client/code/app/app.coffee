@@ -17,9 +17,6 @@ class FinderView
       li.click =>
         collectionView.add entry
         $(this).addClass('item--selected')
-        $('.entry__remove').click ->
-          $(this).parents('.entry').remove()
-          $('.finder__input').focus()
       # else
       #   alert('Full chart')
 

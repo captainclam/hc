@@ -11,14 +11,15 @@ html(lang="en")
     link(rel="stylesheet",href="font-awesome/css/font-awesome.css")
     link(rel="stylesheet",href="animations.css")
   body
-    #finder.app
-      .header
-        .container.header__wrap
-          .logo
-          .header__title Your top 5 albums of 2013
-          .button View finder
+    #finder.app.app--user
+      include header
       .results
         #collection.collection
           .collection__scroll
-            ul.list.entries.results__list
-    
+            //- ul.list.entries.results__list
+            .container
+              .entry
+                .entry__thumb
+                .entry__content
+                  .entry__title Old
+                  .entry__subtitle Danny Brown
