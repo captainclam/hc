@@ -43,17 +43,28 @@ data =
   format: 'json'
   user: 'jaseflow'
 
-$.ajax(
-  url: url
-  cache: false
-  data: data
-).done (res) ->
-  albums = res.topalbums?.album?.slice? 0, 100
-  albums ?= []
-  suggestions = []
-  for album in albums
-    suggestions.push
-      title: album.name
-      subtitle: album.artist.name
-      image: album.image[3]?['#text']  # todo find?
-  printSuggestions suggestions
+getSuggestions = (username) ->
+  data.username = username
+  $.ajax(
+    url: url
+    cache: false
+    data: data
+  ).done (res) ->
+    albums = res.topalbums?.album?.slice? 0, 100
+    albums ?= []
+    suggestions = []
+    for album in albums
+      suggestions.push
+        title: album.name
+        subtitle: album.artist.name
+        image: album.image[3]?['#text']  # todo find?
+    printSuggestions suggestions
+    $('.alert--lastFM').fadeOut()
+
+
+lastFmForm = $('#last-fm-form')
+lastFmForm.submit (e) ->
+  e.preventDefault()
+  username = lastFmForm.find('#last-fm-username').val()
+  getSuggestions username
+
