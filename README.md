@@ -36,3 +36,5 @@ There are also helper functions login(), register(), logout() which moslty just 
 - Giantbomb adapter and data abstraction layer
 - Track/Album switcher
 - get Backbone.events in here
+- scrolling doesn't work (on desktop only maybe?)
+- The "Searching For" text update should not be subject to the debounce
