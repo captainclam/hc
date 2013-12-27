@@ -1,5 +1,5 @@
 printSuggestions = (suggestions) ->
-  for suggestion in suggestions
+  for suggestion in suggestions then do (suggestion) ->
     el = $ ss.tmpl['chart-suggestion'].render suggestion
     el.click ->
       collectionView.add suggestion
