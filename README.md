@@ -29,3 +29,13 @@ ss.rpc 'app.getCollection', {username: 'jsncbt'}, ({success, user}) ->
 ```
 
 There are also helper functions login(), register(), logout() which moslty just wrap the above RPC calls
+
+
+## TODO
+
+- Giantbomb adapter and data abstraction layer
+- Track/Album switcher
+
+- pimp it out. get this shit done while I'm motivated
+
+- proper ✔
