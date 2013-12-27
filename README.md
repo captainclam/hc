@@ -35,7 +35,4 @@ There are also helper functions login(), register(), logout() which moslty just 
 
 - Giantbomb adapter and data abstraction layer
 - Track/Album switcher
-
-- pimp it out. get this shit done while I'm motivated
-
-- proper ✔
+- get Backbone.events in here
