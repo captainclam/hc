@@ -34,6 +34,7 @@ getSuggestions = (username) ->
         image: album.image[3]?['#text']  # todo find?
     $('.alert--lastfm').hide()
     printSuggestions suggestions
+    $('.finder').show()
 
 
 lastFmForm = $('#last-fm-form')
