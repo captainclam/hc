@@ -28,19 +28,17 @@ html(lang="en")
             //-   span#query Mac Miller
             //- include register
         .suggestions
-          .alert.alert--lastFM
+          .alert.alert--lastfm
             .container.alert__container
-              h2.alert__title Enter your 
+              h2.alert__title Do you use 
                 strong last.fm
-                |  user name for more accurate suggestions
+                | ?
               form.alert__form#last-fm-form
-                input(type="text",id="last-fm-username",class="alert__input",placeholder="Your last.fm username")
-                button(type="submit").alert__action
-                  i.fa.fa-save
-              a(href="#").alert__cancel or continue using Hipcharts suggestions.
+                input(type="text",id="last-fm-username",class="alert__input",placeholder="What's your username?")
+                button(type="submit").alert__action Show most played
+              a(href="#").alert__cancel No? Continue using Hipcharts suggestions
           .alert.alert--register
             .container.alert__container
-              h2.alert__title Join us
               include register
           .container#suggestions.results__list
             //- h2.suggestions__title  What were your favourite albums of 2013?

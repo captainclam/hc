@@ -24,8 +24,19 @@ body,
 
 body
   font-family: sans-serif
+  color: #fff
+  font-size: 18px
+
+h3
+  margin-bottom: 20px
+  font-family: 'Roboto', sans-serif
+  font-size: 42px
+
+p
+  margin-bottom: 20px
 
 .button
+  display: inline-block
   color: #fff
   cursor: pointer
   border-radius: 4px
@@ -35,10 +46,19 @@ body
   text-transform: uppercase
   font-size: 14px
   font-weight: bold
+  text-decoration: none
 
 .button--inactive
   color: rgba(255,255,255,0.4)
   border-color: rgba(255,255,255,0.4)
+
+.button--blue
+  border: 0
+  background: blue
+  color: white
+  border-radius: 3px
+  &:focus
+    outline: 0
 
 .logo
   width: 36px
@@ -74,9 +94,8 @@ body
   border: 1px solid rgba(255, 255, 255, 0.34)
 
 .alert
-  background-color: rgba(0,0,0,0.8)
+  background-color: #2e2e2e
   text-align: center
-  font-size: 15px
   color: #fff
   position: absolute
   top: 0
@@ -86,7 +105,7 @@ body
   z-index: 500
   // display: none
 
-.alert--lastFM
+.alert--lastfm
   background-image: url("/img/last-fm.png")
   background-repeat: no-repeat
   background-position: bottom center
@@ -102,7 +121,7 @@ body
   height: 100%
 
 .alert__form
-  height: 44px
+  height: 55px
   display: flex
   margin-bottom: 10px
   position: relative
@@ -117,33 +136,35 @@ body
   font-size: 16px
   font-weight: bold
   color: #555
-  border-radius: 3px 0 0 3px
-
+  border-radius: 3px
+  &:focus
+   outline: 0
+  
 .alert__action
   height: 100%
-  background: orange
+  background: blue
   border: 0
-  font-size: 22px
-  color: #fff
+  font-size: 16px
+  color: white
   font-weight: bold
   padding: 0 20px
   display: flex
-  text-shadow: 0 1px 0px rgba(0,0,0,0.4)
-  border-radius: 0 3px 3px 0
+  border-radius: 3px
+  margin-left: 5px
   &:focus
     outline: 0
 
 .alert__title
-  font-size: 32px
+  font-size: 36px
   font-weight: 100
-  margin-bottom: 24px
-  max-width: 480px
+  margin-bottom: 32px
   text-align: center
 
 .alert__cancel
-  color: #fff
-  margin-left: 15px
-  color: #999
+  color: #BDBDBD
+  font-size: 18px
+  margin-top: 20px
+  font-weight: 200
 
 .module
   overflow: hidden
@@ -182,6 +203,7 @@ body
 .finder
   position: relative
   flex: 1
+  display: none
 
 .finder__clear
   display: none
@@ -315,9 +337,6 @@ body
   counter-reset: tally
   transform: translateZ(0)
 
-.suggestion
-  animation: fadeInUp 1s ease
-
 .entry-wrap
   width: 100%
   max-width: 
@@ -384,16 +403,15 @@ body
     color: #222
 
 .spinner
-  display: none
   text-align: center
   font-size: 10px
 
 .spinner > div
-  background-color: orange
+  background-color: #4B4B4B
   height: 20px
   width: 4px
   display: inline-block
-  margin-left: 1px
+  margin-left: 5px
   
   -webkit-animation: stretchdelay 1.2s infinite ease-in-out
   -moz-animation: stretchdelay 1.2s infinite ease-in-out
@@ -418,6 +436,10 @@ body
   -webkit-animation-delay: -0.8s
   -moz-animation-delay: -0.8s
   -ms-animation-delay: -0.8s
+
+.spinner--huge > div
+  height: 100px
+  width: 10px
 
 .register
   color: #fff
@@ -532,6 +554,7 @@ body
 
 
 @import item
+@import success
 
 @media only screen and (min-width: 768px)
 
@@ -752,3 +775,6 @@ body
 
   .container
     max-width: 1245px
+
+  .alert__cancel:hover
+      color: #fff
