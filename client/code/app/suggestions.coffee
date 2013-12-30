@@ -6,7 +6,7 @@ printSuggestions = (suggestions) ->
       $(this).addClass('item--selected')
       if $(".item--selected").length >= 5
         $('.app').addClass('app--publish')
-    $('#suggestions').append el
+    $('#suggestions-list').append el
 
 # todo: refactor this into a data layer. see finder
 url = 'http://ws.audioscrobbler.com/2.0/'
@@ -32,7 +32,7 @@ getSuggestions = (username) ->
         title: album.name
         subtitle: album.artist.name
         image: album.image[3]?['#text']  # todo find?
-    $('.alert--lastfm').hide()
+    Nav.go 'suggestions'
     printSuggestions suggestions
     $('.finder').show()
 

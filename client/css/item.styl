@@ -92,19 +92,19 @@
   z-index: 150
   flex: 1
 
-.item__title,
-.entry__title
+.item__title
   font-size: 14px
   width: 200px
   text-overflow: ellipsis
   white-space: nowrap
   overflow: hidden
+  margin-bottom: 0
 
-.item__subtitle,
-.entry__subtitle
+.item__subtitle
   color: #eee
   font-size: 13px
   font-weight: normal
+  margin-bottom: 0
 
 @media only screen and (min-width: 768px)
 
@@ -127,6 +127,7 @@
     z-index: 150
     opacity: 0
     transition: opacity 0.3s ease
+    display: none
 
   .item--selected:before
     position: absolute

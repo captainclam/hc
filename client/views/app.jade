@@ -13,36 +13,27 @@ html(lang="en")
   body
     #finder.app
       include header
-      .results
-        .search.suggestions
+      .content
+        .module#collection
+          .container
+            h4 jaseflow Top 5 Albums of 2013
+            ul.list.entries
+        .search.module
           .search__title Searching for 
             span#query some
-            //- .spinner
-            //-   .rect1
-            //-   .rect2
-            //-   .rect3
-            //-   .rect4
-            //-   .rect5
           .container.results__list
-            //- .results__header Searching  
-            //-   span#query Mac Miller
-            //- include register
-        .suggestions
-          .alert.alert--lastfm
-            .container.alert__container
-              h2.alert__title Do you use 
-                strong last.fm
-                | ?
-              form.alert__form#last-fm-form
-                input(type="text",id="last-fm-username",autocomplete="off",class="alert__input",placeholder="What's your username?")
-                button(type="submit").alert__action Show most played
-              a#get-default-suggestions(href="#").alert__cancel No, skip this step.
-          .alert.alert--register
-            .container.alert__container
-              include register
-          .container#suggestions.results__list
-            //- h2.suggestions__title  What were your favourite albums of 2013?
-        //- #collection.collection
-        //-   .collection__scroll
-        //-     ul.list.entries
+        .module.module--lastfm#lastfm
+          .container.alert__container
+            h2.alert__title Do you use 
+              strong last.fm
+              | ?
+            form.alert__form#last-fm-form
+              input(type="text",id="last-fm-username",autocomplete="off",class="alert__input",placeholder="What's your username?")
+              button(type="submit").alert__action Show most played
+            a#get-default-suggestions(href="#suggestions").alert__cancel.go No, skip this step.
+        .module#register
+          .container.alert__container
+            include register
+        .module#suggestions
+          .container#suggestions-list.results__list
     
