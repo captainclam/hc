@@ -2,8 +2,6 @@
 window.login = ({username, password}) ->
   ss.rpc 'app.authenticate', username, password, ({success, message}) ->
     console.log 'login response', success, message
-    if success
-      Nav.go 'app'
 
 register = ({email, username, password, chart}) ->
   ss.rpc 'app.register', {email, username, password, chart} , (res) ->
