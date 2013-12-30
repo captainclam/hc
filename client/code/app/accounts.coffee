@@ -4,7 +4,6 @@ window.login = ({username, password}) ->
     console.log 'login response', success, message
     if success
       Nav.go 'app'
-    # window.location.reload()
 
 register = ({email, username, password, chart}) ->
   ss.rpc 'app.register', {email, username, password, chart} , (res) ->

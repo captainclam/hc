@@ -322,17 +322,20 @@ p
   counter-reset: tally
   transform: translateZ(0)
 
+.module--lastfm
+  display: block
+
 .entry
 	flex-wrap: wrap
 	display: flex
 	padding: 10px
 	position: relative
 	align-items: center
-	margin-top: 1px
+	border-top: 1px solid #ddd
 	background-color: #fff
 	color: #555
 	&:first-child
-	  margin-top: 0
+	  border-top: 0
 
 .entry__counter
   position: absolute
@@ -535,6 +538,9 @@ p
 
 @media only screen and (min-width: 768px)
 
+  .module
+    padding: 20px
+
   .alert__form
     flex-direction: row
 
@@ -666,10 +672,8 @@ p
   .search--active
     transform: translateX(0)
 
-  .search__title
+  .module__title
     color: #999
-    font-size: 28px
-    padding: 20px 0
     text-align: center
     display: flex
     align-items: center
@@ -689,6 +693,28 @@ p
   .entries
     max-width: 480px
     margin: 0 auto
+    counter-reset: tally
+
+  .entry
+    padding: 15px
+    padding-left: 100px
+    counter-increment: tally
+
+  .entry:before
+    top: 0
+    left: 0
+    height: 100%
+    width: 80px
+    display: flex
+    align-items: center
+    justify-content: center
+    position: absolute
+    font-size: 32px
+    color: #bbb
+    font-weight: bold
+    content: counter(tally)
+    background-color: #eee
+    border-right: 1px solid #ccc
 
   .entry__details
     right: 10px
@@ -696,6 +722,7 @@ p
     bottom: 10px
 
   .entry__remove
+    display: none
     text-align: center
     line-height: 34px
     justify-content: center

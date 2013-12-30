@@ -73,6 +73,7 @@ $('.finder__clear').click ->
   $('.finder__input').val('')
   $('.search').removeClass('search--active')
 
-$('.header__action').click ->
+$('.header__action').click (e) ->
+  e.preventDefault()
   $('.finder').hide()
 
