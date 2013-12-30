@@ -4,5 +4,3 @@ window.Nav =
     $('.module#'+module).show()
 
 $('a.go').click -> Nav.go $(this).attr('href').replace('#','')
-
-require '/accounts'
