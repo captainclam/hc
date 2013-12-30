@@ -110,8 +110,8 @@
 
   .item
     float: left
-    width: 256px
-    height: 240px
+    width: 244px
+    height: 244px
     padding: 2px
 
   .item__remove
@@ -171,17 +171,23 @@
     right:4px
     background-color: rgba(0,0,0,0.8)
 
+@media only screen and (min-width: 800px)
+
+  .item
+    height: 256px
+    width: 256px
+
 @media only screen and (min-width: 1024px)
 
   .item
-    flex-basis: 220px
-    height: 234px
+    height: 329px
+    width: 329px
 
 @media only screen and (min-width: 1200px)
 
   .item
-    height: 300px
-    width: 300px
+    height: 311px
+    width: 311px
 
   .item:hover
     .item__overlay

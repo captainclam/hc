@@ -2,9 +2,12 @@ printSuggestions = (suggestions) ->
   for suggestion in suggestions then do (suggestion) ->
     el = $ ss.tmpl['chart-suggestion'].render suggestion
     el.click ->
-      collectionView.add suggestion
-      $(this).addClass('item--selected')
-      if $(".item--selected").length >= 5
+      if $(".item--selected").length <= 4
+        collectionView.add suggestion
+        $(this).addClass('item--selected')
+      else
+        return
+      if $(".item--selected").length == 5
         $('.app').addClass('app--publish')
     $('#suggestions-list').append el
 
