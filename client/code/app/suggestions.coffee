@@ -47,7 +47,6 @@ lastFmForm.submit (e) ->
   getSuggestions username
 
 $('#get-default-suggestions').click ->
-  $('.alert--lastfm').hide()
   printSuggestions [
     {title:"Watching Movies with the Sound Off (Deluxe Edition)", subtitle:"Mac Miller", image:"http://userserve-ak.last.fm/serve/300x300/91010329.png"}
     {title: "Acid Rap", subtitle: "Chance the Rapper", image: "http://userserve-ak.last.fm/serve/300x300/93294971.png"}
@@ -73,3 +72,7 @@ $('#get-default-suggestions').click ->
     {title:"Because The Internet", subtitle:"Childish Gambino", image:"http://userserve-ak.last.fm/serve/300x300/95152407.png"}
   ]
   $('.finder').show()
+  $('.tip').addClass('tip--show')
+
+$('.tip__hide').click ->
+  $(this).parents('.tip').removeClass('tip--show')

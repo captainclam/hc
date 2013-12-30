@@ -27,15 +27,15 @@ body
   color: #fff
   font-size: 18px
 
+h2
 h3
-h4
   margin-bottom: 20px
-  font-family: 'Roboto', sans-serif
+  font-family: sans-serif
 
-h3
+h2
   font-size: 42px
 
-h4
+h3
 	font-size: 24px
 
 p
@@ -329,6 +329,57 @@ p
 
 .module--collection
   padding-top: 10%
+
+@keyframes showTip {
+  0% {
+    transform: translateY(0)
+  }
+  100% {
+    transform: translateY(100px)
+  }
+}
+
+@keyframes hideTip {
+  0% {
+    transform: translateY(100px)
+  }
+  100% {
+    transform: translateY(0)
+  }
+}
+
+
+.tip
+  width: 100%
+  max-width: 600px
+  position: absolute
+  top: 0
+  left: 50%
+  margin-left: -300px
+  text-align: center
+  background-color: rgb(255, 64, 3)
+  border-radius: 0 0 3px 3px
+  padding: 20px
+  padding-right: 40px
+  z-index: 300
+  color: #FFF
+  box-shadow: inset 0 2px 2px rgba(0,0,0,0.2), 0 2px 4px rgba(0, 0, 0, 0.69)
+  top: -100px
+  transition: transform 0.25s ease
+
+.tip__hide
+  position: absolute
+  right: 20px
+  top: 18px
+  font-size: 24px
+  color: rgb(151, 54, 0)
+  cursor: pointer
+  &:hover
+    color: #fff
+
+.tip--show
+  transform: translateY(100px)
+  transition-delay: 1s
 
 .entry
 	flex-wrap: wrap
@@ -679,7 +730,7 @@ p
     transform: translateX(0)
 
   .module__title
-    color: #999
+    color: #fff
     text-align: center
     display: flex
     align-items: center
@@ -770,6 +821,10 @@ p
 
   .container
     max-width: 1024px
+
+  .finder
+    width: 400px
+    margin-left: -200px
     
 @media only screen and (min-width: 1200px)
 

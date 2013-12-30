@@ -14,6 +14,8 @@ html(lang="en")
     #finder.app
       include header
       .content
+        .tip Remember to use the search box above to find any album!
+          i.fa.fa-times-circle.tip__hide
         .module#collection
           .container
             h4.module__title
@@ -26,13 +28,13 @@ html(lang="en")
           .container.results__list
         .module.module--lastfm#lastfm
           .container.alert__container
-            h2.alert__title Do you use 
-              strong last.fm
-              | ?
+            h2.alert__title Do you have a 
+              strong last.fm 
+              | account?
             form.alert__form#last-fm-form
-              input(type="text",id="last-fm-username",autocomplete="off",class="alert__input",placeholder="What's your username?")
+              input(type="text",id="last-fm-username",autocomplete="off",class="alert__input",placeholder="Enter your username")
               button(type="submit").alert__action Show most played
-            a#get-default-suggestions(href="#suggestions").alert__cancel.go No, skip this step.
+            a#get-default-suggestions(href="#suggestions").alert__cancel.go No, just show me popular suggestions.
         .module#register
           .container.alert__container
             include register
