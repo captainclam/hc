@@ -89,7 +89,7 @@
   color: #fff
   border-radius: 0 0 5px 5px
   padding: 10px
-  z-index: 100
+  z-index: 150
   flex: 1
 
 .item__title,
@@ -113,7 +113,21 @@
     width: 256px
     height: 240px
     padding: 2px
-  
+
+  .item__remove
+    position: absolute
+    top: 0
+    right: 0
+    width: 50px
+    height: 50px
+    display: flex
+    align-items: center
+    justify-content: center
+    color: #fff
+    z-index: 150
+    opacity: 0
+    transition: opacity 0.3s ease
+
   .item--selected:before
     position: absolute
     width: 60px
@@ -134,7 +148,10 @@
     animation: fadeIn 0.5s 0.75s ease forwards
     background-color: #fff
     border-radius: 30px
-    transition: opacity 0.5s ease
+    transition: opacity 0.5s 1s ease
+
+  .item--selected .item__remove
+    opacity: 1
 
   .item__thumb
     top: 2px
@@ -144,6 +161,7 @@
     position: absolute
     margin: 2px
     width: auto
+    z-index: 100
 
   .item__details
     position: absolute

@@ -18,5 +18,9 @@
   "scripts": {
     "start": "node server.js"
   },
+  "domains": [
+    "hipcharts.com",
+    "www.hipcharts.com"
+  ],
   "subdomain": "hc"
 }
