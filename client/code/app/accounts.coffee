@@ -23,13 +23,13 @@ logout = ->
   ss.rpc 'app.logout', ->
     window.location.reload()
 
-$('form#login').submit (e) ->
+$('#login').submit (e) ->
   e.preventDefault()
   login
     username: $(this).find('input#username').val()
     password: $(this).find('input#password').val()
 
-$('form#register').submit (e) ->
+$('#register-form').submit (e) ->
   e.preventDefault()
   register
     email: $(this).find('input#email').val()
