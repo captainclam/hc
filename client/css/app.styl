@@ -321,9 +321,14 @@ p
   overflow-y: auto
   counter-reset: tally
   transform: translateZ(0)
+  justify-content: center
+  align-items: center
 
-.module--lastfm
+.module--active
   display: block
+
+.module--collection
+  padding-top: 10%
 
 .entry
 	flex-wrap: wrap
@@ -579,6 +584,7 @@ p
     overflow: hidden
 
   .container
+    width: 100%
     max-width: 768px
     margin: 0 auto
 
