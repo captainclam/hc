@@ -401,7 +401,6 @@ p
 	padding: 10px
 	position: relative
 	align-items: center
-	border-top: 1px solid #ddd
 	background-color: #fff
 	color: #555
 	&:first-child
@@ -739,6 +738,7 @@ p
 
   .module--spaced
     padding-top: 64px
+    padding-bottom: 40px
 
   .sidebar
     height: 100%
@@ -867,35 +867,39 @@ p
     transition: all 0.3s ease
 
   .entries
-    max-width: 480px
-    margin: 0 auto
     counter-reset: tally
 
   .entry
-    padding: 15px
-    padding-left: 100px
     counter-increment: tally
+    width: 25%
+    height: 50%
+    background: none
+    padding: 0
+    float: left
+    padding: 5px
+    &:first-child
+      width: 50%
+      height: 100%
 
-  .entry:before
-    top: 0
-    left: 0
-    height: 100%
-    width: 80px
-    display: flex
-    align-items: center
-    justify-content: center
+  .entry__thumb
+    width: calc(100% - 10px)
+    background-size: cover
+    background-position: center
     position: absolute
-    font-size: 32px
-    color: #bbb
-    font-weight: bold
-    content: counter(tally)
-    background-color: #eee
-    border-right: 1px solid #ccc
+    top: 5px
+    right: 5px
+    bottom: 5px
+    left: 5px
+    margin: 0
 
   .entry__details
-    right: 10px
-    left: 10px
-    bottom: 10px
+    position: absolute
+    right: 5px
+    left: 5px
+    bottom: 5px
+    background-color: rgba(0,0,0,0.8)
+    color: #fff
+    padding: 10px
 
   .entry__remove
     display: none
