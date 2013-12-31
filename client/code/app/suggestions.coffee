@@ -71,7 +71,3 @@ $('#get-default-suggestions').click ->
     {title:"Because The Internet", subtitle:"Childish Gambino", image:"http://userserve-ak.last.fm/serve/300x300/95152407.png"}
   ]
   $('.finder').show()
-  $('.tip').addClass('tip--show')
-
-$('.tip__hide').click ->
-  $(this).parents('.tip').removeClass('tip--show')

@@ -111,5 +111,6 @@ $('.finder__clear').click ->
 
 $('.header__action').click (e) ->
   e.preventDefault()
+  $(this).hide()
   $('.finder').hide()
 
