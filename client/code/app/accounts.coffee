@@ -17,6 +17,7 @@ register = ({email, username, password, chart}) ->
     
 logout = ->
   ss.rpc 'app.logout', ->
+    Nav.go 'lastfm'
     window.location.reload()
 
 $('#login').submit (e) ->
