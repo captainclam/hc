@@ -62,14 +62,3 @@ exports.actions = (req, res, ss) ->
       user.save (err) ->
         throw err if err
         res 'OK'
-
-  listCollection: (username) ->
-    User.findOne {username}, (err, user) ->
-      throw err if err
-      games = []
-      unless user?.games?
-        return res false
-      for id in user.games
-        game = _.findWhere gameCache, {id}
-        games.push game if game?
-      res games
