@@ -517,7 +517,7 @@ p
 
 .register__group
   display: flex
-  flex-flow: column-reverse
+  flex-direction: column-reverse
   margin-bottom: 20px
   position: relative
 
@@ -535,6 +535,7 @@ p
   margin-bottom: 10px
   font-size: 16px
   font-weight: bold
+  display: block
 
 .register__input
   height: 40px
@@ -546,6 +547,7 @@ p
   color: #fff
   padding: 0 10px
   font-size: 16px
+  width: 100%
 
 .register__input--user
   padding-left 129px
@@ -558,6 +560,7 @@ p
 
 .register__action
   height: 50px
+  width: 100%
   border-radius: 2px
   font-size: 18px
   color: #fff
@@ -816,6 +819,9 @@ p
     padding: 0
     line-height: 44px
 
+  .finder
+    flex: auto
+
   .finder__clear
     cursor: pointer
     position: absolute
@@ -911,7 +917,7 @@ p
     opacity: 0
     &:hover
       opacity: 1
-      
+
   .app--publish .header__action
     transform: translateY(53px)
 
