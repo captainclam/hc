@@ -2,6 +2,7 @@ printSuggestions = (suggestions) ->
   for suggestion in suggestions then do (suggestion) ->
     el = $ ss.tmpl['chart-suggestion'].render suggestion
     el.click ->
+      $(this).addClass('item--selected')
       collectionView.add suggestion
     $('#suggestions-list').append el
 
