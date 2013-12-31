@@ -627,8 +627,7 @@ p
 
   .collection
     position: absolute
-    // bottom: -140px
-    bottom: 20px
+    bottom: -140px
     background-color: #333
     padding: 10px
     height: 140px
@@ -637,6 +636,38 @@ p
     left: 50%
     display: flex
     justify-content: space-between
+    background-image: url(/img/collection-bg.png)
+    background-repeat: no-repeat
+    background-position: center
+    border: 1px solid #535353
+    border-bottom: 0
+    transition: transform 0.3s ease
+
+    .chart
+      width: 100%
+      display: flex
+
+    .entry
+      padding: 0
+      background: none
+      width: 20%
+      padding: 0 5px
+      border-top: 0
+      &:before
+        display: none
+
+    .entry__title
+      display: none
+
+    .entry__subtitle
+      display: none
+
+    .entry__thumb
+      width: 100%
+      margin-right: 0
+  
+  .collection--visible
+    transform: translateY(-182px)
 
   .collection__item
     width: calc(20% - 5px)

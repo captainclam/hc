@@ -5,7 +5,6 @@
   display: flex
 
 .item--selected
-  counter-increment: tally
   .item__overlay:before
     opacity: 0.75
   .item__add
@@ -21,7 +20,8 @@
   width: 32px
   height: 32px
   display: block
-  content: counter(tally)
+  font-family: 'FontAwesome'
+  content: "\f00c"
   z-index: 200
   color: #222
   font-weight: bold
@@ -134,9 +134,8 @@
     width: 60px
     height: 60px
     display: block
-    content: counter(tally)
     z-index: 200
-    color: #222
+    color: green
     font-weight: bold
     top: 50%
     margin-top: -30px
@@ -147,7 +146,7 @@
     font-size: 32px
     opacity: 0
     animation: fadeIn 0.5s 0.75s ease forwards
-    background-color: #fff
+    background-color: #111
     border-radius: 30px
     transition: opacity 0.5s 1s ease
 
@@ -170,6 +169,7 @@
     left: 4px
     right:4px
     background-color: rgba(0,0,0,0.8)
+
 
 @media only screen and (min-width: 800px)
 

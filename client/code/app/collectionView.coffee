@@ -1,7 +1,7 @@
 class CollectionView
   constructor: (model) ->
     @model = model
-    @dom = $ '#collection .list'
+    @dom = $ '.chart'
 
   add: (item) =>
     @model.push item
@@ -9,9 +9,11 @@ class CollectionView
 
   render: =>
     @dom.empty()
+    if @model.length is 1
+      $('.collection').addClass('collection--visible')
     for entry in @model then do (entry) =>
-      li = $ ss.tmpl['chart-entry'].render entry
-      @dom.append li
+      div = $ ss.tmpl['chart-entry'].render entry
+      @dom.append div
     return @dom
 
 window.collectionView = new CollectionView []
