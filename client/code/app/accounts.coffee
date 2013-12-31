@@ -12,7 +12,7 @@ register = ({email, username, password, chart}) ->
         password: $(this).find('input#password').val()
       $('.header__action').hide()
       $('.logout').show()
-      $('.register__window').html('<div class="success"><h2 class="success__title">Chart successfully created!</h2><div class="success__message"><p>People can now see your charts at</p></div><div class="success__address">www.hipcharts.com/jaseflow</div><a href="#collection" class="button button--blue success__action">View your charts</a></div>')
+      $('.register__window').html('<div class="success"><h2 class="success__title">Chart successfully created!</h2><div class="success__message"><p>People can now see your charts at</p></div><div class="success__address">www.hipcharts.com/jaseflow</div><a href="/jaseflow" class="button button--blue success__action">View your charts</a></div>')
     
 logout = ->
   ss.rpc 'app.logout', ->
