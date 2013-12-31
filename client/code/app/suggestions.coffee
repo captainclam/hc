@@ -2,6 +2,8 @@ printSuggestions = (suggestions) ->
   for suggestion in suggestions then do (suggestion) ->
     el = $ ss.tmpl['chart-suggestion'].render suggestion
     el.click ->
+      if collectionView.model.length is 5
+        return
       $(this).addClass('item--selected')
       collectionView.add suggestion
     $('#suggestions-list').append el
@@ -10,7 +12,7 @@ printSuggestions = (suggestions) ->
 url = 'http://ws.audioscrobbler.com/2.0/'
 data =
   method: 'user.gettopalbums'
-  limit: 12
+  limit: 36
   api_key: '08b9be8ca570eb793277e9f88cc5ad14'
   format: 'json'
   user: 'jaseflow'
@@ -37,13 +39,13 @@ getSuggestions = (username) ->
 
 lastFmForm = $('#last-fm-form')
 lastFmForm.submit (e) ->
-  $('.app').addClass('app--start')
+  $('.app').addClass('app--landing')
   e.preventDefault()
   username = lastFmForm.find('#last-fm-username').val()
   getSuggestions username
 
 $('#get-default-suggestions').click ->
-  $('.app').addClass('app--start')
+  $('.app').removeClass('app--landing')
   printSuggestions [
     {title:"Watching Movies with the Sound Off (Deluxe Edition)", subtitle:"Mac Miller", image:"http://userserve-ak.last.fm/serve/300x300/91010329.png"}
     {title: "Acid Rap", subtitle: "Chance the Rapper", image: "http://userserve-ak.last.fm/serve/300x300/93294971.png"}

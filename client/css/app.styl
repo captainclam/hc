@@ -30,6 +30,7 @@ body
 h1
 h2
 h3
+h4
   margin-bottom: 20px
   font-family: sans-serif
 
@@ -44,6 +45,10 @@ h3
 
 p
   margin-bottom: 20px
+
+.logout
+  display: none
+  color: #fff
 
 .button
   display: inline-block
@@ -163,9 +168,8 @@ p
   overflow: hidden
   position: absolute
   width: 100%
-  top: -43px
+  top: 0
   z-index: 50
-  transition: transform 0.25s ease
 
 .header__wrap
   display: flex
@@ -510,13 +514,6 @@ p
 
 .register__module
   padding: 10px
-  
-.register h2
-  margin-bottom: 20px
-  font-size: 22px
-
-.register p
-  margin-bottom: 20px
 
 .register__group
   display: flex
@@ -760,7 +757,7 @@ p
 
   .header
     height: 64px
-    top: -64px
+    top: 0
     overflow: hidden
     border-bottom: 1px solid black
 
@@ -914,11 +911,7 @@ p
     opacity: 0
     &:hover
       opacity: 1
-
-
-  .app--start .header
-    transform: translateY(100%)
-
+      
   .app--publish .header__action
     transform: translateY(53px)
 

@@ -10,8 +10,8 @@ class FinderView
       console.log entry
       li = $ ss.tmpl['chart-result'].render entry
       li.click ->
-        img = $(this).find('.item__thumb img').attr('src')
-        console.log(img)
+        if collectionView.model.length is 5
+          return
         collectionView.add entry
         $(this).addClass('item--selected')
       # else

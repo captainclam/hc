@@ -3,6 +3,8 @@ window.publicProfile = ->
 	return unless username
 	ss.rpc 'app.getCollection', {username}, ({success, user, message}) ->
 		if success
+			$('.app').addClass('app--start')
+			$('.header__action').hide()
 			collectionView.model = user.chart
 			collectionView.render()
 			Nav.go 'collection'

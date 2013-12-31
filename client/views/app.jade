@@ -16,12 +16,12 @@ html(lang="en")
       .content
         //- .tip Remember to use the search box above to find any album!
         //-   i.fa.fa-times-circle.tip__hide
-        .module#collection
+        .module.module--spaced#collection
           .container
             h4.module__title
               span jaseflow's
               | Top 5 Albums of 2013
-            ul.list.entries
+            ul.chart.entries
         .module.search
           .module__title Searching for 
             span#query some
@@ -45,7 +45,7 @@ html(lang="en")
           .container.alert__container
             include register
         .module.module--spaced#suggestions
-          h3.module__title What are your top five albums of the year?
+          h3.module__title What are your top five albums of 2013?
           .container#suggestions-list.results__list
         .collection
           .chart
