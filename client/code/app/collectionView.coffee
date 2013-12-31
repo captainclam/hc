@@ -8,9 +8,10 @@ class CollectionView
     @render()
 
   render: =>
+    if @model.length > 5
+      return
     if @model.length is 5
       $('.app').addClass('app--publish')
-      return
     @dom.empty()
     if @model.length is 1
       $('.collection').addClass('collection--visible')
