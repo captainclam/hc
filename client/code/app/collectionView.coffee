@@ -9,6 +9,8 @@ class CollectionView
 
   render: =>
     @dom.empty()
+    if @model.length is 5
+      $('.app').addClass('app--publish')
     if @model.length is 1
       $('.collection').addClass('collection--visible')
     for entry in @model then do (entry) =>

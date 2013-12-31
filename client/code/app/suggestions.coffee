@@ -2,13 +2,7 @@ printSuggestions = (suggestions) ->
   for suggestion in suggestions then do (suggestion) ->
     el = $ ss.tmpl['chart-suggestion'].render suggestion
     el.click ->
-      if $(".item--selected").length <= 4
-        collectionView.add suggestion
-        $(this).addClass('item--selected')
-      else
-        return
-      if $(".item--selected").length == 5
-        $('.app').addClass('app--publish')
+      collectionView.add suggestion
     $('#suggestions-list').append el
 
 # todo: refactor this into a data layer. see finder
