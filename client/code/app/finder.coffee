@@ -5,12 +5,13 @@ class FinderView
 
   render: =>
     @dom.empty()
-    @dom[0].classList.add('results__list--active')
     for entry in @model then do (entry) =>
       # console.log entry.title
       console.log entry
       li = $ ss.tmpl['chart-result'].render entry
       li.click ->
+        img = $(this).find('.item__thumb img').attr('src')
+        console.log(img)
         collectionView.add entry
         $(this).addClass('item--selected')
       # else

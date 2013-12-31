@@ -320,9 +320,6 @@ p
 //   max-width: 800px
 //   margin: 0 auto
 
-.collection
-  counter-reset: tally
-
 .module
   display: none
   height: 100%
@@ -628,6 +625,23 @@ p
 
 @media only screen and (min-width: 768px)
 
+  .collection
+    position: absolute
+    // bottom: -140px
+    bottom: 20px
+    background-color: #333
+    padding: 10px
+    height: 140px
+    width: 600px
+    margin-left: -300px
+    left: 50%
+    display: flex
+    justify-content: space-between
+
+  .collection__item
+    width: calc(20% - 5px)
+    background-color: #111
+
   .footer
     display: block
     position: absolute
@@ -703,11 +717,6 @@ p
 
   .alert__title
     margin-right: 20px
-
-  .collection__scroll
-    transform: translateZ(0)
-    height: 100%
-    overflow: hidden
 
   .container
     width: 100%
