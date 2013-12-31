@@ -14,8 +14,8 @@ html(lang="en")
     #finder.app
       include header
       .content
-        .tip Remember to use the search box above to find any album!
-          i.fa.fa-times-circle.tip__hide
+        //- .tip Remember to use the search box above to find any album!
+        //-   i.fa.fa-times-circle.tip__hide
         .module#collection
           .container
             h4.module__title
@@ -26,9 +26,15 @@ html(lang="en")
           .module__title Searching for 
             span#query some
           .container.results__list
-        .module.module--lastfm#lastfm
-          .container.alert__container
-            h2.alert__title Do you have a 
+        .module.landing#lastfm
+          .landing__img
+          .container.alert__container.landing__content
+            .landing__logo
+            h1.landing__title Hipcharts 
+            h2.landing__strap Create your 
+              strong top fives 
+              | and contribute to real time social charts!
+            h3.alert__title Before you begin, do you have a 
               strong last.fm 
               | account?
             form.alert__form#last-fm-form
@@ -38,6 +44,10 @@ html(lang="en")
         .module#register
           .container.alert__container
             include register
-        .module#suggestions
+        .module.module--spaced#suggestions
           .container#suggestions-list.results__list
-    
+        .footer
+          .footer__links
+            a(href="#") Terms &amp; Conditions
+            a(href="#") Privacy Policy
+

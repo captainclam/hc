@@ -42,11 +42,13 @@ getSuggestions = (username) ->
 
 lastFmForm = $('#last-fm-form')
 lastFmForm.submit (e) ->
+  $('.app').addClass('app--start')
   e.preventDefault()
   username = lastFmForm.find('#last-fm-username').val()
   getSuggestions username
 
 $('#get-default-suggestions').click ->
+  $('.app').addClass('app--start')
   printSuggestions [
     {title:"Watching Movies with the Sound Off (Deluxe Edition)", subtitle:"Mac Miller", image:"http://userserve-ak.last.fm/serve/300x300/91010329.png"}
     {title: "Acid Rap", subtitle: "Chance the Rapper", image: "http://userserve-ak.last.fm/serve/300x300/93294971.png"}
