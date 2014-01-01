@@ -22,29 +22,36 @@ html(lang="en")
           .module__title Searching for 
             span#query some
           .container.results__list
-        .module.landing#lastfm
+        .module.module--active.landing#lastfm
           .landing__img
           .container.alert__container.landing__content
-            .landing__logo
-            h1.landing__title Hipcharts 
-            h2.landing__strap Create your 
-              strong top fives 
-              | and contribute to real time social charts!
-            h3.alert__title Before you begin, do you have a 
-              strong last.fm 
-              | account?
-            form.alert__form#last-fm-form
-              input(type="text",id="last-fm-username",autocomplete="off",class="alert__input",placeholder="Enter your username")
-              button(type="submit").alert__action Show most played
-            a#get-default-suggestions(href="#suggestions").alert__cancel.go No, just show me popular suggestions.
+            .slides
+              .slides__slider
+                .slide
+                  .landing__logo
+                  h1.landing__title Hipcharts 
+                  h2.landing__strap Create your 
+                    strong top fives 
+                    | and contribute to real time social charts!
+                  a(href="#").button.button--large.next-slide Start charting
+                .slide.slide--two
+                  form.form#last-fm-form
+                    label.form__label Before you begin, do you have a 
+                      strong last.fm 
+                      | account?
+                    .form__wrap
+                      input(type="text",id="last-fm-username",autocomplete="off",class="form__input",placeholder="Enter your username")
+                      button(type="submit").form__action Show most played
+                  a#get-default-suggestions(href="#suggestions").alert__cancel.go Nope, just show me popular suggestions.
         .module#register
           .container.alert__container
             include register
         .module.module--spaced#suggestions
-          h3.module__title What are your top five albums of 2013?
-          .container#suggestions-list.results__list
+          #suggestions-list.results__list
         .collection
-          .chart
+          h2.collection__title What are your top five albums of 2013
+          .collection__tray
+            .chart
         .footer
           .footer__links
             a(href="#") Terms &amp; Conditions

@@ -13,7 +13,7 @@
     background-color: #222
     color: darken(green,20%)
   .item__thumb img
-    animation: fadeOutUp 0.8s ease forwards
+    animation: fadeOutDown 0.8s ease forwards
 
 .item--selected:before
   position: absolute
@@ -192,3 +192,24 @@
       opacity: 1
     .item__add
       transform: scale(1.25)
+
+@media only screen and (min-width: 1600px)
+  
+  .item
+    width: 20%
+
+@media only screen and (min-width: 1700px)
+  
+  .item
+    width: 16.666666667%
+    height: 261px
+
+@media only screen and (min-width: 1920px)
+
+  .item
+    height: 300px
+
+@media only screen and (min-width: 2100px)
+
+  .item
+    height: 330px

@@ -77,6 +77,10 @@ p
   &:focus
     outline: 0
 
+.button--large
+  padding: 25px 60px
+  font-size: 18px
+
 .logo
   width: 36px
   height: 33px
@@ -117,15 +121,18 @@ p
   flex-direction: column
   height: 100%
 
-.alert__form
+.form
   display: flex
   flex-direction: column
   margin-bottom: 10px
   position: relative
   width: 100%
-  max-width: 600px
 
-.alert__input
+.form__wrap
+  max-width: 420px
+  margin: 0 auto
+
+.form__input
   height: 55px
   font-family: 'Helvetica Neue', sans-serif
   width: 100%
@@ -140,8 +147,9 @@ p
   &:focus
    outline: 0
   
-.alert__action
+.form__action
   height: 55px
+  width: 100%
   cursor: pointer
   background: blue
   border: 0
@@ -153,9 +161,11 @@ p
   &:focus
     outline: 0
 
-.alert__title
+.form__label
   font-weight: 100
   text-align: center
+  font-size: 18px
+  margin-bottom: 20px
 
 .alert__cancel
   color: #BDBDBD
@@ -174,7 +184,7 @@ p
 .header__wrap
   display: flex
   align-items: center
-  padding: 5px 10px
+  padding: 0 10px
 
 .header__question
   color: #fff
@@ -200,51 +210,49 @@ p
   display: none
 
 .finder__clear
-  display: none
   position: absolute
   right: 20px
   bottom: 13px
-  color: #fff
+  color: red
 
 .finder__input
   width: 100%
   border: 0
-  border-radius: 0
   height: 44px
   padding: 0 20px
   font-size: 14px
-  background-color: #2270a4
-  border: 1px solid #0a64a0
-  color: #fff
+  background-color: #fff
+  border-radius: 2px
+  color: #555
   &:focus
     outline: 0
 
 .finder__input::-webkit-input-placeholder
-   color: rgba(255,255,255,0.2)
+   color: #999
 
 .finder__input:-moz-placeholder
-   color:  rgba(255,255,255,0.2) 
+   color: #999
 
 .finder__input::-moz-placeholder
-   color:  rgba(255,255,255,0.2) 
+   color: #999
 
 .finder__input:-ms-input-placeholder
-   color:  rgba(255,255,255,0.2)
+   color: #999
 
 
-.alert__input::-webkit-input-placeholder
+.form__input::-webkit-input-placeholder
    color: #999
    font-weight: normal
 
-.alert__input:-moz-placeholder
+.form__input:-moz-placeholder
    color:  #999
    font-weight: normal
 
-.alert__input::-moz-placeholder
+.form__input::-moz-placeholder
    color:  #999
    font-weight: normal
 
-.alert__input:-ms-input-placeholder
+.form__input:-ms-input-placeholder
    color:  #999
    font-weight: normal
 
@@ -272,6 +280,9 @@ p
 .search--active
   transform: translateX(-100%)
   transform: translateX(-100%)
+
+.results__list
+  overflow: hidden
 
 .result
   color: #fff
@@ -621,20 +632,52 @@ p
 
 @media only screen and (min-width: 768px)
 
+  .slides
+    width: 100%
+    position: relative
+    height: 80vh
+    overflow: hidden
+
+  .slides__slider
+    position: absolute
+    width: 100%
+    height: 100%
+    transition: transform 0.25s ease
+    transform: translateZ(0)
+  
+  .slides__slider--1
+    transform: translateX(-100%)
+
+  .slide
+    top: 0
+    left: 0
+    display: flex
+    position: absolute
+    align-items: center
+    justify-content: center
+    width: 100%
+    height: 100%
+    flex-flow: column
+
+  .slide--two
+    left: 100%
+
+  .slide--three
+    left: 200%
+
   .collection
     position: absolute
-    bottom: -140px
-    background-color: #333
+    bottom: -180px
+    background-color: #2B2B2B
     padding: 10px
-    height: 140px
-    width: 600px
+    padding-top: 20px
+    height: 180px
+    width: 605px
     margin-left: -300px
     left: 50%
     display: flex
+    flex-direction: column
     justify-content: space-between
-    background-image: url(/img/collection-bg.png)
-    background-repeat: no-repeat
-    background-position: center
     border: 1px solid #535353
     border-bottom: 0
     transition: transform 0.3s ease
@@ -642,15 +685,22 @@ p
     .chart
       width: 100%
       display: flex
+      height: 100%
+      margin-left: -10px
 
     .entry
       padding: 0
       background: none
-      width: 20%
+      width: calc(20% - 10px) !important
+      margin-left: 10px
+      height: auto !important
       padding: 0 5px
       border-top: 0
       &:before
         display: none
+
+    .entry__details
+      display: none
 
     .entry__title
       display: none
@@ -663,11 +713,26 @@ p
       margin-right: 0
   
   .collection--visible
-    transform: translateY(-182px)
+    transform: translateY(-222px)
 
   .collection__item
     width: calc(20% - 5px)
     background-color: #111
+  
+  .collection__title
+    font-size: 20px
+    text-align: center
+
+  .collection__tray
+    background-image: url(/img/collection-bg.png)
+    background-repeat: no-repeat
+    background-position: center
+    width: 100%
+    height: 111px
+
+  .form__label
+    font-size: 32px
+    margin-bottom: 40px
 
   .footer
     display: block
@@ -684,7 +749,6 @@ p
   .footer__links a
     color: #999
     font-size: 14px
-    margin-left: 40px
     text-decoration: none
     padding: 0 20px
     &:first-child
@@ -692,9 +756,6 @@ p
 
   .module
     padding: 20px
-
-  .alert__form
-    flex-direction: row
 
   .landing
     background-size: cover
@@ -721,10 +782,6 @@ p
     position: relative
     z-index: 200
 
-  .alert__action
-    width: 300px
-    margin-left: 5px
-
   .logo:before
     content: 'Hipcharts'
     display: block
@@ -737,7 +794,7 @@ p
     font-size: 20px
 
   .module--spaced
-    padding-top: 64px
+    padding-top: 73px
     padding-bottom: 40px
 
   .sidebar
@@ -745,9 +802,6 @@ p
     box-shadow: -1px 0 5px
     position: relative
     border-left: 1px solid rgb(54, 54, 54)
-
-  .alert__title
-    margin-right: 20px
 
   .container
     width: 100%
@@ -773,6 +827,7 @@ p
 
   .header__wrap
     position: relative
+    padding: 0 30px
     height: 100%
     display: flex
     justify-content: space-between
@@ -830,9 +885,8 @@ p
     position: absolute
     right: 10px
     bottom: 11px
-    color: #fff
-    font-size: 20px
-    opacity: 0
+    color: darken(blue,10)
+    font-size: 18px
   
   .search
     overflow: hidden

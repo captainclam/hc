@@ -6,6 +6,7 @@ printSuggestions = (suggestions) ->
         return
       $(this).addClass('item--selected')
       collectionView.add suggestion
+      $('.collection').addClass('collection--visible')
     $('#suggestions-list').append el
 
 # todo: refactor this into a data layer. see finder
@@ -46,6 +47,7 @@ lastFmForm.submit (e) ->
 
 $('#get-default-suggestions').click ->
   $('.app').removeClass('app--landing')
+  $('.collection').addClass('collection--visible')
   printSuggestions [
     {title:"Watching Movies with the Sound Off (Deluxe Edition)", subtitle:"Mac Miller", image:"http://userserve-ak.last.fm/serve/300x300/91010329.png"}
     {title: "Acid Rap", subtitle: "Chance the Rapper", image: "http://userserve-ak.last.fm/serve/300x300/93294971.png"}
