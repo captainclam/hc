@@ -10,6 +10,8 @@ class FinderView
       console.log entry
       li = $ ss.tmpl['chart-result'].render entry
       li.click ->
+        $('.finder__input').focus()
+        $('.finder__input').val('')
         if collectionView.model.length is 5
           return
         collectionView.add entry
