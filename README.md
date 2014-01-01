@@ -38,3 +38,4 @@ There are also helper functions login(), register(), logout() which moslty just 
 - get Backbone.events in here
 - scrolling doesn't work (on desktop only maybe?)
 - The "Searching For" text update should not be subject to the debounce
+- Hash passwords! http://nodejs.org/api/crypto.html#crypto_crypto_createhash_algorithm
