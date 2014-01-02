@@ -40,6 +40,8 @@ html(lang="en")
                       strong last.fm 
                       | account?
                     .form__wrap
+                      .form__error
+                        #error-message This is an error message
                       input(type="text",id="last-fm-username",autocomplete="off",class="form__input",placeholder="Enter your username")
                       button(type="submit").form__action Show most played
                   a#get-default-suggestions(href="#suggestions").alert__cancel.go Nope, just show me popular suggestions.

@@ -25,17 +25,22 @@ getSuggestions = (username) ->
     cache: false
     data: data
   ).done (res) ->
-    albums = res.topalbums?.album?.slice? 0, 100
-    albums ?= []
-    suggestions = []
-    for album in albums
-      suggestions.push
-        title: album.name
-        subtitle: album.artist.name
-        image: album.image[3]?['#text']  # todo find?
-    Nav.go 'suggestions'
-    printSuggestions suggestions
-    $('.finder').show()
+    if res.error
+      $('.form__error').css('opacity','1')
+      $('#error-message').text(res.message)
+      # alert res.message
+    else
+      albums = res.topalbums?.album?.slice? 0, 100
+      albums ?= []
+      suggestions = []
+      for album in albums
+        suggestions.push
+          title: album.name
+          subtitle: album.artist.name
+          image: album.image[3]?['#text']  # todo find?
+      Nav.go 'suggestions'
+      printSuggestions suggestions
+      $('.finder').show()
 
 
 lastFmForm = $('#last-fm-form')
