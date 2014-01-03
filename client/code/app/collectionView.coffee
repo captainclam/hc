@@ -22,6 +22,7 @@ class CollectionView
       div = $ ss.tmpl['chart-entry'].render entry
       @dom.append div
       div.click =>
+        $('.item--selected').removeClass('item--selected')
         @model = _.reject @model, (item) -> item is entry
         div.remove()
     return @dom
