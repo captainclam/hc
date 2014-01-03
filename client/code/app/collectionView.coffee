@@ -14,7 +14,8 @@ class CollectionView
     if @model.length > 5
       return
     if @model.length is 5
-      $('#publish').toggleClass('button--blue')
+      $('#publish').addClass('button--blue')
+      $('#publish').removeClass('button--inactive')
     @dom.empty()
     if @model.length is 1
       $('.collection').addClass('collection--visible')
@@ -25,6 +26,9 @@ class CollectionView
         $('.item--selected').removeClass('item--selected')
         @model = _.reject @model, (item) -> item is entry
         div.remove()
+        if @model.length < 5
+          $('#publish').removeClass('button--blue')
+          $('#publish').addClass('button--inactive')
     return @dom
 
 window.collectionView = new CollectionView []
@@ -32,3 +36,11 @@ window.collectionView = new CollectionView []
 $('.collection .entry').click =>
   @model = _.reject @model, (item) -> item is actualItem
   @render()
+
+$('#publish').click (e) ->
+  e.preventDefault()
+  if $('.collection .entry').length is 5
+    Nav.go 'register'
+    $('.collection').removeClass('collection--visible')
+  else
+    return

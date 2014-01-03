@@ -36,8 +36,7 @@ responseHandler = (res) ->
   finderView.render()
 
 keyUpHandler = ->
-  $('.tip').removeClass('tip--show')
-  $('.spinner').show()
+  $('.finder__clear').addClass('fa-times')
   $('.app')[0].classList.add('app--searching')
   $('.finder__clear').show()
   term = input.val()
@@ -110,9 +109,3 @@ $('.finder__clear').click ->
     {title:"Something Else", subtitle:"Tech N9ne", image:"http://userserve-ak.last.fm/serve/300x300/95439353.png"}
     {title:"Because The Internet", subtitle:"Childish Gambino", image:"http://userserve-ak.last.fm/serve/300x300/95152407.png"}
   ]
-
-$('.publish').click (e) ->
-  e.preventDefault()
-  $(this).hide()
-  $('.finder').hide()
-
