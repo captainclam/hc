@@ -51,7 +51,9 @@ html(lang="en")
         .module.module--spaced#suggestions
           #suggestions-list.results__list
         .collection
-          h2.collection__title What are your top five albums of 2013
+          .collection__hd
+            h2.collection__title What are your top five albums of 2013
+            a.button.button--inactive.go(id="publish", href="#register") Publish
           .collection__tray
             .chart
         .footer

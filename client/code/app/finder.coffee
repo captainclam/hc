@@ -111,7 +111,7 @@ $('.finder__clear').click ->
     {title:"Because The Internet", subtitle:"Childish Gambino", image:"http://userserve-ak.last.fm/serve/300x300/95152407.png"}
   ]
 
-$('.header__action').click (e) ->
+$('.publish').click (e) ->
   e.preventDefault()
   $(this).hide()
   $('.finder').hide()

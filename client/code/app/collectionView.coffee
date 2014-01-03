@@ -14,7 +14,7 @@ class CollectionView
     if @model.length > 5
       return
     if @model.length is 5
-      $('.app').addClass('app--publish')
+      $('#publish').toggleClass('button--blue')
     @dom.empty()
     if @model.length is 1
       $('.collection').addClass('collection--visible')
@@ -24,3 +24,7 @@ class CollectionView
     return @dom
 
 window.collectionView = new CollectionView []
+
+$('.collection .entry').click =>
+  @model = _.reject @model, (item) -> item is actualItem
+  @render()
