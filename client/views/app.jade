@@ -12,19 +12,19 @@ html(lang="en")
     link(rel="stylesheet",href="animations.css")
   body
     #finder.app
-      include header
+      //- include header
       .content
         //- .tip Remember to use the search box above to find any album!
         //-   i.fa.fa-times-circle.tip__hide
-        .module.module--spaced#collection
+        .module#collection
             ul.chart.entries
         .module.search
           .module__title Searching for 
             span#query some
           .container.results__list
-        .module.module--active.landing#lastfm
+        .module.module--active.landing.bg-image#lastfm
           .landing__img
-          .container.alert__container.landing__content
+          .container.alert__container.bg-image-content
             .slides
               .slides__slider
                 .slide
@@ -36,19 +36,20 @@ html(lang="en")
                   a(href="#").button.button--large.next-slide Start charting
                 .slide.slide--two
                   form.form#last-fm-form
-                    label.form__label Before you begin, do you have a 
+                    label.form__label Would you you like to see your 
                       strong last.fm 
-                      | account?
+                      | suggestions?
                     .form__wrap
                       .form__error
                         #error-message This is an error message
                       input(type="text",id="last-fm-username",autocomplete="off",class="form__input",placeholder="Enter your username")
                       button(type="submit").form__action Show most played
-                  a#get-default-suggestions(href="#suggestions").alert__cancel.go Nope, just show me popular suggestions.
-        .module#register
-          .container.alert__container
+                  a#get-default-suggestions(href="#suggestions").alert__cancel.go Nope, just show me popular popular.
+        .module#register.bg-image
+          .landing__img
+          .container.alert__container.bg-image-content
             include register
-        .module.module--spaced#suggestions
+        .module#suggestions
           #suggestions-list.results__list
         .collection
           .collection__hd

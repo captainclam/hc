@@ -42,5 +42,6 @@ $('#publish').click (e) ->
   if $('.collection .entry').length is 5
     Nav.go 'register'
     $('.collection').removeClass('collection--visible')
+    $('.finder').hide()
   else
     return
