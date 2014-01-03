@@ -18,8 +18,10 @@ data =
   format: 'json'
   user: 'jaseflow'
 
-getSuggestions = (username) ->
-  data.user = username
+window.getSuggestions = (username) ->
+  if username
+    window.lastFmUsername = username
+  data.user = username or window.lastFmUsername
   $.ajax(
     url: url
     cache: false
