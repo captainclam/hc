@@ -21,6 +21,9 @@ class CollectionView
     for entry in @model then do (entry) =>
       div = $ ss.tmpl['chart-entry'].render entry
       @dom.append div
+      div.click =>
+        @model = _.reject @model, (item) -> item is entry
+        div.remove()
     return @dom
 
 window.collectionView = new CollectionView []
