@@ -43,13 +43,25 @@ html(lang="en")
                       .form__error
                         #error-message This is an error message
                       input(type="text",id="last-fm-username",autocomplete="off",class="form__input",placeholder="Enter your username")
-                      button(type="submit").form__action Show most played
+                      button(type="submit").form__action Show your most played
                   a#get-default-suggestions(href="#suggestions").alert__cancel.go Nope, just show me popular popular.
         .module#register.bg-image
           .landing__img
           .container.alert__container.bg-image-content
+            .signup
+              h2 Create your account
             include register
         .module#suggestions
+          .finder
+            i.finder__clear.fa.fa-search
+            input#search-toggle.finder__input(placeholder="eg. Acid Rap")
+            //- span#query Mac Miller
+            .spinner
+              .rect1
+              .rect2
+              .rect3
+              .rect4
+              .rect5  
           #suggestions-list.results__list
         .collection
           .collection__hd
@@ -57,7 +69,7 @@ html(lang="en")
             a.button.button--inactive(id="publish", href="#register") Publish
           .collection__tray
             .chart
-        .footer
+        //- .footer
           .footer__links
             a(href="#") Terms &amp; Conditions
             a(href="#") Privacy Policy

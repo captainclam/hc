@@ -24,6 +24,7 @@ class FinderView
 
 responseHandler = (res) ->
   $('.spinner').hide()
+  $('.finder__clear').show()
   chart = []
   albums = res.results?.albummatches?.album?.slice? 0, 10
   albums ?= []
@@ -36,6 +37,8 @@ responseHandler = (res) ->
   finderView.render()
 
 keyUpHandler = ->
+  $('.spinner').show()
+  $('.finder__clear').hide()
   $('.finder__clear').addClass('fa-times')
   $('.app')[0].classList.add('app--searching')
   $('.finder__clear').show()
@@ -58,7 +61,7 @@ data =
   api_key: '08b9be8ca570eb793277e9f88cc5ad14'
   format: 'json'
 
-input = $ '#finder .header input'
+input = $ '.finder__input'
 input.keyup _.debounce keyUpHandler, 400
 
 window.finderView = new FinderView []
