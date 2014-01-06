@@ -76,7 +76,7 @@
   align-items: center
   justify-content: center
   border-radius: 20px
-  border: 2px solid #fff
+  border: item-spacing solid #fff
   font-size: 14px
   transition: transform 0.2s ease
 
@@ -110,9 +110,9 @@
 
   .item
     float: left
-    width: 33.333333333%
-    height: 244px
-    padding: 2px
+    width: 250px
+    height: 250px
+    padding: item-spacing
 
   .item__remove
     position: absolute
@@ -154,12 +154,12 @@
     opacity: 1
 
   .item__thumb
-    top: 2px
-    right: 2px
-    bottom: 2px
-    left: 2px
+    top: item-spacing
+    right: item-spacing
+    bottom: item-spacing
+    left: item-spacing
     position: absolute
-    margin: 2px
+    margin: item-spacing
     width: auto
     z-index: 100
 
@@ -168,48 +168,13 @@
     bottom: 4px
     left: 4px
     right:4px
-    background-color: rgba(0,0,0,0.8)
+    background: linear-gradient(rgba(0,0,0,0),black)
     flex: auto
 
-
-@media only screen and (min-width: 800px)
-
-  .item
-    height: 256px
-
-@media only screen and (min-width: 1024px)
-
-  .item
-    width: 25%
-
 @media only screen and (min-width: 1200px)
-
-  .item
-    height: 311px
 
   .item:hover
     .item__overlay
       opacity: 1
     .item__add
       transform: scale(1.25)
-
-@media only screen and (min-width: 1600px)
-  
-  .item
-    width: 20%
-
-@media only screen and (min-width: 1700px)
-  
-  .item
-    width: 16.666666667%
-    height: 261px
-
-@media only screen and (min-width: 1920px)
-
-  .item
-    height: 300px
-
-@media only screen and (min-width: 2100px)
-
-  .item
-    height: 330px

@@ -52,7 +52,7 @@ lastFmForm.submit (e) ->
   username = lastFmForm.find('#last-fm-username').val()
   getSuggestions username
 
-$('#get-default-suggestions').click ->
+$('.get-default-suggestions').click ->
   $('.app').removeClass('app--landing')
   $('.collection').addClass('collection--visible')
   printSuggestions defaultSuggestions

@@ -12,7 +12,7 @@ html(lang="en")
     link(rel="stylesheet",href="animations.css")
   body
     #finder.app
-      //- include header
+      include header
       .content
         //- .tip Remember to use the search box above to find any album!
         //-   i.fa.fa-times-circle.tip__hide
@@ -23,6 +23,7 @@ html(lang="en")
             span#query some
           .container.results__list
         .module.module--active.landing.bg-image#lastfm
+          .lastfm
           .landing__img
           .container.alert__container.bg-image-content
             .slides
@@ -35,33 +36,29 @@ html(lang="en")
                     | and contribute to real time social charts!
                   a(href="#").button.button--large.next-slide Start charting
                 .slide.slide--two
-                  form.form#last-fm-form
-                    label.form__label Would you you like to see your 
+                  form.form
+                    label.form__label Would you like to use your 
                       strong last.fm 
                       | suggestions?
-                    .form__wrap
-                      .form__error
-                        #error-message This is an error message
-                      input(type="text",id="last-fm-username",autocomplete="off",class="form__input",placeholder="Enter your username")
-                      button(type="submit").form__action Show your most played
-                  a#get-default-suggestions(href="#suggestions").alert__cancel.go Nope, just show me popular popular.
+                    .form__wrap.answers
+                      a.button.button--filled.next-slide.answers__btn(id="yes") Yes
+                      a.button.get-default-suggestions.answers__btn(href="#suggestions").go No
+                .slide.slide--three
+                  form.form#last-fm-form
+                    label.form__label.flat What is your username?
+                  .form__wrap
+                    .form__error
+                      #error-message This is an error message
+                    input(type="text",id="last-fm-username",autocomplete="off",class="form__input",placeholder="Enter your username")
+                    button(type="submit").button.button--block.button--filled Show your most played
+                  a.get-default-suggestions(href="#suggestions").alert__cancel.go Nope, just show me popular popular.
         .module#register.bg-image
           .landing__img
           .container.alert__container.bg-image-content
             .signup
               h2 Create your account
             include register
-        .module#suggestions
-          .finder
-            i.finder__clear.fa.fa-search
-            input#search-toggle.finder__input(placeholder="eg. Acid Rap")
-            //- span#query Mac Miller
-            .spinner
-              .rect1
-              .rect2
-              .rect3
-              .rect4
-              .rect5  
+        .module.module--spaced#suggestions
           #suggestions-list.results__list
         .collection
           .collection__hd

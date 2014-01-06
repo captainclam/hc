@@ -6,7 +6,12 @@ require '/collectionView'
 require '/publicProfile'
 require '/suggestions'
 
+slideCount = 0
+
 ss.rpc 'app.getCurrentUser', (user) -> if user then $('.logout').show()
 
-$('.next-slide').click ->
-  $('.slides__slider')[0].classList.add('slides__slider--1')
+$(".next-slide").click ->
+  slideCount++
+  $(".slides__slider").addClass "slides__slider--" + slideCount
+  if $(this).attr("id") is "yes"
+    $('.lastfm').addClass('lastfm--visible')
