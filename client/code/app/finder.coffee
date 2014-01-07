@@ -37,11 +37,7 @@ responseHandler = (res) ->
   finderView.render()
 
 keyUpHandler = ->
-  $('.spinner').show()
-  $('.finder__clear').hide()
   $('.finder__clear').addClass('fa-times')
-  $('.app')[0].classList.add('app--searching')
-  $('.finder__clear').show()
   term = input.val()
   $('#query').html(term)
   unless term.length > 2
