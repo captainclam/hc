@@ -11,6 +11,7 @@ html(lang="en")
     link(rel="stylesheet",href="font-awesome/css/font-awesome.css")
     link(rel="stylesheet",href="animations.css")
   body
+    include login
     #finder.app
       include header
       .content
@@ -46,11 +47,11 @@ html(lang="en")
                 .slide.slide--three
                   form.form#last-fm-form
                     label.form__label.flat What is your username?
-                  .form__wrap
-                    .form__error
-                      #error-message This is an error message
-                    input(type="text",id="last-fm-username",autocomplete="off",class="form__input",placeholder="Enter your username")
-                    button(type="submit").button.button--block.button--filled Show your most played
+                    .form__wrap
+                      .form__error
+                        #error-message This is an error message
+                      input(type="text",id="last-fm-username",autocomplete="off",class="form__input",placeholder="Enter your username")
+                      button(type="submit").button.button--block.button--filled Show your most played
                   a.get-default-suggestions(href="#suggestions").alert__cancel.go Nope, just show me popular popular.
         .module#register.bg-image
           .landing__img

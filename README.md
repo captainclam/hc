@@ -1,7 +1,7 @@
 
 ## TODO
 
-- Fix last fm suggestion input
+- ~~Fix last fm suggestion input~~
 - Improve the item grid
 - Make collection tray prettier
 - Logged in (profile view) / Logged out (landing page)

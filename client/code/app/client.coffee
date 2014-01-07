@@ -15,3 +15,6 @@ $(".next-slide").click ->
   $(".slides__slider").addClass "slides__slider--" + slideCount
   if $(this).attr("id") is "yes"
     $('.lastfm').addClass('lastfm--visible')
+
+$(".login-link").click ->
+  $('.app').toggleClass "app--login"
