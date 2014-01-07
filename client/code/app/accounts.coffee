@@ -1,6 +1,6 @@
 
-window.login = ({username, password}) ->
-  ss.rpc 'app.authenticate', username, password, ({success, message}) ->
+window.login = ({email, password}) ->
+  ss.rpc 'app.authenticate', email, password, ({success, message}) ->
     console.log 'login response', success, message
 
 register = ({email, username, password, chart}) ->
@@ -23,7 +23,7 @@ logout = ->
 $('#login').submit (e) ->
   e.preventDefault()
   login
-    username: $(this).find('input#username').val()
+    email: $(this).find('input#email').val()
     password: $(this).find('input#password').val()
 
 $('#register-form').submit (e) ->

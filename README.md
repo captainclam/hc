@@ -1,3 +1,20 @@
+
+## TODO
+
+- Fix last fm suggestion input
+- Improve the item grid
+- Make collection tray prettier
+- Logged in (profile view) / Logged out (landing page)
+- Login form
+- Success register takes user to their logged in landing page (profile view)
+- Clear suggestions prints default suggestions if no lastfm account
+- Register error messaging
+- Hide login link after register (logged in)
+- Make collection prettier!
+- Unlogged in profile views show a create your own chart link and users username
+- Login form to check for email/password
+- Tidy up mobile view
+
 # HipCharts
 
 Temp build of [https://github.com/jsncbt/hipcharts](https://github.com/jsncbt/hipcharts) until it gets updated with this version.
@@ -30,12 +47,3 @@ ss.rpc 'app.getCollection', {username: 'jsncbt'}, ({success, user}) ->
 
 There are also helper functions login(), register(), logout() which moslty just wrap the above RPC calls
 
-
-## TODO
-
-- Giantbomb adapter and data abstraction layer
-- Track/Album switcher
-- get Backbone.events in here
-- scrolling doesn't work (on desktop only maybe?)
-- The "Searching For" text update should not be subject to the debounce
-- Hash passwords! http://nodejs.org/api/crypto.html#crypto_crypto_createhash_algorithm
