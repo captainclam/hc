@@ -7,7 +7,7 @@
 - Logged in (profile view) / Logged out (landing page)
 - Login form
 - Success register takes user to their logged in landing page (profile view)
-~~- Clear suggestions prints default suggestions if no lastfm account~~
+- ~~Clear suggestions prints default suggestions if no lastfm account~~
 - Register error messaging
 - Hide login link after register (logged in)
 - Make collection prettier!
