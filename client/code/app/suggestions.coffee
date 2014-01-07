@@ -1,4 +1,4 @@
-printSuggestions = (suggestions) ->
+window.printSuggestions = (suggestions) ->
   for suggestion in suggestions then do (suggestion) ->
     el = $ ss.tmpl['chart-suggestion'].render suggestion
     el.click ->
