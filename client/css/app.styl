@@ -114,6 +114,9 @@ p
   background-color: orange
   color: #fff
 
+.button--small
+  height: 44px
+
 .button--large
   height: 80px
   padding: 0 60px
@@ -781,6 +784,8 @@ p
       flex-basis: 20%
       &:before
         display: none
+      &:first-child
+        width: 20%
 
     .entry__details
       display: none
@@ -801,12 +806,12 @@ p
       bottom: 0
       &:before
         opacity: 0
-        background-color: #000
+        background-color: #1e1e1e
         position: absolute
         display: flex
         justify-content: center
         align-items: center
-        font-size: 38px
+        font-size: 24px
         content: ''
         color: #fff
         width: 100%
@@ -814,9 +819,10 @@ p
         font-family: 'FontAwesome'
         content: "\f057"
         transition: opacity 0.25s ease
+        border: 1px solid #333
 
     .entry__thumb:hover:before
-      opacity: 0.8
+      opacity: 1
   
   .collection--visible
     transform: translateY(-200px)
