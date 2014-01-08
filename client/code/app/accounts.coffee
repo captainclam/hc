@@ -1,7 +1,14 @@
 
-window.login = ({email, password}) ->
+window.login = ({email, password, user}) ->
   ss.rpc 'app.authenticate', email, password, ({success, message}) ->
     console.log 'login response', success, message
+    if success
+      $('.login-link').hide()
+      $('.logout-link').show()
+      $('.app').removeClass('app--login')
+      collectionView.model = user.chart
+      collectionView.render()
+      Nav.go 'collection'
 
 register = ({email, username, password, chart}) ->
   ss.rpc 'app.register', {email, username, password, chart} , (res) ->
@@ -20,7 +27,7 @@ logout = ->
     Nav.go 'lastfm'
     window.location.reload()
 
-$('#login').submit (e) ->
+$('#login-form').submit (e) ->
   e.preventDefault()
   login
     email: $(this).find('input#email').val()
@@ -34,4 +41,8 @@ $('#register-form').submit (e) ->
     password: $(this).find('input#password').val()
     chart: collectionView.model
 
-$('a.logout').click logout
+$('.logout-link').click logout
+
+$('.login-link').click ->
+  $('.app').addClass('app--login')
+  $('#username')
