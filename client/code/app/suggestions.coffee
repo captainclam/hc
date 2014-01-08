@@ -1,5 +1,4 @@
 window.printSuggestions = (suggestions) ->
-  $('.app').addClass('app--finder')
   for suggestion in suggestions then do (suggestion) ->
     el = $ ss.tmpl['chart-suggestion'].render suggestion
     console.log 'yep'
@@ -27,6 +26,8 @@ data =
   user: 'jaseflow'
 
 window.getSuggestions = (username) ->
+  Nav.go 'suggestions'
+  $('.app').addClass('app--finder')
   if username
     window.lastFmUsername = username
   data.user = username or window.lastFmUsername
@@ -48,7 +49,6 @@ window.getSuggestions = (username) ->
           title: album.name
           subtitle: album.artist.name
           image: album.image[3]?['#text']  # todo find?
-      Nav.go 'suggestions'
       printSuggestions suggestions
       $('.finder').show()
       console.log 'yep'
