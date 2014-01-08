@@ -18,7 +18,7 @@ register = ({email, username, password, chart}) ->
       login
         email: $(this).find('input#email').val()
         password: $(this).find('input#password').val()
-      $('.login-link').show()
+      $('.login-link').hide()
       $('.logout-link').show()
     
 logout = ->
