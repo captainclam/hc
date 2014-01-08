@@ -69,7 +69,7 @@ lastFmForm.submit (e) ->
   getSuggestions username
 
 $('.get-default-suggestions').click ->
-  $('.app').removeClass('app--landing')
+  $('.app').addClass('app--finder')
   printSuggestions defaultSuggestions
   $('.finder').show()
 
