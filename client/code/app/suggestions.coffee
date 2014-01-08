@@ -1,12 +1,20 @@
 window.printSuggestions = (suggestions) ->
+  $('.app').addClass('app--finder')
   for suggestion in suggestions then do (suggestion) ->
     el = $ ss.tmpl['chart-suggestion'].render suggestion
+    console.log 'yep'
+    container = document.querySelector("#suggestions-list")
+    msnry = new Masonry(container,
+      
+      # options
+      isResizeBound: true
+      itemSelector: ".item"
+    )
     el.click ->
       if collectionView.model.length is 5
         return
       $(this).addClass('item--selected')
       collectionView.add suggestion
-      $('.collection').addClass('collection--visible')
     $('#suggestions-list').append el
 
 # todo: refactor this into a data layer. see finder
@@ -43,6 +51,14 @@ window.getSuggestions = (username) ->
       Nav.go 'suggestions'
       printSuggestions suggestions
       $('.finder').show()
+      console.log 'yep'
+      container = document.querySelector("#suggestions-list")
+      msnry = new Masonry(container,
+        
+        # options
+        isResizeBound: true
+        itemSelector: ".item"
+      )
 
 
 lastFmForm = $('#last-fm-form')
@@ -54,7 +70,6 @@ lastFmForm.submit (e) ->
 
 $('.get-default-suggestions').click ->
   $('.app').removeClass('app--landing')
-  $('.collection').addClass('collection--visible')
   printSuggestions defaultSuggestions
   $('.finder').show()
 

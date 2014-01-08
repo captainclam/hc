@@ -4,17 +4,17 @@ exports.actions = (req, res, ss) ->
 
   req.use('session')
 
-  authenticate: (username, password) ->
-    unless username and password
-      res success: false, message: 'Both Username and Password are required'
-    User.findOne {username, password}, (err, user) ->      
+  authenticate: (email, password) ->
+    unless email and password
+      res success: false, message: 'Both email and password are required'
+    User.findOne {email, password}, (err, user) ->      
       if err
         res success: false, message: err
       if user
         req.session.setUserId user._id
-        res success: true
+        res success: true, user: user
       else
-        res success: false, message: 'Invalid Username/Password'
+        res success: false, message: 'Invalid Email/Password'
 
   logout: ->
     req.session.setUserId null

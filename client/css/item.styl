@@ -110,9 +110,10 @@
 
   .item
     float: left
-    width: 250px
+    width: 33.333333333%
     height: 250px
     padding: item-spacing
+    animation: fadeInUp 0.3s ease
 
   .item__remove
     position: absolute
@@ -171,10 +172,37 @@
     background: linear-gradient(rgba(0,0,0,0),black)
     flex: auto
 
-@media only screen and (min-width: 1200px)
+@media only screen and (min-width: 1024px)
+    
+  .item
+    width: 25%
 
+@media only screen and (min-width: 1200px)
+  
   .item:hover
     .item__overlay
       opacity: 1
     .item__add
       transform: scale(1.25)
+
+@media only screen and (min-width: 1400px)
+
+  .item
+    width: 20%
+
+@media only screen and (min-width: 1800px)
+  
+  .item
+    width: 16.666666667%
+
+@media only screen and (min-width: 2400px)
+  
+  .item
+    width: 12.5%
+
+
+
+
+
+
+

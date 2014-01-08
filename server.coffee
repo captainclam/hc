@@ -13,7 +13,7 @@ if process.env.SUBDOMAIN
 ss.client.define 'main',
   view: 'app.jade'
   css: ['app.styl']
-  code: ['libs/jquery.min.js', 'libs/underscore.min.js', 'libs/fastclick.js', 'libs/keymaster.js', 'app']
+  code: ['libs/jquery.min.js', 'libs/underscore.min.js', 'libs/fastclick.js', 'libs/keymaster.js', 'libs/masonry.js', 'app']
   tmpl: '*'
 
 # Serve this client on the root URL
