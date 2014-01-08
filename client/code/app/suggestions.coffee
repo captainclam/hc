@@ -70,7 +70,10 @@ lastFmForm.submit (e) ->
 
 $('.get-default-suggestions').click ->
   $('.app').addClass('app--finder')
-  printSuggestions defaultSuggestions
+  # Shitty hack to fix animation delay since default suggestions load so fast and opacity ) trick fucks out masonry
+  setTimeout (->
+    printSuggestions defaultSuggestions
+  ), 1500
   $('.finder').show()
 
 window.defaultSuggestions = [
