@@ -2,17 +2,17 @@
 ## TODO
 
 - ~~Fix last fm suggestion input~~
-- Improve the item grid
-- Make collection tray prettier
+- ~~Improve the item grid~~
+- ~~Make collection tray prettier~~
 - Logged in (profile view) / Logged out (landing page)
 - Login form
 - Success register takes user to their logged in landing page (profile view)
 - ~~Clear suggestions prints default suggestions if no lastfm account~~
 - Register error messaging
-- Hide login link after register (logged in)
+- ~~Hide login link after register (logged in)~~
 - Make collection prettier!
 - Unlogged in profile views show a create your own chart link and users username
-- Login form to check for email/password
+- ~~Login form to check for email/password~~
 - Tidy up mobile view
 
 # HipCharts
