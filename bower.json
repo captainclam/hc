@@ -1,0 +1,25 @@
+{
+  "name": "hc",
+  "version": "0.0.0",
+  "homepage": "www.hipcharts.com",
+  "authors": [
+    "Jason Corbett <jsncbt@gmail.com>"
+  ],
+  "main": "libs.js",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "fastclick": "~0.6.10",
+    "jquery": "~2.0.3",
+    "keymaster": "~1.6.1",
+    "masonry": "~3.1.4",
+    "underscore": "~1.5.2"
+  }
+}
