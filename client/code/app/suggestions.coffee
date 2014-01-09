@@ -1,11 +1,13 @@
 window.printSuggestions = (suggestions) ->
   for suggestion in suggestions then do (suggestion) ->
     el = $ ss.tmpl['chart-suggestion'].render suggestion
-    console.log 'yep'
+    $('.item__thumb img').load ->
+      $(this).parent('item__thumb').addClass('item__thumb--loaded')
     container = document.querySelector("#suggestions-list")
     msnry = new Masonry(container,
       
       # options
+      isFitWidth: true
       isResizeBound: true
       itemSelector: ".item"
     )
@@ -56,6 +58,7 @@ window.getSuggestions = (username) ->
       msnry = new Masonry(container,
         
         # options
+        isFitWidth: true
         isResizeBound: true
         itemSelector: ".item"
       )

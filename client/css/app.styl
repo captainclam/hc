@@ -22,6 +22,8 @@ body,
 .app
   transform: translateZ(0)
   transition: transform 0.3s ease
+  position: relative
+  z-index: 10
 
 *
   margin: 0
@@ -69,13 +71,6 @@ p
 
 .login-link
   display: block
-
-.login
-  position: absolute
-  right: 0
-  top: 0
-  width: 320px
-  padding: 20px
 
 .button
   display: flex
@@ -347,6 +342,7 @@ p
 
 .results__list
   overflow: hidden
+  margin: 0 auto
 
 .result
   color: #fff
@@ -669,6 +665,8 @@ p
 
 .login
   position: absolute
+  opacity: 0
+  transition: opacity 0.25s 0.25s ease
   top: 0
   right: 0
   height: 100%
@@ -704,6 +702,9 @@ p
 
 .app--login
   transform: translateX(-320px)
+
+.app--login + .login
+  opacity: 1
 
 .app--finder
   .header
@@ -766,6 +767,7 @@ p
     border: 0
     margin-right: 20px
     background-color: #202020
+    counter-reset: chart
 
     .chart
       width: 100%
@@ -773,6 +775,7 @@ p
       height: 100%
       border: 2px dashed #555;
       padding: 5px
+      box-shadow: inset 0 2px 5px rgba(0,0,0,0.8);
 
     .entry
       padding: 0
@@ -782,6 +785,25 @@ p
       margin: 1px
       width: 20%
       flex-basis: 20%
+      counter-increment: chart
+      &:after
+        position: absolute
+        top: 0
+        right: 0
+        color: #fff
+        font-family: 'Roboto'
+        font-weight: bold
+        font-size: 12px
+        width: 20px
+        height: 20px
+        line-height: 20px
+        text-align: center
+        content: counter(chart)
+        display: block
+        background-color: #333
+        border: 1px solid #222
+        border-top: 0
+        border-right: 0
       &:before
         display: none
       &:first-child
@@ -804,6 +826,7 @@ p
       left: 0
       right: 0
       bottom: 0
+      width: auto
       &:before
         opacity: 0
         background-color: #1e1e1e

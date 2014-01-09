@@ -11,7 +11,6 @@ html(lang="en")
     link(rel="stylesheet",href="font-awesome/css/font-awesome.css")
     link(rel="stylesheet",href="animations.css")
   body
-    include login
     #finder.app
       include header
       .content
@@ -46,7 +45,9 @@ html(lang="en")
                       a.button.get-default-suggestions.answers__btn(href="#suggestions").go No
                 .slide.slide--three
                   form.form#last-fm-form
-                    label.form__label.flat What is your username?
+                    label.form__label.flat What is your 
+                      strong last.fm 
+                      | username?
                     .form__wrap
                       .form__error
                         #error-message This is an error message
@@ -64,4 +65,5 @@ html(lang="en")
           .collection
             .chart
           a.button.button--small.button--inactive(id="publish", href="#register") Publish
+    include login
 
