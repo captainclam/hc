@@ -84,6 +84,7 @@ $('.finder__clear').click ->
   $('.results__list').html('')
   $('.finder__input').focus()
   $('.finder__input').val('')
+  $('.spinner').show()
   if window.lastFmUsername
     window.getSuggestions()
   else
