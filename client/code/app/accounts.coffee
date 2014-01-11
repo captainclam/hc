@@ -30,7 +30,7 @@ register = ({email, username, password, chart}) ->
       $('.register__alert').html(res.message)
     
 logout = ->
-  ss.rpc 'app.logout', ->
+  ss.rpc 'auth.logout', ->
     window.location = '/'
 
 $('#login-form').submit (e) ->
