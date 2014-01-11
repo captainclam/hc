@@ -32,6 +32,7 @@ window.getSuggestions = (username) ->
   $('.app').addClass('app--finder')
   if username
     window.lastFmUsername = username
+    $('#register-form #username').val username
   data.user = username or window.lastFmUsername
   $.ajax(
     url: url
