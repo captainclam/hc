@@ -15,7 +15,6 @@ item-spacing = 2px
 html,
 body,
 .app,
-.module,
 .collection
   height: 100%
 
@@ -91,6 +90,9 @@ p
   text-decoration: none
   transition: all 0.25s ease
   opacity: 1
+
+.button--white
+  border-color: #fff
 
 .button--inactive
   cursor: default
@@ -316,11 +318,11 @@ p
    font-weight: normal
 
 .content
-  background-color: #2c2c2c
-  box-shadow: inset 0 2px 2px rgba(0,0,0,0.3)
+  background-color: rgba(0,0,0,0.8)
   position: absolute
   bottom: 0
   width: 100%
+  height: 100%
   top: 0
   overflow: hidden
 
@@ -393,17 +395,18 @@ p
 //   margin: 0 auto
 
 .module
-  display: none
-  height: 100%
+  top: 0
+  left: 100%
+  right: 0
+  bottom: 0
+  position: absolute
   padding: 10px
-  overflow: hidden
-  counter-reset: tally
+  opacity: 0
   transform: translateZ(0)
-  justify-content: center
-  align-items: center
 
 .module--active
-  display: block
+  opacity: 1
+  left: 0
 
 .module--collection
   padding-top: 10%
@@ -618,8 +621,8 @@ p
 .register__input
   height: 40px
   border: 0
-  border-radius: 3px;
-  background-color: #646464;
+  border-radius: 3px
+  background-color: #646464
   border: 1px solid rgb(46, 46, 46)
   transition: border-color 0.1s ease
   color: #fff
@@ -720,10 +723,24 @@ p
   .footer
     transform: translateY(-100px)
 
+.app--auth
+  .header
+    top: 0
+
+
 @import item
 @import success
 
 @media only screen and (min-width: 768px)
+
+  .controls
+    display: none
+    margin-right: 20px
+
+  .logo
+    position: absolute
+    top: 14px
+    left: 27px
 
   .slides
     width: 100%
@@ -781,9 +798,9 @@ p
       width: 100%
       display: flex
       height: 100%
-      border: 2px dashed #555;
+      border: 2px dashed #555
       padding: 5px
-      box-shadow: inset 0 2px 5px rgba(0,0,0,0.8);
+      box-shadow: inset 0 2px 5px rgba(0,0,0,0.8)
 
     .entry
       padding: 0
@@ -908,9 +925,6 @@ p
     &:first-child
       border-right: 1px solid rgba(255,255,255,0.4)
 
-  .module
-    padding: 20px
-
   .bg-image
     background-size: cover
     background-image: url("/img/performer.jpg")
@@ -982,7 +996,7 @@ p
     padding: 0 30px
     height: 100%
     display: flex
-    justify-content: space-between
+    justify-content: flex-end
     align-items: center
 
   .content
@@ -1030,7 +1044,7 @@ p
     line-height: 44px
   
   .finder
-    margin-left: 120px
+    margin-left: 150px
     margin-right: 40px
     transition: all 0.3s ease
 
@@ -1077,9 +1091,6 @@ p
     padding: 0
     float: left
     padding: 5px
-    &:first-child
-      width: 50%
-      height: 100%
 
   .entry__thumb
     width: calc(100% - 10px)

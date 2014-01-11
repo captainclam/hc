@@ -1,12 +1,14 @@
 window.loginSuccess = (user) ->
-  $('.login-link').hide()
-  $('.logout-link').show()
-  $('.app').removeClass('app--login')
-  collectionView.model = user.chart
-  collectionView.render()
-  Nav.go 'collection'
-  $('.finder').hide()
-  $('.footer').hide()
+  # $('.app').addClass('app--auth')
+  # $('.app').removeClass('app--login')
+  # $('.login-link').hide()
+  # $('.logout-link').show()
+  # collectionView.model = user.chart
+  # collectionView.render()
+  # Nav.go 'collection'
+  # $('.finder').hide()
+  # $('.footer').hide()
+  window.location = '/' + user.username
 
 window.checkUsername = (username, cb) ->
   ss.rpc 'app.checkUsername', username, cb
@@ -28,8 +30,7 @@ register = ({email, username, password, chart}) ->
     
 logout = ->
   ss.rpc 'app.logout', ->
-    Nav.go 'lastfm'
-    window.location.reload()
+    window.location = '/'
 
 $('#login-form').submit (e) ->
   e.preventDefault()
@@ -56,3 +57,9 @@ $('.register #username').keyup _.debounce (e) ->
 , 500
 
 # Nav.go 'register'
+
+ss.rpc 'app.getCurrentUser', (user) ->
+  if user
+    publicProfile(user.username)
+  # else
+  #   Nav.go 'lastfm'

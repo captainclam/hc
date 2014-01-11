@@ -9,21 +9,17 @@ html(lang="en")
     link(rel="stylesheet",href="font-awesome/css/font-awesome.css")
     link(rel="stylesheet",href="animations.css")
   body
-    #finder.app
+    .app.bg-image
       include header
       .content
         //- .tip Remember to use the search box above to find any album!
         //-   i.fa.fa-times-circle.tip__hide
+        .module.module--active#splash
         .module.module--spaced#collection
             ul.chart.entries
-        .module.search
-          .module__title Searching for 
-            span#query some
-          .container.results__list
-        .module.module--active.landing.bg-image#lastfm
+        .module.landing#lastfm
           .lastfm
-          .landing__img
-          .container.alert__container.bg-image-content
+          .container.alert__container-content
             .slides
               .slides__slider
                 .slide
@@ -52,9 +48,8 @@ html(lang="en")
                       input(type="text",id="last-fm-username",autocomplete="off",class="form__input",placeholder="Enter your username")
                       button(type="submit").button.button--block.button--filled Show your most played
                   a.get-default-suggestions(href="#suggestions").alert__cancel.go I don't use last.fm, continue with default suggestions.
-        .module#register.bg-image
-          .landing__img
-          .container.alert__container.bg-image-content
+        .module#register
+          .container.alert__container-content
             include register
         .module.module--spaced#suggestions
           #suggestions-list.results__list

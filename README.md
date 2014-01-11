@@ -4,7 +4,7 @@
 - ~~Fix last fm suggestion input~~
 - ~~Improve the item grid~~
 - ~~Make collection tray prettier~~
-- Logged in (profile view) / Logged out (landing page)
+- ~~Logged in (profile view) / Logged out (landing page)~~
 - Login form
 - Success register takes user to their logged in landing page (profile view)
 - ~~Clear suggestions prints default suggestions if no lastfm account~~

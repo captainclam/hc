@@ -1,5 +1,6 @@
 
 require '/nav'
+# Nav.go 'splash'
 require '/accounts'
 require '/finder'
 require '/collectionView'
@@ -7,8 +8,6 @@ require '/publicProfile'
 require '/suggestions'
 
 slideCount = 0
-
-ss.rpc 'app.getCurrentUser', (user) -> if user then $('.logout').show()
 
 $(".next-slide").click ->
   slideCount++
