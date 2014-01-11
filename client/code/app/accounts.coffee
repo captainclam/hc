@@ -1,4 +1,6 @@
-
+window.checkUsername = (username) ->
+  ss.rpc 'app.checkUsername', username, (exists) ->
+    console.log username, exists
 
 window.login = ({email, password, user}) ->
   ss.rpc 'app.authenticate', email, password, ({success, message, user}) ->
@@ -13,14 +15,15 @@ window.login = ({email, password, user}) ->
 
 register = ({email, username, password, chart}) ->
   ss.rpc 'app.register', {email, username, password, chart} , (res) ->
-    console.log res
-    if res is 'OK'
+    if res.success
       window.currentUser = {email, username, password, chart}
       login
         email: $(this).find('input#email').val()
         password: $(this).find('input#password').val()
       $('.login-link').hide()
       $('.logout-link').show()
+    else
+      alert res.message
     
 logout = ->
   ss.rpc 'app.logout', ->
@@ -43,3 +46,9 @@ $('#register-form').submit (e) ->
     chart: collectionView.model
 
 $('.logout-link').click logout
+
+$('.register #username').keyup _.debounce (e) ->
+  v = $(e.target).value
+  checkUsername v, (exists) ->
+    console.log 'ayyyyy', v, exists
+, 500

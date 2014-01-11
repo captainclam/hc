@@ -41,17 +41,16 @@ exports.actions = (req, res, ss) ->
     if details and validEmail.test details.email
       User.findOne {username: details.username}, (err, existingUser) ->
         if existingUser?
-          console.log 'ERROR: username is taken'
-          res 'ERROR: username is taken'
+          res success: false, message: 'That username is already taken'
         else
           console.log 'OK'
           user = new User details
           user.save (err) ->
             throw err if err
-            res 'OK'
+            res success: true, user: user
     else
       console.log 'ERROR: no user supplied'
-      res 'ERROR: no user supplied'
+      res success: false, message: 'Please provide the required detais'
 
   updateProfile: ->
     User.findOne {_id: req.session.userId}, (err, user) ->
@@ -62,3 +61,14 @@ exports.actions = (req, res, ss) ->
       user.save (err) ->
         throw err if err
         res 'OK'
+
+  checkUsername: (username) ->
+    console.log username
+    User.findOne {username}, (err, user) ->
+      console.error err
+      console.log user
+      res user?
+
+
+
+
