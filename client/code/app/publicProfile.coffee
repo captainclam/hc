@@ -1,7 +1,7 @@
 window.publicProfile = (username) ->
   username ?= window.location.pathname.substring(1)
   return unless username
-  ss.rpc 'app.getCollection', {username}, ({success, user, message}) ->
+  ss.rpc 'auth.getCollection', {username}, ({success, user, message}) ->
     if success
       $('.controls').show()
       $('.app').addClass('app--auth')
@@ -20,6 +20,4 @@ window.publicProfile = (username) ->
       Nav.go 'collection'
       # alert 'yay! #1' + user.chart[0].title
     else
-      alert 'boo! ' + message
-
-setTimeout publicProfile, 10
+      console.warn 'publicProfile fail ' + message

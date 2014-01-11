@@ -47,3 +47,9 @@ ss.rpc 'app.getCollection', {username: 'jsncbt'}, ({success, user}) ->
 
 There are also helper functions login(), register(), logout() which moslty just wrap the above RPC calls
 
+
+# IDEA
+
+- ability to LABEL a chart, then show other charts with that same label! e.g. "Best 5 albums of 2013", "Top 10 Rappers", "5 artists to watch in 2014"
+- artist/track switcher might be best.
+- comments on each entry?

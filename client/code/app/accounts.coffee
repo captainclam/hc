@@ -11,16 +11,16 @@ window.loginSuccess = (user) ->
   window.location = '/' + user.username
 
 window.checkUsername = (username, cb) ->
-  ss.rpc 'app.checkUsername', username, cb
+  ss.rpc 'auth.checkUsername', username, cb
 
-window.login = ({email, password}) ->
-  ss.rpc 'app.authenticate', email, password, ({success, message, user}) ->
+window.login = ({email, password, user}) ->
+  ss.rpc 'auth.login', {email, password}, ({success, message, user}) ->
     console.log 'login response', success, message
     if success
       loginSuccess(user)
 
 register = ({email, username, password, chart}) ->
-  ss.rpc 'app.register', {email, username, password, chart} , (res) ->
+  ss.rpc 'auth.register', {email, username, password, chart} , (res) ->
     if res.success
       window.currentUser = {email, username, password, chart}
       loginSuccess(currentUser)
@@ -61,5 +61,5 @@ $('.register #username').keyup _.debounce (e) ->
 ss.rpc 'app.getCurrentUser', (user) ->
   if user
     publicProfile(user.username)
-  # else
-  #   Nav.go 'lastfm'
+  else
+    Nav.go 'lastfm'
