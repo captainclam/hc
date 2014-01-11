@@ -13,7 +13,7 @@
     background-color: #222
     color: darken(green,20%)
   .item__thumb img
-    animation: fadeOutDown 0.8s ease forwards
+    opacity: 0.1
 
 .item--selected:before
   position: absolute
@@ -30,11 +30,8 @@
   text-align: center
   line-height: 32px
   font-size: 18px
-  opacity: 0
-  animation: fadeIn 0.5s 0.75s ease forwards
   background-color: #fff
   border-radius: 30px
-  transition: opacity 0.5s ease
 
 .item__overlay
   position: absolute
@@ -147,11 +144,8 @@
     text-align: center
     line-height: 60px
     font-size: 32px
-    opacity: 0
-    animation: fadeIn 0.5s 0.75s ease forwards
     background-color: #111
     border-radius: 30px
-    transition: opacity 0.5s 0.2s ease
 
   .item--selected .item__remove
     opacity: 1
