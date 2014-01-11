@@ -76,7 +76,7 @@ $('.get-default-suggestions').click ->
   # Shitty hack to fix animation delay since default suggestions load so fast and opacity ) trick fucks out masonry
   setTimeout (->
     printSuggestions defaultSuggestions
-  ), 1500
+  ), 300
   $('.finder').show()
 
 window.defaultSuggestions = [
