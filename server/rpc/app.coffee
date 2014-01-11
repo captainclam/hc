@@ -47,6 +47,7 @@ exports.actions = (req, res, ss) ->
           user = new User details
           user.save (err) ->
             throw err if err
+            req.session.setUserId user._id
             res success: true, user: user
     else
       console.log 'ERROR: no user supplied'
