@@ -569,18 +569,22 @@ p
   // margin-top: -25px - WTF WAS THIS FOR?
   transition: transform 0.25s ease
 
+.register__window
+  position: relative
+
 .register--alert
   transform: translateY(50px)
 
 .register__alert
+  display: none
   height: 50px
-  display: flex
-  align-items: center
-  padding: 0 10px
   color: #fff
-  margin-bottom: 10px
-  font-size: 14px
-  font-weight: bold
+  text-align: center
+  position: absolute
+  top: -50px
+  width: 100%
+  font-size: 18px
+  animation: fadeInUp 0.25s ease
 
 .register__alert--error
   background-color: orange

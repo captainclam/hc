@@ -23,7 +23,8 @@ register = ({email, username, password, chart}) ->
       $('.login-link').hide()
       $('.logout-link').show()
     else
-      alert res.message
+      $('.register__alert').show()
+      $('.register__alert').html(res.message)
     
 logout = ->
   ss.rpc 'app.logout', ->
@@ -47,8 +48,10 @@ $('#register-form').submit (e) ->
 
 $('.logout-link').click logout
 
-$('.register #username').keyup _.debounce (e) ->
-  v = $(e.target).value
-  checkUsername v, (exists) ->
-    console.log 'ayyyyy', v, exists
-, 500
+Nav.go ('register')
+
+# $('.register #username').keyup _.debounce (e) ->
+#   v = $(e.target).value
+#   checkUsername v, (exists) ->
+#     console.log 'ayyyyy', v, exists
+# , 500
