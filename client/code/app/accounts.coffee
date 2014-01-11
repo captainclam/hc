@@ -25,6 +25,7 @@ register = ({email, username, password, chart}) ->
       window.currentUser = {email, username, password, chart}
       loginSuccess(currentUser)
     else
+      console.log ({email, username, password, chart})
       $('.register__alert').show()
       $('.register__alert').html(res.message)
     

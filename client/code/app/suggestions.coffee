@@ -70,6 +70,7 @@ lastFmForm.submit (e) ->
   e.preventDefault()
   username = lastFmForm.find('#last-fm-username').val()
   getSuggestions username
+  $('.lastfm').removeClass('lastfm--visible')
 
 $('.get-default-suggestions').click ->
   $('.app').addClass('app--finder')

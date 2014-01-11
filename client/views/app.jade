@@ -19,7 +19,7 @@ html(lang="en")
         .module.module--spaced#collection
             ul.chart.entries
         .module.landing#lastfm
-          .container.alert__container-content
+          .container
             .slides
               .slides__slider
                 .slide
@@ -49,9 +49,9 @@ html(lang="en")
                       button(type="submit").button.button--block.button--filled Show your most played
                   a.get-default-suggestions(href="#suggestions").alert__cancel.go I don't use last.fm, continue with default suggestions.
         .module#register
-          .container.alert__container-content
+          .container
             include register
-        .module.module--spaced#suggestions
+        .module.module--spaced.module--blocked#suggestions
           #suggestions-list.results__list
           //- .spinner
             .rect1
