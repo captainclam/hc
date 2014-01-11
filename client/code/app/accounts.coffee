@@ -1,6 +1,5 @@
-window.checkUsername = (username) ->
-  ss.rpc 'app.checkUsername', username, (exists) ->
-    console.log username, exists
+window.checkUsername = (username, cb) ->
+  ss.rpc 'app.checkUsername', username, cb
 
 window.login = ({email, password, user}) ->
   ss.rpc 'app.authenticate', email, password, ({success, message, user}) ->
@@ -48,10 +47,9 @@ $('#register-form').submit (e) ->
 
 $('.logout-link').click logout
 
-Nav.go ('register')
-
-# $('.register #username').keyup _.debounce (e) ->
-#   v = $(e.target).value
-#   checkUsername v, (exists) ->
-#     console.log 'ayyyyy', v, exists
-# , 500
+$('.register #username').keyup _.debounce (e) ->
+  username = @value
+  checkUsername username, (exists) ->
+    # console.log 'checkUsername', username, exists
+    $('.register__check').toggleClass 'register__check--error', exists
+, 500
