@@ -75,6 +75,7 @@ lastFmForm.submit (e) ->
 
 $('.get-default-suggestions').click ->
   $('.app').addClass('app--finder')
+  $('.lastfm').removeClass('lastfm--visible')
   # Shitty hack to fix animation delay since default suggestions load so fast and opacity ) trick fucks out masonry
   setTimeout (->
     printSuggestions _.shuffle defaultSuggestions

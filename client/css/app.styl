@@ -658,8 +658,8 @@ p
   position: absolute
   width: 40px
   height: 40px
-  background: #111
-  color: orange
+  background: #E9E9E9
+  color: #555
   right: 0
   bottom: 0
   display: flex
@@ -710,6 +710,11 @@ p
   padding: 10px
   border-left: 1px solid rgb(68, 68, 68)
   box-shadow: inset 2px 0 5px rgba(0,0,0,0.4)
+
+.module--blocked
+  display: block
+  overflow-y: auto
+  padding-bottom: 200px
 
 @-webkit-keyframes stretchdelay
   0%
@@ -1110,6 +1115,7 @@ p
 
   .entries
     counter-reset: tally
+    width: 100%
 
   .entry
     counter-increment: tally

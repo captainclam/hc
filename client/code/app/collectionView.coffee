@@ -41,5 +41,6 @@ $('#publish').click (e) ->
     Nav.go 'register'
     $('.finder').hide()
     $('.login-link').hide()
+    $('.register #email').focus()
   else
     return
