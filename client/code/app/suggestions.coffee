@@ -1,22 +1,22 @@
+doMasonry = ->
+  container = $("#suggestions-list").get 0
+  msnry = new Masonry container,
+    isFitWidth: true
+    isResizeBound: true
+    itemSelector: ".item"
+
 window.printSuggestions = (suggestions) ->
   for suggestion in suggestions then do (suggestion) ->
     el = $ ss.tmpl['chart-suggestion'].render suggestion
     $('.item__thumb img').load ->
       $(this).parent('item__thumb').addClass('item__thumb--loaded')
-    container = document.querySelector("#suggestions-list")
-    msnry = new Masonry(container,
-      
-      # options
-      isFitWidth: true
-      isResizeBound: true
-      itemSelector: ".item"
-    )
     el.click ->
       if collectionView.model.length is 5
         return
       $(this).addClass('item--selected')
       collectionView.add suggestion
     $('#suggestions-list').append el
+  doMasonry()
 
 # todo: refactor this into a data layer. see finder
 url = 'http://ws.audioscrobbler.com/2.0/'
