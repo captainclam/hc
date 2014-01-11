@@ -1,32 +1,19 @@
-
 require '/nav'
-# Nav.go 'splash'
 require '/accounts'
 require '/finder'
 require '/collectionView'
 require '/publicProfile'
 require '/suggestions'
+require '/lastFm'
 
-slideCount = 0
-
-$(".next-slide").click ->
-  slideCount++
-  $(".slides__slider").addClass "slides__slider--" + slideCount
-  if $(this).attr("id") is "yes"
-    setTimeout (->
-      $('#last-fm-username').focus()
-    ), 100
-    $('.lastfm').addClass('lastfm--visible')
-
-$(".login-link").click ->
-  $('.app').toggleClass "app--login"
-  $('.login #email').focus()
-
-
+# bootstrap
 ss.rpc 'auth.getCurrentUser', (user) ->
-  if user
-    publicProfile user.username
-  else if username = window.location.pathname.substring(1)
+  if username = window.location.pathname.substring(1)
+    # viewing someone elses profile?
     publicProfile username
+  else if user
+    # logged in, show own profile
+    publicProfile user.username
   else
+    # not logged in, default to lastfm suggestion module
     Nav.go 'lastfm'

@@ -57,5 +57,7 @@ $('.register #username').keyup _.debounce (e) ->
     $('.register__check').toggleClass 'register__check--error', exists
 , 500
 
-# Nav.go 'register'
+$(".login-link").click ->
+  $('.app').toggleClass "app--login"
+  $('.login #email').focus()
 
