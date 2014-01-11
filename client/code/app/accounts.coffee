@@ -1,26 +1,27 @@
+window.loginSuccess = (user) ->
+  $('.login-link').hide()
+  $('.logout-link').show()
+  $('.app').removeClass('app--login')
+  collectionView.model = user.chart
+  collectionView.render()
+  Nav.go 'collection'
+  $('.finder').hide()
+  $('.footer').hide()
+
 window.checkUsername = (username, cb) ->
   ss.rpc 'app.checkUsername', username, cb
 
-window.login = ({email, password, user}) ->
+window.login = ({email, password}) ->
   ss.rpc 'app.authenticate', email, password, ({success, message, user}) ->
     console.log 'login response', success, message
     if success
-      $('.login-link').hide()
-      $('.logout-link').show()
-      $('.app').removeClass('app--login')
-      collectionView.model = user.chart
-      collectionView.render()
-      Nav.go 'collection'
+      loginSuccess(user)
 
 register = ({email, username, password, chart}) ->
   ss.rpc 'app.register', {email, username, password, chart} , (res) ->
     if res.success
       window.currentUser = {email, username, password, chart}
-      login
-        email: $(this).find('input#email').val()
-        password: $(this).find('input#password').val()
-      $('.login-link').hide()
-      $('.logout-link').show()
+      loginSuccess(currentUser)
     else
       $('.register__alert').show()
       $('.register__alert').html(res.message)
@@ -33,7 +34,7 @@ logout = ->
 $('#login-form').submit (e) ->
   e.preventDefault()
   login
-    username: $(this).find('input#username').val()
+    email: $(this).find('input#email').val()
     password: $(this).find('input#password').val()
   Nav.go 'collection'
 
@@ -53,3 +54,5 @@ $('.register #username').keyup _.debounce (e) ->
     # console.log 'checkUsername', username, exists
     $('.register__check').toggleClass 'register__check--error', exists
 , 500
+
+# Nav.go 'register'

@@ -1,8 +1,14 @@
 {
-	"folders":
-	[
-		{
-			"path": "/Users/jasoncorbett/Sites/hc"
-		}
-	]
+  "folders":
+  [
+    {
+      "folder_exclude_patterns":
+      [
+        "bower_components",
+        "node_modules",
+        "client/code/libs"
+      ],
+      "path": "/Users/jasoncorbett/Sites/hc"
+    }
+  ]
 }

@@ -21,3 +21,4 @@ $(".next-slide").click ->
 
 $(".login-link").click ->
   $('.app').toggleClass "app--login"
+  $('.login #email').focus()
