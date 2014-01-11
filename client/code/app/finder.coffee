@@ -88,4 +88,4 @@ $('.finder__clear').click ->
   if window.lastFmUsername
     window.getSuggestions()
   else
-    window.printSuggestions window.defaultSuggestions
+    window.printSuggestions _.shuffle window.defaultSuggestions
