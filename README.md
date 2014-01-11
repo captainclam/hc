@@ -14,6 +14,7 @@
 - Unlogged in profile views show a create your own chart link and users username
 - ~~Login form to check for email/password~~
 - Tidy up mobile view
+- Bind Nav to proper pushState history, router, something for nav
 
 # HipCharts
 
