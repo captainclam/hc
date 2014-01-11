@@ -25,6 +25,8 @@ $(".login-link").click ->
 
 ss.rpc 'auth.getCurrentUser', (user) ->
   if user
-    publicProfile(user.username)
+    publicProfile user.username
+  else if username = window.location.pathname.substring(1)
+    publicProfile username
   else
     Nav.go 'lastfm'
