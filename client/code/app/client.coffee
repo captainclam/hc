@@ -8,7 +8,7 @@ require '/suggestions'
 
 slideCount = 0
 
-ss.rpc 'app.getCurrentUser', (user) -> if user then $('.logout').show()
+ss.rpc 'auth.getCurrentUser', (user) -> if user then $('.logout').show()
 
 $(".next-slide").click ->
   slideCount++

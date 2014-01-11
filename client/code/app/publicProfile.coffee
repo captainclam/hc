@@ -1,7 +1,7 @@
 window.publicProfile = ->
 	username = window.location.pathname.substring(1)
 	return unless username
-	ss.rpc 'app.getCollection', {username}, ({success, user, message}) ->
+	ss.rpc 'auth.getCollection', {username}, ({success, user, message}) ->
 		if success
 			$('.app').addClass('app--start')
 			$('.header__action').hide()

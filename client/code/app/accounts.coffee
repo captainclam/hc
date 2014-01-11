@@ -1,8 +1,8 @@
 window.checkUsername = (username, cb) ->
-  ss.rpc 'app.checkUsername', username, cb
+  ss.rpc 'auth.checkUsername', username, cb
 
 window.login = ({email, password, user}) ->
-  ss.rpc 'app.authenticate', email, password, ({success, message, user}) ->
+  ss.rpc 'auth.login', {email, password}, ({success, message, user}) ->
     console.log 'login response', success, message
     if success
       $('.login-link').hide()
@@ -13,7 +13,7 @@ window.login = ({email, password, user}) ->
       Nav.go 'collection'
 
 register = ({email, username, password, chart}) ->
-  ss.rpc 'app.register', {email, username, password, chart} , (res) ->
+  ss.rpc 'auth.register', {email, username, password, chart} , (res) ->
     if res.success
       window.currentUser = {email, username, password, chart}
       login
@@ -26,7 +26,7 @@ register = ({email, username, password, chart}) ->
       $('.register__alert').html(res.message)
     
 logout = ->
-  ss.rpc 'app.logout', ->
+  ss.rpc 'auth.logout', ->
     Nav.go 'lastfm'
     window.location.reload()
 
