@@ -9,14 +9,14 @@ exports.actions = (req, res, ss) ->
       if err
         res success: false, message: err
       else
-        res success: true, {chart}
+        res success: true, chart: chart
 
-  # find: (details) ->
-  #   Chart.find details, (err, chart) ->
-  #     if err
-  #       res success: false, message: err
-  #     else
-  #       res success: true, {chart}
+  find: (details) ->
+    Chart.find details, (err, charts) ->
+      if err
+        res success: false, message: err
+      else
+        res success: true, charts: charts
 
   add: (details) ->
     chart = new Chart details
