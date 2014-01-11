@@ -39,7 +39,7 @@ exports.actions = (req, res, ss) ->
 
   register: (details, chartDetails) ->
     validEmail = /^[^\s@]+@[^\s,;@]+$/g
-    if details #and validEmail.test details.email
+    if details.username and details.password #and validEmail.test details.email
       User.findOne {username: details.username}, (err, existingUser) ->
         if existingUser?
           res success: false, message: 'That username is already taken'

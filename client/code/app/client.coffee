@@ -22,3 +22,9 @@ $(".login-link").click ->
   $('.app').toggleClass "app--login"
   $('.login #email').focus()
 
+
+ss.rpc 'auth.getCurrentUser', (user) ->
+  if user
+    publicProfile(user.username)
+  else
+    Nav.go 'lastfm'

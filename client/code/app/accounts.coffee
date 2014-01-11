@@ -58,8 +58,3 @@ $('.register #username').keyup _.debounce (e) ->
 
 # Nav.go 'register'
 
-ss.rpc 'app.getCurrentUser', (user) ->
-  if user
-    publicProfile(user.username)
-  else
-    Nav.go 'lastfm'

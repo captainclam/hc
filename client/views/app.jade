@@ -14,11 +14,11 @@ html(lang="en")
       .content
         //- .tip Remember to use the search box above to find any album!
         //-   i.fa.fa-times-circle.tip__hide
+        .lastfm
         .module.module--active#splash
         .module.module--spaced#collection
             ul.chart.entries
         .module.landing#lastfm
-          .lastfm
           .container.alert__container-content
             .slides
               .slides__slider
@@ -53,7 +53,7 @@ html(lang="en")
             include register
         .module.module--spaced#suggestions
           #suggestions-list.results__list
-          .spinner
+          //- .spinner
             .rect1
             .rect2
             .rect3
