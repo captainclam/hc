@@ -1,4 +1,5 @@
 User = require '../models/user'
+Chart = require '../models/chart'
 
 exports.actions = (req, res, ss) ->
 
@@ -36,9 +37,9 @@ exports.actions = (req, res, ss) ->
           success: false
           message: 'User not found'
 
-  register: (details) ->
+  register: (details, chartDetails) ->
     validEmail = /^[^\s@]+@[^\s,;@]+$/g
-    if details and validEmail.test details.email
+    if details #and validEmail.test details.email
       User.findOne {username: details.username}, (err, existingUser) ->
         if existingUser?
           res success: false, message: 'That username is already taken'
@@ -47,8 +48,11 @@ exports.actions = (req, res, ss) ->
           user = new User details
           user.save (err) ->
             throw err if err
-            req.session.setUserId user._id
-            res success: true, user: user
+            chart = new Chart chartDetails
+            chart.save (err) ->
+              throw err if err
+              req.session.setUserId user._id
+              res success: true, user: user
     else
       console.log 'ERROR: no user supplied'
       res success: false, message: 'Please provide the required detais'
