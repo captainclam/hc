@@ -1,5 +1,5 @@
-doMasonry = (el) ->
-  container = $(el).get 0
+doMasonry = ->
+  container = $("#suggestions-list").get 0
   msnry = new Masonry container,
     isFitWidth: true
     isResizeBound: true
