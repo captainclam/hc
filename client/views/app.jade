@@ -17,19 +17,43 @@ html(lang="en")
         .lastfm
         .module.module--active#splash
         .module.module--spaced.module--blocked#collection
-            ul.chart.entries
-        .module.landing#lastfm
+          ul.chart.entries
+        .module.module--spaced.module--blocked#options
+          .options
+            a(href="#lastfm").option.go
+              h2.option__title Top Five
+                stong.option__type albums
+              h3.option__year 2013
+            a(href="#").option.option--disabled
+              h2.option__title Top Five
+                stong.option__type songs
+              h3.option__year 2013
+            a(href="#").option.option--disabled
+              h2.option__title Top Five
+                stong.option__type games
+              h3.option__year 2013
+            a(href="#").option.option--disabled
+              h2.option__title Top Five
+                stong.option__type movies
+              h3.option__year 2013
+            a(href="#").option.option--disabled
+              h2.option__title Top Five
+                stong.option__type books
+              h3.option__year 2013
+        .module#landing
+          .container
+            .landing
+              .landing__logo
+              h1.landing__title Hipcharts 
+              h2.landing__strap Create your 
+                strong top fives 
+                | and contribute to real time social charts!
+              a(href="#options").button.button--large.go.show-options Create your first chart
+        .module#lastfm
           .container
             .slides
               .slides__slider
                 .slide
-                  .landing__logo
-                  h1.landing__title Hipcharts 
-                  h2.landing__strap Create your 
-                    strong top fives 
-                    | and contribute to real time social charts!
-                  a(href="#").button.button--large.next-slide Start charting
-                .slide.slide--two
                   form.form
                     label.form__label Would you like to use 
                       strong last.fm 
@@ -37,7 +61,7 @@ html(lang="en")
                     .form__wrap.answers
                       a.button.button--filled.next-slide.answers__btn(id="yes") Yes
                       a.button.get-default-suggestions.answers__btn(href="#suggestions").go No
-                .slide.slide--three
+                .slide.slide--two
                   form.form#last-fm-form
                     label.form__label.flat What is your 
                       strong last.fm 
@@ -63,6 +87,6 @@ html(lang="en")
           .collection__title What were your top five albums of 2013?
           .collection
             .chart
-          a.button.button--small.button--inactive(id="publish", href="#register") Publish
+          a.button.button--small.button--disabled(id="publish", href="#register") Publish
     include login
 

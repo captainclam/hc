@@ -1,0 +1,71 @@
+
+.options
+  display: flex
+  flex-wrap: wrap
+
+.option
+  width: 270px
+  height: 270px
+  background-color: rgba(255,255,255,0.2)
+  border-radius: 5px
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-direction: column
+  border: 1px solid #5E5E5E
+  margin-bottom: 10px
+  margin-left: 10px
+  cursor: pointer
+  position: relative
+  overflow: hidden
+  text-decoration: none
+  &:before
+    display: block
+    position: absolute
+    bottom: -40px
+    right: 0
+    left: 0
+    height: 40px
+    background-color: #000
+    color: #fff
+    content: 'Start charting'
+    line-height: 40px
+    text-align: center
+    font-size: 13px
+    text-transform: uppercase
+    border-radius: 0 0 5px 5px
+    transition: transform 0.25s ease
+
+.option--disabled
+  opacity: 0.4
+  &:before
+    content: 'Coming soon'
+
+.option:hover
+  &:before
+    transform: translateY(-40px)
+
+
+.option__title
+  text-transform: uppercase
+  font-size: 14px
+  text-align: center
+  line-height: 1.2
+  font-weight: bold
+  letter-spacing: 8px
+  color: #fff
+  margin-bottom: 0
+  font-family: 'Roboto'
+
+.option__type
+  letter-spacing: 0
+  font-size: 34px
+  display: block
+  color: orange
+
+.option__year
+  font-size: 66px
+  color: #999
+  font-family: 'Helvetica Neue', sans-serif
+  font-weight: 100
+  margin-bottom: 0

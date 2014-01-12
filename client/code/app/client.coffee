@@ -16,4 +16,7 @@ ss.rpc 'auth.getCurrentUser', (user) ->
     publicProfile user.username
   else
     # not logged in, default to lastfm suggestion module
-    Nav.go 'lastfm'
+    Nav.go 'landing'
+
+$('.show-options').click ->
+  $('.header').addClass('header--visible')

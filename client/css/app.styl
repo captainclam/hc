@@ -757,9 +757,9 @@ p
   .header
     top: 0
 
-
 @import item
 @import success
+@import options
 
 @media only screen and (min-width: 768px)
 
@@ -961,6 +961,12 @@ p
     background-size: cover
     background-image: url("/img/performer.jpg")
 
+  .landing
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
   .landing__logo
     width: 150px
     height: 150px
@@ -1022,6 +1028,9 @@ p
   .header
     height: 64px
     overflow: hidden
+  
+  .header--visible
+    transform: translateY(64px)
 
   .header__question
     font-size: 20px
