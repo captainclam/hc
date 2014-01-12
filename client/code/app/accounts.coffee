@@ -17,6 +17,7 @@ window.login = ({email, password, user}) ->
   ss.rpc 'auth.login', {email, password}, ({success, message, user}) ->
     console.log 'login response', success, message
     if success
+      $('.app').removeClass('app--login')
       loginSuccess(user)
 
 register = ({email, username, password, chart}) ->
