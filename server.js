@@ -28,7 +28,7 @@
   ss.client.define('main', {
     view: 'app.jade',
     css: ['app.styl'],
-    code: ['libs/jquery.min.js', 'libs/underscore.min.js', 'libs/fastclick.js', 'libs/keymaster.js', 'libs/masonry.js', 'app'],
+    code: ['libs/jquery.min.js', 'libs/underscore.min.js', 'libs/fastclick.js', 'libs/history.js', 'libs/keymaster.js', 'libs/masonry.js', 'app'],
     tmpl: '*'
   });
 
