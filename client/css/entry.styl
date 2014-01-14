@@ -1,0 +1,145 @@
+.radial
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  z-index: 200
+  background: radial-gradient(transparent,black)
+
+.entries
+  position: absolute
+  width: 100%
+  left: 0
+  transform: translateZ(0)
+  transition: transform 0.3s ease
+
+.entry
+  position: absolute
+  left: 0
+  width: 100%
+  top: 0
+
+.entry:nth-child(2)
+  left: 100%
+
+.entry:nth-child(3)
+  left: 200%
+
+.entry:nth-child(4)
+  left: 300%
+
+.entry:nth-child(5)
+  left: 400%
+
+.entry
+  flex-wrap: wrap
+  padding: 10px
+  padding-top: 80px
+  &:before
+    position: absolute
+    top: 0
+    left: 50%
+    margin-left: -25px
+    width: 50px
+    height: 50px
+    font-size: 75px
+    text-align: center
+    content: '5'
+    display: block
+    color: rgba(255,255,255,0.1)
+  &:after
+    position: absolute
+    top: 40px
+    width: 100%
+    text-align: center
+    color: #fff
+    font-size: 13px
+    font-family: 'Helvetica Neue'
+    text-transform: uppercase
+    content: 'Number five'
+    display: block
+    letter-spacing: 10px
+
+.entry__counter
+  position: absolute
+  top: 10px
+  left: 10px
+  color: #fff
+  font-weight: bold
+  text-shadow: 0 1px 1px rgba(0,0,0,0.8)
+  line-height: 60px
+  text-align: center
+  width: 0px
+  height: 0px
+  border-style: solid
+  border-width: 60px 60px 0 0
+  border-color: orange transparent transparent transparent
+
+.entry__details
+  text-align: center
+
+.entry__title
+  font-weight: bold
+  overflow: hidden
+
+.entry__subtitle
+  font-weight: normal
+  font-size: 14px
+  color: #999
+
+.entry__thumb
+  width: 260px
+  height: 260px
+  background-size: cover
+  margin: 0 auto
+  margin-bottom: 20px
+  position: relative
+  z-index: 20
+
+.nav
+  display: none
+
+@media only screen and (min-width: 768px)
+  
+  .nav
+    display: flex
+    align-items: center
+    justify-content: center
+    height: 150px
+    position: absolute
+    bottom: 0
+    width: 100%
+    left: 0
+    right: 0
+    z-index: 300
+
+  .chart-toggle
+    margin-left: 20px
+  
+  .entries
+    top: 50%
+    margin-top: -203px
+
+  .entry:before
+    font-size: 140px
+    top: -100px
+
+  .entry:after
+    top: -13px
+
+  .entry:nth-child(2)
+    left: 50%
+
+  .entry:nth-child(3)
+    left: 100%
+
+  .entry:nth-child(4)
+    left: 150%
+
+  .entry:nth-child(5)
+    left: 200%
+
+  .entry__thumb
+    width: 300px
+    height: 300px

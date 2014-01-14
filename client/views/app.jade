@@ -17,7 +17,11 @@ html(lang="en")
         .lastfm
         .module.module--active#splash
         .module.module--spaced.module--blocked#collection
+          .radial
           ul.chart.entries
+          .nav
+            a.button.button--white.button--inactive.chart-toggle(href="#prev") Prev
+            a.button.chart-toggle(href="#next") Next
         .module.module--spaced.module--blocked#options
           .options
             a(href="#lastfm").option.go
@@ -40,7 +44,7 @@ html(lang="en")
               h2.option__title Top Five
                 stong.option__type books
               h3.option__year 2013
-        .module#landing
+        .module.module--landing#landing
           .container
             .landing
               .landing__logo
