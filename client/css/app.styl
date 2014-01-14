@@ -64,6 +64,15 @@ p
   display: none
   color: #fff
 
+.bg-image
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center
+
+.bg-image-content
+  position: relative
+  z-index: 200
+
 .login-link
   display: block
 
@@ -953,16 +962,6 @@ p
     padding: 0 20px
     &:first-child
       border-right: 1px solid rgba(255,255,255,0.4)
-
-  .bg-image
-    background-size: cover
-    background-repeat: no-repeat
-    background-position: center
-    // background-image: url("/img/performer.jpg")
-
-  .bg-image-content
-    position: relative
-    z-index: 200
 
   .logo:before
     content: 'Hipcharts'
