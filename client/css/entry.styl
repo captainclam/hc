@@ -13,6 +13,7 @@
   left: 0
   transform: translateZ(0)
   transition: transform 0.3s ease
+  counter-reset: number
 
 .entry
   position: absolute
@@ -36,6 +37,7 @@
   flex-wrap: wrap
   padding: 10px
   padding-top: 80px
+  counter-increment: number
   &:before
     position: absolute
     top: 0
@@ -45,7 +47,7 @@
     height: 50px
     font-size: 75px
     text-align: center
-    content: '5'
+    content: counter(number)
     display: block
     color: rgba(255,255,255,0.1)
   &:after
