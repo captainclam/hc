@@ -29,6 +29,8 @@ window.publicProfile = (username) ->
       $('.finder').hide()
       $('.footer').hide()
       setBackground()
+      $('.header .collection').hide()
+      $('.controls').show()
       # alert 'yay! #1' + user.chart[0].title
     else
       console.warn 'publicProfile fail ' + message

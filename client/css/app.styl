@@ -18,6 +18,13 @@ body,
 .collection
   height: 100%
 
+.flex-column
+  display: flex
+  flex-direction: column
+
+.flex-it
+  flex: 1
+
 *
   margin: 0
   padding: 0
@@ -54,6 +61,7 @@ p
 .app
   transform: translateZ(0)
   transition: all 0.3s ease
+  overflow: hidden
   position: relative
   z-index: 10
 
@@ -63,6 +71,13 @@ p
 .header__link
   display: none
   color: #fff
+  height: 100%
+  line-height: 50px
+  border-left: 1px solid rgba(255,255,255,0.1)
+  padding: 0 20px
+  text-decoration: none
+  font-weight: bold
+  font-size: 14px
 
 .bg-image
   background-size: cover
@@ -118,8 +133,8 @@ p
   color: #fff
 
 .button--small
-  height: 44px
-  line-height: 44px
+  height: 36px
+  line-height: 36px
 
 .button--large
   height: 80px
@@ -163,7 +178,7 @@ p
   transition-delay: 0s
 
 .lastfm--visible
-  transform: translateY(-200px)
+  transform: translateY(-250px)
   transition-delay: 1s
 
 .form
@@ -234,20 +249,19 @@ p
 
 .header
   overflow: hidden
+  padding-right: 10px
   position: absolute
   width: 100%
-  z-index: 50
+  z-index: 500
   height: 44px
-  background: linear-gradient(darken(blue,5),blue)
-  box-shadow: 0 1px 1px rgba(0,0,0,0.4)
-  border-bottom: 1px solid #383838
-  top: -64px
+  background: linear-gradient(lighten(black,20),lighten(black,18))
+  border-top: 1px solid #4B4B4B
+  top: -50px
   transition: transform 0.25s 0.2s ease
 
 .header__wrap
   display: flex
   align-items: center
-  padding: 0 10px
 
 .header__question
   color: #fff
@@ -275,13 +289,13 @@ p
 .finder__clear
   position: absolute
   right: 20px
-  bottom: 13px
+  bottom: 8px
   color: red
 
 .finder__input
   width: 100%
   border: 0
-  height: 44px
+  height: 35px
   padding: 0 20px
   font-size: 14px
   background-color: #fff
@@ -415,7 +429,7 @@ p
   padding-top: 10%
 
 .module--spaced
-  padding-top: 43px
+  padding-bottom: 43px
 
 .module--landing
   background-color: #111
@@ -552,6 +566,10 @@ p
   transition: transform 0.25s ease
   max-width: 400px
   margin: 0 auto
+  background-color: rgb(46, 46, 46)
+  border-radius: 5px
+  box-shadow: 0 1px 4px rgba(0,0,0,0.4)
+  padding: 20px
 
 .register__window
   position: relative
@@ -581,6 +599,8 @@ p
   flex-direction: column-reverse
   margin-bottom: 20px
   position: relative
+  &:last-child
+    margin-bottom: 0
 
 .register__group--user:before
   content: 'hipcharts.com/u/'
@@ -701,16 +721,7 @@ p
     font-weight: 400
 
 .login
-  position: absolute
-  opacity: 0
-  transition: opacity 0.25s 0.25s ease
-  top: 0
-  right: 0
-  height: 100%
   width: 320px
-  padding: 10px
-  border-left: 1px solid rgb(68, 68, 68)
-  box-shadow: inset 2px 0 5px rgba(0,0,0,0.4)
 
 .module--blocked
   display: block
@@ -748,14 +759,12 @@ p
   opacity: 1
 
 .app--finder
-  .header
-    transform: translateY(64px)
-  .footer
-    transform: translateY(-100px)
+  // .footer
+  //   transform: translateY(-100px)
 
-.app--auth
-  .header
-    top: 0
+// .app--auth
+//   .header
+//     bottom: -50px
 
 @import item
 @import success
@@ -770,12 +779,9 @@ p
 
   .controls
     display: none
-    margin-right: 20px
-
-  .logo
+    right: 10px
     position: absolute
-    top: 14px
-    left: 27px
+    top: 5px
 
   .slides
     width: 100%
@@ -820,102 +826,20 @@ p
     left: 200%
 
   .collection
-    flex-basis: 400px
+    right: 10px
+    position: absolute
+    top: 0
+    height: 100%
     display: flex
-    flex-direction: column
-    justify-content: space-between
     border: 0
-    margin-right: 20px
-    background-color: #202020
-    counter-reset: chart
+    counter-reset: chart 2
+    align-items: center
 
-    .chart
-      width: 100%
-      display: flex
-      height: 100%
-      border: 2px dashed #555
-      padding: 5px
-      box-shadow: inset 0 2px 5px rgba(0,0,0,0.8)
+  .header .collection
+    display: none
 
-    .entry
-      position: relative
-      padding: 0
-      background: none
-      height: 100% !important
-      border-top: 0
-      margin: 1px
-      width: 20%
-      flex-basis: 20%
-      counter-increment: chart
-      left: 0 !important
-      &:after
-        position: absolute
-        top: 0
-        right: 0
-        color: #fff
-        font-family: 'Roboto'
-        font-weight: bold
-        font-size: 12px
-        width: 20px
-        height: 20px
-        line-height: 20px
-        text-align: center
-        content: counter(chart)
-        display: block
-        background-color: #333
-        border: 1px solid #222
-        border-top: 0
-        border-right: 0
-        letter-spacing: 0
-        z-index: 20
-      &:before
-        display: none
-      &:first-child
-        width: 20%
-
-    .entry__details
-      display: none
-
-    .entry__title
-      display: none
-
-    .entry__subtitle
-      display: none
-
-    .entry__thumb
-      margin-right: 0
-      box-shadow: 0 2px 1px rgba(0,0,0,0.4)
-      cursor: pointer
-      top: 0
-      left: 0
-      right: 0
-      bottom: 0
-      width: auto
-      height: 100% !important
-      margin-bottom: 0
-      backface-visibility: hidden
-      &:before
-        opacity: 0
-        background-color: #1e1e1e
-        position: absolute
-        display: flex
-        justify-content: center
-        align-items: center
-        font-size: 24px
-        content: ''
-        color: #fff
-        width: 100%
-        height: 100%
-        font-family: 'FontAwesome'
-        content: "\f057"
-        transition: opacity 0.25s ease
-        border: 1px solid #333
-
-    .entry__thumb:hover:before
-      opacity: 1
-  
-  .collection--visible
-    transform: translateY(-200px)
+  .header .collection--visible
+    display: flex
 
   .collection__item
     width: calc(20% - 5px)
@@ -932,7 +856,7 @@ p
     font-size: 26px
     margin-bottom: 0
     flex: 1
-    font-family: 'Roboto'
+    font-family: 'Roboto', sans-serif
 
   .collection__tray
     background-image: url(/img/collection-bg.png)
@@ -947,6 +871,7 @@ p
 
   .footer
     display: flex
+    display: none
     justify-content: space-between
     align-items: center
     position: absolute
@@ -969,6 +894,10 @@ p
     &:first-child
       border-right: 1px solid rgba(255,255,255,0.4)
 
+  .logo
+    margin-left: 10px
+    margin-right: 110px
+
   .logo:before
     content: 'Hipcharts'
     display: block
@@ -980,8 +909,17 @@ p
     padding-top: 6px
     font-size: 20px
 
+  .logo:after
+    display: block
+    content: "\f060"
+    font-family: 'FontAwesome'
+    color: #fff
+    position: absolute
+    top: 5px
+    left: -26px
+
   .module--spaced
-    padding-top: 73px
+    padding-top: 10px
     padding-bottom: 40px
 
   .module--blocked
@@ -1007,11 +945,18 @@ p
     padding-top: 10px
 
   .header
-    height: 64px
+    height: 50px
     overflow: hidden
-  
+    top: auto
+    bottom: -50px
+
+  // .header__link
+  //   right: 10px
+  //   position: absolute
+  //   top: 19px
+    
   .header--visible
-    transform: translateY(64px)
+    transform: translateY(-50px)
 
   .header__question
     font-size: 20px
@@ -1019,10 +964,9 @@ p
 
   .header__wrap
     position: relative
-    padding: 0 30px
     height: 100%
     display: flex
-    justify-content: flex-end
+    justify-content: flex-start
     align-items: center
 
   .content
@@ -1070,15 +1014,15 @@ p
     line-height: 44px
   
   .finder
-    margin-left: 150px
     margin-right: 40px
     transition: all 0.3s ease
+    max-width: 260px
 
   .finder__clear
     cursor: pointer
     position: absolute
     right: 10px
-    bottom: 11px
+    bottom: 8px
     color: darken(blue,10)
     font-size: 18px
   
@@ -1125,6 +1069,3 @@ p
 
   .alert__cancel:hover
       color: #fff
-
-  .finder
-    margin-right: 50%

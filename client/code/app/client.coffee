@@ -18,5 +18,5 @@ ss.rpc 'auth.getCurrentUser', (user) ->
     # not logged in, default to lastfm suggestion module
     Nav.go 'landing'
 
-$('.show-options').click ->
-  $('.header').addClass('header--visible')
+# $('.show-options').click ->
+#   $('.header').addClass('header--visible')

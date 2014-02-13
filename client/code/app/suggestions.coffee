@@ -11,12 +11,15 @@ window.printSuggestions = (suggestions) ->
     $('.item__thumb img').load ->
       $(this).parent('item__thumb').addClass('item__thumb--loaded')
     el.click ->
+      $('.header .collection').addClass('collection--visible')
       if collectionView.model.length is 5
         return
       $(this).addClass('item--selected')
       collectionView.add suggestion
     $('#suggestions-list').append el
   doMasonry()
+  $(".item__thumb img").load ->
+    $(this).css "opacity", "1"
 
 # todo: refactor this into a data layer. see finder
 url = 'http://ws.audioscrobbler.com/2.0/'
@@ -81,6 +84,7 @@ $('.get-default-suggestions').click ->
     printSuggestions _.shuffle defaultSuggestions
   ), 300
   $('.finder').show()
+
 
 window.defaultSuggestions = [
   {title:"Watching Movies with the Sound Off (Deluxe Edition)", subtitle:"Mac Miller", image:"http://userserve-ak.last.fm/serve/300x300/91010329.png"}

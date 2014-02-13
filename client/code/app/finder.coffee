@@ -9,6 +9,8 @@ class FinderView
       # console.log entry.title
       console.log entry
       li = $ ss.tmpl['chart-result'].render entry
+      $(".item__thumb img").load ->
+        $(this).css "opacity", "1"
       li.click ->
         $('.finder__input').focus()
         $('.finder__input').val('')

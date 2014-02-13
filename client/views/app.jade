@@ -16,33 +16,19 @@ html(lang="en")
         //-   i.fa.fa-times-circle.tip__hide
         .lastfm
         .module.module--active#splash
+        .module#login
+          include login
         .module.module--spaced.module--blocked#collection
           .radial
           ul.chart.entries
           .nav
             a.button.button--white.button--inactive.chart-toggle(href="#prev") Prev
             a.button.chart-toggle(href="#next") Next
-        .module.module--spaced.module--blocked#options
+        .module.module--spaced#options
           .options
             a(href="#lastfm").option.go
               h2.option__title Top Five
                 stong.option__type albums
-              h3.option__year 2013
-            a(href="#").option.option--disabled
-              h2.option__title Top Five
-                stong.option__type songs
-              h3.option__year 2013
-            a(href="#").option.option--disabled
-              h2.option__title Top Five
-                stong.option__type games
-              h3.option__year 2013
-            a(href="#").option.option--disabled
-              h2.option__title Top Five
-                stong.option__type movies
-              h3.option__year 2013
-            a(href="#").option.option--disabled
-              h2.option__title Top Five
-                stong.option__type books
               h3.option__year 2013
         .module.module--landing#landing
           .container
@@ -79,7 +65,7 @@ html(lang="en")
         .module#register
           .container
             include register
-        .module.module--spaced.module--blocked.suggestions#suggestions
+        .module.module--blocked.suggestions#suggestions
           #suggestions-list.results__list
           //- .spinner
             .rect1
@@ -87,10 +73,5 @@ html(lang="en")
             .rect3
             .rect4
             .rect5
-        .footer
-          .collection__title What were your top five albums of 2013?
-          .collection
-            .chart
-          a.button.button--small.button--inactive(id="publish", href="#register") Publish
-    include login
+        include footer
 
