@@ -52,11 +52,7 @@ $ ->
   _.each labels.slice(0,5), (label) ->
     li = $ "<li class='hc-chart'><a>#{label}</a> <span>(preview)</span></li>"
     li.find('a').click -> saveItem {title, href, label}
-    li.find('span').click (e) ->
-      e.stopPropagation()
-      e.stopImmediatePropagation()
-      e.preventDefault()
-      viewList label
+    li.find('span').click -> viewList label
     $('ul.label-list').append li
   
   $('button.create-list').click (e) ->
