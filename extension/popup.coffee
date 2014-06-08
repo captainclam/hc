@@ -20,8 +20,8 @@ $ ->
   $('button').click (e) ->
     e.preventDefault()
     $(this).html 'LOL'
-    # item = {title: document.title, href: window.location.href}
-    item = title:'hello', href: 'google'
+    item = {title: document.title, href: window.location.href}
+    # item = title:'hello', href: 'google'
     appendItem item
     # save
     list.push item

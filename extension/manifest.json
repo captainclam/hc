@@ -24,7 +24,7 @@
     }
   ],
   "permissions": [
-    "activeTab"
+    "tabs"
   ],
   "browser_action": {
     "default_icon": "img/logo-small.png",
