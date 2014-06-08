@@ -6,11 +6,15 @@
 .flat
   margin-bottom: 0 !important
 
+a:focus
+  outline: 0
+
 h1
 h2
 h3
 h4
 h5
+p
   margin-bottom: 12px
 
 body
@@ -64,8 +68,15 @@ label
 
 .hipcharts__body
   padding: 12px
+  :last-child
+    margin-bottom: 0
 
 .hipcharts__footer
   background-color: #F5F5F5
   border-top: 1px solid #ddd
   padding: 12px
+
+.hipcharts__error
+  font-size: 14px
+  font-weight: 100
+  color: #999
