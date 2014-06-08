@@ -12,8 +12,15 @@ saveItem = (item) ->
   saveList()
   module 'list'
   dom.find('.label-title .value').html item.label
+  appendItems item.label
+
+viewList = (label) ->
+  appendItems label
+  module 'list'
+
+appendItems = (label) ->
   dom.find('ul.item-list').empty()
-  for item in _.where(list, {label: item.label}).slice(0,5)
+  for item in _.where(list, {label}).slice(0,5)
     appendItem item
 
 saveList = ->
@@ -43,8 +50,13 @@ $ ->
 
   labels = _.uniq _.pluck list, 'label'
   _.each labels.slice(0,5), (label) ->
-    li = $ "<li class='hc-chart'>#{label}</li>"
-    li.click -> saveItem {title, href, label}
+    li = $ "<li class='hc-chart'><a>#{label}</a> <span>(preview)</span></li>"
+    li.find('a').click -> saveItem {title, href, label}
+    li.find('span').click (e) ->
+      e.stopPropagation()
+      e.stopImmediatePropagation()
+      e.preventDefault()
+      viewList label
     $('ul.label-list').append li
   
   $('button.create-list').click (e) ->
