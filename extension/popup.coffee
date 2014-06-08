@@ -11,7 +11,7 @@ saveItem = (item) ->
   list.push item
   saveList()
   dom.find('ul.list').empty()
-  for item in _.where list, {label}
+  for item in _.where list, {label: item.label}
     appendItem item
 
 saveList = ->

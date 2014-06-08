@@ -10,6 +10,7 @@
     "persistent": false,
     "scripts": [
       "lib/jquery.min.js",
+      "lib/underscore-min.js",
       "bg.js"
     ]
   },
