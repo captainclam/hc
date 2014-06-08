@@ -19,3 +19,4 @@ extension/content.js
 extension/bg.js
 extension/Gruntfile.js
 extension/popup.js
+extension/popup.css
