@@ -34,7 +34,7 @@ $ ->
     title = tab.title
 
   labels = _.uniq _.pluck list, 'label'
-  _.each labels, (label) ->
+  _.each labels.slice(0,5), (label) ->
     li = $ "<li class='hc-chart'>#{label}</li>"
     li.click -> saveItem {title, href, label}
     $('ul.label-list').append li
