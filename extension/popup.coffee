@@ -8,7 +8,7 @@ if list[0] and (!list[0].title or !list[0].label)
   list = []
 
 saveItem = (item) ->
-  list.push item
+  list.unshift item # tack it on the start (recency)
   saveList()
   module 'list'
   dom.find('.label-title .value').html item.label
