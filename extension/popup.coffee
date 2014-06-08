@@ -25,15 +25,22 @@ appendItem = (item) ->
 $ ->
   dom = $ '#hipcharts'
 
+  href = null
+  title = null
+  chrome.tabs.getSelected null, (tab) ->
+    # console.log tab
+    href = tab.url
+    title = tab.title
+
   labels = _.uniq _.pluck list, 'label'
   _.each labels, (label) ->
     li = $ "<li>#{label}</li>"
-    li.click -> saveItem title:'hello', href: 'google', label: label
+    li.click -> saveItem {title, href, label}
     $('ul.label-list').append li
   
   $('button.create-list').click (e) ->
     e.preventDefault()
     input = $('input.list-title')
     label = input.val()
-    saveItem title:'hello', href: 'google', label: label
+    saveItem {title, href, label}
     input.val('').focus()
