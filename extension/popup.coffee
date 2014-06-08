@@ -21,7 +21,15 @@ saveList = ->
 
 appendItem = (item) ->
   {title, href} = item
-  dom.find('ul.item-list').append "<li><a href='#{href}'>#{title}</a></li>"
+  li = $ "<li class='hc-item'><a href='#{href}'>#{title}</a> <i class='hc-remove'>x</i></li>"
+  li.find('.hc-remove').click (e) ->
+    e.stopPropagation()
+    e.stopImmediatePropagation()
+    e.preventDefault()
+    list = _.reject list, (obj) -> obj is item
+    saveList()
+    li.remove()
+  dom.find('ul.item-list').append li
 
 $ ->
   dom = $ '#hipcharts'
