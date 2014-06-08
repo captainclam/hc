@@ -1,5 +1,9 @@
 dom = null
 
+# temp oops global scope bad huh
+href = null
+title = null
+
 list = JSON.parse(localStorage.getItem('hc-list'))
 list ?= []
 
@@ -50,8 +54,6 @@ printLabels = ->
 $ ->
   dom = $ '#hipcharts'
 
-  href = null
-  title = null
   chrome.tabs.getSelected null, (tab) ->
     # console.log tab
     href = tab.url
