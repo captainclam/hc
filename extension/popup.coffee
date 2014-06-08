@@ -11,7 +11,6 @@ saveItem = (item) ->
   list.unshift item # tack it on the start (recency)
   saveList()
   module 'list'
-  dom.find('.label-title .value').html item.label
   appendItems item.label
 
 viewList = (label) ->
@@ -19,6 +18,7 @@ viewList = (label) ->
   module 'list'
 
 appendItems = (label) ->
+  dom.find('.label-title .value').html label
   dom.find('ul.item-list').empty()
   for item in _.where(list, {label}).slice(0,5)
     appendItem item
@@ -38,6 +38,15 @@ appendItem = (item) ->
     li.remove()
   dom.find('ul.item-list').append li
 
+printLabels = ->
+  $('ul.label-list').empty()
+  labels = _.uniq _.pluck list, 'label'
+  _.each labels.slice(0,5), (label) ->
+    li = $ "<li class='hc-chart'><a>#{label}</a> <span>(preview)</span></li>"
+    li.find('a').click -> saveItem {title, href, label}
+    li.find('span').click -> viewList label
+    $('ul.label-list').append li
+
 $ ->
   dom = $ '#hipcharts'
 
@@ -48,12 +57,7 @@ $ ->
     href = tab.url
     title = tab.title
 
-  labels = _.uniq _.pluck list, 'label'
-  _.each labels.slice(0,5), (label) ->
-    li = $ "<li class='hc-chart'><a>#{label}</a> <span>(preview)</span></li>"
-    li.find('a').click -> saveItem {title, href, label}
-    li.find('span').click -> viewList label
-    $('ul.label-list').append li
+  printLabels()
   
   $('button.create-list').click (e) ->
     e.preventDefault()
@@ -62,6 +66,7 @@ $ ->
     return unless label
     saveItem {title, href, label}
     input.val('').focus()
+    printLabels()
 
   $('.hipcharts__back').click (e) ->
     e.preventDefault()
