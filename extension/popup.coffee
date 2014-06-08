@@ -10,7 +10,8 @@ if list[0] and (!list[0].title or !list[0].label)
 saveItem = (item) ->
   list.push item
   saveList()
-  dom.find('ul.list').empty()
+  dom.find('.label-title').html item.label
+  dom.find('ul.item-list').empty()
   for item in _.where list, {label: item.label}
     appendItem item
 
@@ -19,13 +20,13 @@ saveList = ->
 
 appendItem = (item) ->
   {title, href} = item
-  dom.find('ul.list').append "<li><a href='#{href}'>#{title}</a></li>"
+  dom.find('ul.item-list').append "<li><a href='#{href}'>#{title}</a></li>"
 
 $ ->
   dom = $ '#hipcharts'
 
   labels = _.uniq _.pluck list, 'label'
-  for label in labels
+  _.each labels, (label) ->
     li = $ "<li>#{label}</li>"
     li.click -> saveItem title:'hello', href: 'google', label: label
     $('ul.label-list').append li
