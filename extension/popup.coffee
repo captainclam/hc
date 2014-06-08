@@ -13,7 +13,7 @@ saveItem = (item) ->
   module 'list'
   dom.find('.label-title .value').html item.label
   dom.find('ul.item-list').empty()
-  for item in _.where list, {label: item.label}
+  for item in _.where(list, {label: item.label}).slice(0,5)
     appendItem item
 
 saveList = ->
