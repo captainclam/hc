@@ -1,12 +1,15 @@
-#hc-extension-banner
-  display: none
+.hc-banner
   position: fixed
   top: 0
-  left: 0
-  width: 100%
-  background: white
-  padding: 20px
+  right: -270px
+  width: 320px
+  bottom: 0
+  background: #474747
   text-align: center
   color: #222
   font-size: 20px
-  z-index: 100
+  -webkit-transition: all 0.25s ease
+  z-index: 999999999999
+
+.hc-banner--active
+  -webkit-transform: translateX(-270px)
