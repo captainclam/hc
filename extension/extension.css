@@ -1,0 +1,13 @@
+#hc-extension-banner {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  padding: 20px;
+  text-align: center;
+  color: #222;
+  font-size: 20px;
+  z-index: 100;
+}
