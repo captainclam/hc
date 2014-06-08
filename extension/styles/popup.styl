@@ -12,8 +12,34 @@
   border-top: 1px solid #ddd
   cursor: pointer
   font-weight: 400
+  position: relative
   &:first-child
     border-top: 0
+  &:hover
+    color: #111
+
+.hc-item
+  display: block
+  padding: 6px 0
+  border-top: 1px solid #ddd
+  cursor: pointer
+  font-weight: 400
+  position: relative
+  &:first-child
+    border-top: 0
+
+.hc-remove
+  position: absolute
+  right: 0
+  font-style: normal
+  top: 6px
+  width: 24px
+  height: 24px
+  text-align: center
+  line-height: 24px
+  display: block
+  font-weight: bold
+  color: #ddd
   &:hover
     color: #111
 
@@ -78,8 +104,6 @@ label
   font-size: 14px
   text-transform: uppercase
   font-weight: 600
-  display: flex
-  justify-content: space-between
   a
     text-transform: none
 
