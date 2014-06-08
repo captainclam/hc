@@ -5,21 +5,32 @@
 <link rel="stylesheet" href="popup.css">
 
 <div id="hipcharts" class="hipcharts">
-	<div class="hipcharts__body">
-		<h2 class="hipcharts__title">Recent charts</h2>
-		<div class="hipcharts__error">
-			<ul class="label-list">
-			</ul>
+	<div class="hc-module hc-module--active" id="hc-add">
+		<div class="hipcharts__body">
+			<h2 class="hipcharts__title">
+				Recent charts
+			</h2>
+			<div class="hipcharts__error">
+				<ul class="label-list">
+				</ul>
+			</div>
+		</div>
+		<div class="hipcharts__footer">
+			<form action="">
+				<h2 class="hipcharts__title">Create new chart</h2>
+				<input type="text" class="input list-title" placeholder="eg. MF DOOM tracks">
+				<button type="submit" class="create-list">Create</button>
+			</form>
 		</div>
 	</div>
-	<div class="hipcharts__footer">
-		<form action="">
-			<h2 class="hipcharts__title">Create new chart</h2>
-			<input type="text" class="input list-title" placeholder="eg. MF DOOM tracks">
-			<button type="submit" class="create-list">Create</button>
-		</form>
+	<div class="hc-module" id="hc-list">
 
-    <h2 class="label-title"></h2>
-	  <ul class="item-list"></ul>
+		<div class="hipcharts__body">
+	    <h2 class="hipcharts__title label-title">
+	    	<i class="hipcharts__back">&lt;</i>
+	    	<span class="value"></span>
+	    </h2>
+		  <ul class="item-list"></ul>
+		</div>
 	</div>
 </div>

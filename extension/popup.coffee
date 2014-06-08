@@ -10,7 +10,8 @@ if list[0] and (!list[0].title or !list[0].label)
 saveItem = (item) ->
   list.push item
   saveList()
-  dom.find('.label-title').html item.label
+  module 'list'
+  dom.find('.label-title .value').html item.label
   dom.find('ul.item-list').empty()
   for item in _.where list, {label: item.label}
     appendItem item
@@ -34,7 +35,7 @@ $ ->
 
   labels = _.uniq _.pluck list, 'label'
   _.each labels, (label) ->
-    li = $ "<li>#{label}</li>"
+    li = $ "<li class='hc-chart'>#{label}</li>"
     li.click -> saveItem {title, href, label}
     $('ul.label-list').append li
   
@@ -42,5 +43,15 @@ $ ->
     e.preventDefault()
     input = $('input.list-title')
     label = input.val()
+    return unless label
     saveItem {title, href, label}
     input.val('').focus()
+
+  $('.hipcharts__back').click (e) ->
+    e.preventDefault()
+    module 'add'
+
+module = (id) ->
+  $('.hc-module').hide()
+  $('#hc-'+id).show()
+
