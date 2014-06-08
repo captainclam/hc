@@ -32,7 +32,7 @@ saveList = ->
 
 appendItem = (item) ->
   {title, href} = item
-  li = $ "<li class='hc-item'><a href='#{href}'>#{title}</a> <i class='hc-remove'>x</i></li>"
+  li = $ "<li class='hc-item'><a href='#{href}' target='_blank'>#{title}</a> <i class='hc-remove'>x</i></li>"
   li.find('.hc-remove').click (e) ->
     e.stopPropagation()
     e.stopImmediatePropagation()
