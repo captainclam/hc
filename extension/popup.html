@@ -1,3 +1,6 @@
+<script src="lib/jquery.min.js"></script>
+<script src="popup.js"></script>
+
 <style>
 	* {
 		margin: 0;
@@ -59,11 +62,11 @@
 
 </style>
 
-<div class="hipcharts">
-	<button>Add to new chart</button>
+<div id="hipcharts" class="hipcharts">
 	<form action="">
 		<label for="">Your top five what?</label>
 		<input type="text" class="input" placeholder="eg. MF DOOM tracks">
 		<button type="submit">Save</button>
 	</form>
+  <ul class="list"></ul>
 </div>
