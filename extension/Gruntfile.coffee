@@ -3,8 +3,12 @@ module.exports = (grunt) ->
   grunt.initConfig
     pkg: grunt.file.readJSON 'package.json'
 
-    # coffee:
-    #   compile:
+    coffee:
+      compile:
+        files:
+          'popup.js': 'popup.coffee'
+          'content.js': 'content.coffee'
+          'bg.js': 'bg.coffee'
 
     stylus:
       compile:
@@ -12,6 +16,7 @@ module.exports = (grunt) ->
         #   compress: !DEBUG
         files:
           'extension.css': 'styles/main.styl'
+          'popup.css': 'styles/popup.styl'
 
     # jade:
     #   compile:
@@ -25,6 +30,9 @@ module.exports = (grunt) ->
       stylus:
         files: ['styles/*.styl']
         tasks: ['stylus']
+      coffee:
+        files: ['*.coffee']
+        tasks: ['coffee']
       # jade:
       #   files: ['lib/*.jade', 'lib/templates/*.jade']
       #   tasks: ['jade']
